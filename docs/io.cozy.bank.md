@@ -4,7 +4,7 @@
 
 Cozy can stores and manipulate bank related datas, distributed across several doctypes.
 
-## `io.cozy.bank.account`
+## `io.cozy.bank.accounts`
 
 This doctypes stores informations about a Bank account:
 
