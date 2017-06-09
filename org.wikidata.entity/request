@@ -1,0 +1,2 @@
+GET https://www.wikidata.org/wiki/Special:EntityData/{{entity}}.json
+Accept: application/json
