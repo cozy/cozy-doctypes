@@ -8,4 +8,4 @@ Table of contents
 - [Bank](io.cozy.bank.md): Banking related data
 - [Files](io.cozy.files.md): files documents
 - [Konnectors](io.cozy.konnectors.md): Installed Konnectors
-- [Settings](io.cozy.settings.md); Instance settings
+- [Settings](io.cozy.settings.md): Instance settings
