@@ -1,0 +1,2 @@
+GET https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&{{params}}
+  Accept "application/json"

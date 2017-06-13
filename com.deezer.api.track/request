@@ -1,0 +1,2 @@
+GET https://api.deezer.com/search/track/?output=json&strict=on&q={{q}}
+  Accept "application/json"

@@ -1,0 +1,2 @@
+GET https://en.wikipedia.org/w/api.php?{{params}}
+  Accept "application/json"
