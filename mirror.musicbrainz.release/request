@@ -1,2 +1,1 @@
-GET https://ssl14.ovh.net/~hoodbrai/proxy.php?http://musicbrainz-mirror.eu:5000/ws/2/release/{{rid}}/?fmt=json&{{params}}
-  Accept "application/json"
+GET http://musicbrainz-mirror.eu:5000/ws/2/release/{{rid}}/?fmt=json&{{params}}
