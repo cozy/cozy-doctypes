@@ -10,3 +10,4 @@ Table of contents
 - [Files](io.cozy.files.md): files documents
 - [Konnectors](io.cozy.konnectors.md): installed Konnectors
 - [Settings](io.cozy.settings.md): instance settings
+- [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
