@@ -8,6 +8,8 @@ Table of contents
 - [Apps](io.cozy.apps.md): installed apps
 - [Bank](io.cozy.bank.md): banking related data
 - [Files](io.cozy.files.md): files documents
+- [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [Konnectors](io.cozy.konnectors.md): installed Konnectors
 - [Settings](io.cozy.settings.md): instance settings
 - [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
+- [Bills](io.cozy.bills.md): bills
