@@ -11,3 +11,4 @@ Table of contents
 - [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [Konnectors](io.cozy.konnectors.md): installed Konnectors
 - [Settings](io.cozy.settings.md): instance settings
+- [Bills](io.cozy.bills.md): bills
