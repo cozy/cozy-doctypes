@@ -10,3 +10,4 @@ Table of contents
 - [Files](io.cozy.files.md): files documents
 - [Konnectors](io.cozy.konnectors.md): installed Konnectors
 - [Settings](io.cozy.settings.md): instance settings
+- [Bills](io.cozy.bills.md): bills
