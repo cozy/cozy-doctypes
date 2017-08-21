@@ -19,4 +19,5 @@
 
 ## Types
 
-- `health_costs`: Health related costs
+- `health_costs`: Health related bills
+- `phone`: Phone related bills
