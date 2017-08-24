@@ -6,7 +6,8 @@
 
 - `type`: {string} - Type of the bill
 - `subtype`: {string} - Used for labelling the bill. ie: "Ostéopathie"
-- `date`: {date}
+- `date`: {date} - Date the bill was emitted
+- `originalDate` - For health bills, represents the date of the health act (presumably the date the account was charged)
 - `vendor`: {string} - Vendor which issued the bill
 - `amount`: {number} - Amount of the bill, __always positive__ even if it is a refund
 - `isRefund`: {boolean} - Indicate if the bill represents a refund/reimbursement
