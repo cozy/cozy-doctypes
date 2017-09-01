@@ -1,0 +1,23 @@
+{
+  "name": "cozy-doctypes",
+  "version": "1.0.0",
+  "description": "Export Cozy Doctypes",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cozy/cozy-doctypes.git"
+  },
+  "keywords": [
+    "export",
+    "cozy",
+    "doctypes"
+  ],
+  "license": "AGPL-v3.0",
+  "bugs": {
+    "url": "https://github.com/cozy/cozy-doctypes/issues"
+  },
+  "homepage": "https://cozy.github.io/cozy-doctypes/"
+}

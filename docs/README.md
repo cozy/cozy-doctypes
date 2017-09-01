@@ -1,5 +1,4 @@
-Table of contents
-=================
+# Table of contents
 
 ## Cozy doctypes
 
@@ -14,3 +13,12 @@ Table of contents
 - [Photos Albums](io.cozy.photos.albums.md): photos albums
 - [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
 - [Settings](io.cozy.settings.md): instance settings
+
+## How update this repository
+
+- Add new doctype in `index.js`
+- Add documentation in `docs/<doctype>.md` and update `docs/README.md` (It's alphabetic order)
+- Upgrade version number in `package.json`
+- Create a pull-request
+- Merge it on master
+- Create a release and wait that travis release automatically on npm 🎉
