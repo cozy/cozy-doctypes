@@ -4,6 +4,22 @@
 
 Cozy can stores and manipulate bank related datas, distributed across several doctypes.
 
+## `io.cozy.bank.settings`
+
+This doctype store informations about Bank application settings. There is only one document, by default:
+
+```
+{
+  notifications: {
+    amountMax: {
+      enable: false,
+      value: 30
+    }
+  }
+}
+```
+
+
 ## `io.cozy.bank.accounts`
 
 This doctypes stores informations about a Bank account:
