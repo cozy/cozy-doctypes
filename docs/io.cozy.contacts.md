@@ -34,7 +34,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `type?`: {string} Programmatic type of phone number (`"work"`, `"home"`, `"mobile"`, `"fax"`, `"other"`)
   - `label?`: {string} A user-provided localized type of phone number (example: `"Work"`)
   - `primary?`: {boolean} Indicates a preferred-use number
-- `_cozy?`: {array} An array of cozy instances with the following attributes:
+- `cozy?`: {array} An array of cozy instances with the following attributes:
   - `url`: {string}
   - `label?`: {string} A user-provided localized type of instance
   - `primary?`: {boolean} Indicates a preferred-use instance
