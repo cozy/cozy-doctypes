@@ -2,7 +2,7 @@
 
 # Session login entry
 
-## `io.cozy.sessions.login`
+## `io.cozy.sessions.logins`
 
 This doctype represent an entry in the session history:
 
