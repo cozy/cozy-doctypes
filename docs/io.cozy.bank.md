@@ -44,6 +44,6 @@ This doctype stors informations about a bank transaction:
 - `amount`: {number} the amount of the transaction
 - `currency`: {string} a 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
 - `category`: {string} a category that apply to the transaction
--  `account`: {identifier} the related account the transaction belongs to, in the form of `{doctype}:{_id}` (e.g. `io.cozy.bank.account:{_id}`)
+-  `account`: {identifier} the related account id the transaction belongs to
 - `bill`: {identifier} an external doctype identifier to an element the trasbaction can be associated to (e.g. `io.cozy.files:{_id}`, `io.cozy.bills:{_id}`)
 - `parent`: {_id} in case of a split transaction, the one refers the global transaction the split one belongs to
