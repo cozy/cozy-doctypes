@@ -43,7 +43,8 @@ This doctype stors informations about a bank transaction:
 - `dateImport`: {timestamp} the date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} the amount of the transaction
 - `currency`: {string} a 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
-- `category`: {string} a category that apply to the transaction
+- `manualCategoryId`: {string} a category that apply to the transaction and is manually selected by the user
+- `automaticCategoryId`: {string} a category that apply to the transaction and is automatically calculated
 -  `account`: {identifier} the related account id the transaction belongs to
 - `bill`: {identifier} an external doctype identifier to an element the trasbaction can be associated to (e.g. `io.cozy.files:{_id}`, `io.cozy.bills:{_id}`)
 - `parent`: {_id} in case of a split transaction, the one refers the global transaction the split one belongs to
