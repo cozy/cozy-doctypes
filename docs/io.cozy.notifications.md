@@ -15,6 +15,7 @@ mobile app, and a summary can be sent by email.
 - `actions`: [{text, intent}] an array of objects with a text and an intent.
   Each action can be seen as a link, the text being what is shown and the
   intent what happens when clicking on the link.
+- `created_at`: {timestamp} the date of the creation.
 
 See also [the notification documentation](https://github.com/cozy/cozy-stack/blob/master/docs/notifications.md)
 for more informations.
