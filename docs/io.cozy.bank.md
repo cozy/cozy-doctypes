@@ -46,5 +46,15 @@ This doctype stors informations about a bank transaction:
 - `manualCategoryId`: {string} a category that apply to the transaction and is manually selected by the user
 - `automaticCategoryId`: {string} a category that apply to the transaction and is automatically calculated
 -  `account`: {identifier} the related account id the transaction belongs to
-- `bill`: {identifier} an external doctype identifier to an element the trasbaction can be associated to (e.g. `io.cozy.files:{_id}`, `io.cozy.bills:{_id}`)
+- `bills`: {array} an array of external doctype identifiers to an element the transbaction can be associated to (e.g. `io.cozy.files:{_id}`, `io.cozy.bills:{_id}`)
 - `parent`: {_id} in case of a split transaction, the one refers the global transaction the split one belongs to
+- `reimbursements`: {array} list of reimbursements corresponding to a debit bank operation. Each
+  item of the array takes the following form: 
+```javascript
+{
+  billId: "io.cozy.bills:989a89f898e8989b",
+  amount: 20,
+  operationId: "89a89f898e8983b566c"
+}
+```
+
