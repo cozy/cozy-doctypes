@@ -15,6 +15,7 @@
 - `originalAmount`: {number} - Original amount in case of a partial refund
 - `invoice`: {string} - The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
 - `content`: {string}
+- `originalOperation`: {string} - The associated payment bank operation. ex:`io.cozy.bank.operation:c43645a93831827c8ec512eac3005e51`
 
 ## Types
 
