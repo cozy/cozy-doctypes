@@ -10,6 +10,7 @@
 - `vendor`: {string} - Vendor which issued the bill
 - `amount`: {number}
 - `originalAmount`: Original amount in case of a partial refund
+- `groupAmount`: Group amount in case this bill was part of a grouped refund
 - `plan`: {string}
 - `pdfurl`: {string} - The associated file
 - `binaryId`: {string}
