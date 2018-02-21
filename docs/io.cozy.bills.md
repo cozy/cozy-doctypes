@@ -8,6 +8,7 @@
 - `date`: {date} - Date the bill was emitted
 - `vendor`: {string} - Vendor which issued the bill
 - `amount`: {number} - Amount of the bill, __always positive__ even if it is a refund
+- `groupAmount`: Group amount in case this bill was part of a grouped refund
 - `isThirdPartyPayer`: {boolean} - Indicate if the bill is adressed to a third party payer (and then no associated transaction is expected to be found in bank)
 - `invoice`: {string} - The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
 - `content`: {string}
