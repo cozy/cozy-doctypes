@@ -13,6 +13,8 @@
 - `amount`: {number} - Amount of the bill, __always positive__ even if it is a refund
 - `originalAmount`: {number} - Original amount in case of a partial refund
 - `groupAmount`: Group amount in case this bill was part of a grouped refund
+- `thirdPartyRefund` : {number} - Amount reimbursed to third parties
+- `socialSecurityRefund` : {number} - Amount reimbursed to social security
 - `isRefund`: {boolean} - Indicate if the bill represents a refund/reimbursement
 - `isThirdPartyPayer`: {boolean} - Indicate if the bill has been already covered by a third party payer. This attribute can be useful when Cozy retrieves bills issued by french medical insurances.
 When this attribute is in "true" no associated debit is expected to be found in the client bank
@@ -21,6 +23,7 @@ statements.
 - `content`: {string}
 - `debitOperations`: {array[io.cozy.bank.operations._id]} - List of debit operations id
 - `creditOperations`: {array[io.cozy.bank.operations._id]} - List of credit operations id
+
 
 ### Types
 
