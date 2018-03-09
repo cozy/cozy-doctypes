@@ -40,9 +40,9 @@ This doctype stors informations about a bank transaction:
 
 - `label`: {string} - The label describing the transaction
 - `type`: {string} - A type in the list : `['none', 'credit card', 'cash', 'check', 'transfer', 'internal transfer', 'debit card', 'deposit', 'financial fee', 'direct debit']`
-- `date`: {timestamp} - The date the transaction is emmited
-- `dateOperation`: {timestamp} - The date the transaction is registered in the account
-- `dateImport`: {timestamp} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
+- `date`: {date} - The date the transaction is emmited
+- `dateOperation`: {date} - The date the transaction is registered in the account
+- `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} - The amount of the transaction
 - `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
 - `manualCategoryId`: {string} - A category that apply to the transaction and is manually selected by the user
@@ -52,3 +52,9 @@ This doctype stors informations about a bank transaction:
 - `creditOperations`: {array[<io.cozy.bank.operations._id>]} - List of credit operations id
 - `debitOperations`: {array[<io.cozy.bank.operations._id>]} - List of debit operations id
 - `parent`: {_id} - In case of a split transaction, the one refers the global transaction the split one belongs to
+
+
+For the dates, any string or integer which can be interpreted by new Date(date) is possible but the
+best the result of Date.toString() -> like 'Fri Mar 09 2018 19:04:40 GMT+0100 (CET)' which contains
+the time zones.
+
