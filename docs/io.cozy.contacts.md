@@ -42,4 +42,13 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `primary?`: {boolean} Indicates a preferred-use instance
 - `groups`: {array} An array containing all the `io.cozy.contacts.groups` this contact is part of
 - `metadata`: {object}
-  - `version`: {integer} Use for migrations. Current version is **1**
+  - `version`: {integer} Used for migrations. Current version is **1**
+
+
+## `io.cozy.contacts.groups`
+
+Used to group contacts together. A group can obviously have multiple contacts, but contacts can also be part of multiple groups.
+
+- `name`: {string} is the group's public name
+- `metadata`: {object}
+  - `version`: {integer} Used for migrations. Current version is **1**
