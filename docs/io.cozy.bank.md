@@ -49,6 +49,7 @@ This doctype stors informations about a bank transaction:
 - `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated
 - `account`: {identifier} - The related account id the transaction belongs to
 - `bills`: {array[<io.cozy.bills._id>]} - List of bills id.
+- `reimbursements`: {array[<io.cozy.bills._id>]} - List of bills id.
 - `creditOperations`: {array[<io.cozy.bank.operations._id>]} - List of credit operations id
 - `debitOperations`: {array[<io.cozy.bank.operations._id>]} - List of debit operations id
 - `parent`: {_id} - In case of a split transaction, the one refers the global transaction the split one belongs to
