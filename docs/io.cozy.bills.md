@@ -39,3 +39,25 @@ are there to help the connector to link this bills to their original debit opera
 - `subtype`: {string} - Used for labelling the bill. ie: "Ostéopathie" (optionnal)
 - `originalAmount`: {number} - Original amount in case of a partial refund
 - `originalDate` - Represents the date of the associated spent (presumably the date the account was charged)
+
+### Example
+
+```
+{
+  "_id": "62e5d80d6e11d19992b7efce794263f0",
+  "amount": 700,
+  "beneficiary": "PIERRE RICHARD",
+  "date": "2018-02-07T23:00:00.000Z",
+  "groupAmount": 7.5,
+  "isRefund": true,
+  "metadata": {
+    "version": 1
+  },
+  "originalAmount": 25,
+  "originalDate": "2018-03-11T23:00:00.000Z",
+  "socialSecurityRefund": 17.5,
+  "subtype": "Consultation spécialiste",
+  "type": "health_costs",
+  "vendor": "Harmonie"
+}
+```
