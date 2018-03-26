@@ -77,6 +77,8 @@ For the dates, any string or integer which can be interpreted by new Date(date) 
 best the result of Date.toString() -> like 'Fri Mar 09 2018 19:04:40 GMT+0100 (CET)' which contains
 the time zones.
 
+### Example
+
 ```
 {
   "_id": "f0426fdeadbeef55755ee7f4d6555",
