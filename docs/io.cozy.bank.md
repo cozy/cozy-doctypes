@@ -33,6 +33,24 @@ This doctypes stores informations about a Bank account:
 - `iban`: {string} - The bank account international identifier
 - `serviceID`: {number} - In case of external service used to import transactions, this key can stores the service's account ID; can be `undefined` is the account isn't managed by any external service
 
+### Example
+
+```
+{
+  "_id": "2165d9a310deadbeeffc08d54c45102",
+  "balance": 1337.73,
+  "institutionLabel": "Société Générale (Particuliers)",
+  "label": "Livret Dévelop. Durable (x1337)",
+  "linxoId": "123456",
+  "metadata": {
+    "version": 1
+  },
+  "number": "03791 00048085818",
+  "shortLabel": "Livret Dévelop. Durable",
+  "type": "Savings"
+}
+```
+
 
 ## `io.cozy.bank.operations`
 
@@ -58,4 +76,24 @@ This doctype stors informations about a bank transaction:
 For the dates, any string or integer which can be interpreted by new Date(date) is possible but the
 best the result of Date.toString() -> like 'Fri Mar 09 2018 19:04:40 GMT+0100 (CET)' which contains
 the time zones.
+
+```
+{
+  "_id": "f0426fdeadbeef55755ee7f4d6555",
+  "account": "15fb6402426bcdeadbeeffd5f4587bb",
+  "amount": 10,
+  "automaticCategoryId": "400110",
+  "currency": "EUR",
+  "date": "2017-09-22 00:00:00+01:00",
+  "dateOperation": null,
+  "label": "M  PIERRE RICHARD",
+  "linxoId": "845811337",
+  "metadata": {
+    "dateImport": "2018-03-09T09:23:40.075Z",
+    "version": 1
+  },
+  "originalBankLabel": "VIR RECU    5383518660S DE: M  PIERRE RICHARD J MOTIF: Cascade REF: NOT PROVIDED",
+  "type": "transfer"
+}
+```
 
