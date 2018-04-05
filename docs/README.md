@@ -3,6 +3,7 @@ Table of contents
 
 ## Cozy doctypes
 
+- [Accounts](io.cozy.accounts.md): Konnector accounts
 - [Bank](io.cozy.bank.md): banking related data
 - [Bills](io.cozy.bills.md): bills
 - [Contacts](io.cozy.contacts.md): instance owner contacts
