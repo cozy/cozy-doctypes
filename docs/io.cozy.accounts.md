@@ -78,3 +78,4 @@ The connectors based on Linxo API are storing specific informations into `data` 
 
   }
 }
+```
