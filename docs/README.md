@@ -6,6 +6,7 @@ Table of contents
 - [Accounts](io.cozy.accounts.md): Konnector accounts
 - [Bank](io.cozy.bank.md): banking related data
 - [Bills](io.cozy.bills.md): bills
+- [Payslips](io.cozy.payslips.md): payslips
 - [Contacts](io.cozy.contacts.md): instance owner contacts
 - [Files](io.cozy.files.md): files documents
 - [Konnectors](io.cozy.konnectors): Connectors
