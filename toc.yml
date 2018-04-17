@@ -9,3 +9,4 @@
 - Remote requests: ./docs/io.cozy.remote.requests.md
 - Session logins: ./docs/io.cozy.sessions.logins.md
 - Triggers: ./docs/io.cozy.triggers.md
+- Accounts: ./docs/io.cozy.accounts.md
