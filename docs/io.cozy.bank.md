@@ -64,6 +64,8 @@ This doctype stors informations about a bank transaction:
 - `amount`: {number} - The amount of the transaction
 - `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
 - `manualCategoryId`: {string} - A category that apply to the transaction and is manually selected by the user
+- `cozyCategoryId`: {string} - A category found by Cozy
+- `cozyCategoryProba`: {number} - The probability of Cozy category
 - `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated
 - `account`: {identifier} - The related account id the transaction belongs to
 - `bills`: {array[<io.cozy.bills._id>]} - List of bills id.
@@ -90,6 +92,8 @@ the time zones.
   "dateOperation": null,
   "label": "M  PIERRE RICHARD",
   "linxoId": "845811337",
+  "cozyCategoryId": "400110",
+  "cozyCategoryProba": 0.9323,
   "metadata": {
     "dateImport": "2018-03-09T09:23:40.075Z",
     "version": 1
@@ -98,4 +102,3 @@ the time zones.
   "type": "transfer"
 }
 ```
-
