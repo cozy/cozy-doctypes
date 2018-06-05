@@ -2,7 +2,7 @@
 
 # `io.cozy.sharings`
 
-This doctype describe a sharing, ie an action made by some user to share some
+This doctype describes a sharing, ie an action made by some user to share some
 documents and files from her cozy instance to other people.
 
 * An identifier (the same for all members of the sharing)
@@ -12,10 +12,15 @@ documents and files from her cozy instance to other people.
   recipients
 * A `description` (one sentence that will help people understand what is shared
   and why)
+- a flag `active` that says if the sharing is currently active for at least
+  one member
+- a flag `owner`, true for the document on the cozy of the sharer, and false
+  on the other cozy instance
 * a flag `open_sharing`:
   * `true` if any member of the sharing can add a new recipient
   * `false` if only the owner can add a new recipient
-* Some technical data (`created_at`, `updated_at`, `app_slug`, `preview_path`)
+* Some technical data (`created_at`, `updated_at`, `app_slug`, `preview_path`,
+  `triggers`, `credentials`)
 * A list of sharing `rules`, each rule being composed of:
   * a `title`, that will be displayed to the recipients before they accept the
     sharing
@@ -125,9 +130,7 @@ documents are shared, and to replicate changes from one Cozy to the others.
   a `/` (e.g. `io.cozy.contacts/c1f5dae4-0d87-11e8-b91b-1f41c005768b`)
 * `_rev`: the CouchDB default revision for this document (not very meaningful,
   it’s here to avoid concurrency issues)
-* `revisions`: an array with the last known `_rev`s of the referenced object (for
-  conflicts, we put
-  [the winner](http://docs.couchdb.org/en/2.1.1/replication/conflicts.html#working-with-conflicting-documents))
+* `revisions`: a tree with the last known `_rev`s of the referenced object
 * `infos`, a map of sharing ids → `{rule, removed, binary}`
   * `rule` says which rule from the sharing must be applied for this document
   * `removed` will be true for a deleted document, a trashed file, or if the
