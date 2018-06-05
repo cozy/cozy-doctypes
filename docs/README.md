@@ -14,6 +14,7 @@ Table of contents
 - [Photos Albums](io.cozy.photos.albums.md): photos albums
 - [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
 - [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
+- [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
 - [Triggers](io.cozy.triggers.md): Job triggers
 
 ## Metadata
