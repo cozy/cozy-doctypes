@@ -16,7 +16,7 @@ When installing a konnector, the Cozy stack creates a new `io.cozy.konnector` do
 The available attributes in a `io.cozy.konnectors` document are :
 
 * `categories`
-* `data_type`
+* `data_types`
 * `developer`
 * `doctypes`
 * `editor`
