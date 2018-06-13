@@ -102,3 +102,40 @@ the time zones.
   "type": "transfer"
 }
 ```
+
+
+## `io.cozy.bank.balancehistories`
+
+This doctype stores a year of daily balances :
+
+- `year`: {number} - The year of the balances
+- `balances`: {object} - A day (YYYY-MM-DD format) / balance (number) map
+
+### Relationships
+
+- `account`: {object} - The associated account
+
+### Example
+
+```
+{
+  "_id": "f1aacd3254509687c07e48279b42cd50",
+  "year": 2018,
+  "balances": {
+    "2018-01-01": 8000,
+    "2018-01-02": 8000.42,
+    "2018-01-03": 1337
+  },
+  "metadata": {
+    "version": 1
+  },
+  "$relationships": {
+    "account": {
+      "data": {
+        "_id": "f1aacd3254509687c07e48279b42f3de",
+        "_type": "io.cozy.bank.accounts"
+      }
+    }
+  }
+}
+```
