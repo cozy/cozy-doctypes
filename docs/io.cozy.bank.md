@@ -129,7 +129,7 @@ This doctype stores a year of daily balances :
   "metadata": {
     "version": 1
   },
-  "$relationships": {
+  "relationships": {
     "account": {
       "data": {
         "_id": "f1aacd3254509687c07e48279b42f3de",
