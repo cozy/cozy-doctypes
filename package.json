@@ -1,6 +1,6 @@
 {
   "name": "cozy-doctypes",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Definitions for Cozy models",
   "main": "src/index.js",
   "repository": "git@github.com:cozy/cozy-doctypes.git",
@@ -10,10 +10,15 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "semantic-release-cli": "^4.0.5",
+    "travis-deploy-once": "^5.0.0",
+    "semantic-release": "^15.6.0"
   },
   "scripts": {
     "lint": "eslint --fix src/",
-    "test": "jest src/"
+    "test": "jest src/",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   }
 }
