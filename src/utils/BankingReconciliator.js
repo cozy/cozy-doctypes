@@ -1,5 +1,6 @@
 const keyBy = require('lodash/keyBy')
 const fromPairs = require('lodash/fromPairs')
+const log = require('../log')
 
 class BankingReconciliator {
   constructor({ BankAccount, BankTransaction }) {
@@ -21,6 +22,8 @@ class BankingReconciliator {
       fetchedAccounts,
       stackAccounts
     )
+
+    log('info', 'BankingReconciliator: Saving accounts...')
     const cozyAccounts = await BankAccount.bulkSave(matchedAccounts)
 
     const stackTransactions = BankTransaction.getMostRecentForAccounts(
@@ -54,6 +57,7 @@ class BankingReconciliator {
         onlyMostRecent: fromNewKonnectorAccount
       }
     )
+    log('info', 'BankingReconciliator: Saving transactions...')
     return BankTransaction.bulkSave(transactions)
   }
 }
