@@ -57,7 +57,8 @@ class Transaction extends Document {
     } else {
       log(
         'info',
-        `onlyMostRecent: ${onlyMostRecent}, splitDate: ${splitDate}, saving all new transactions`)
+        `onlyMostRecent: ${onlyMostRecent}, splitDate: ${splitDate}, saving all new transactions`
+      )
     }
 
     log(
