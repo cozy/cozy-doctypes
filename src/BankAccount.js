@@ -1,4 +1,5 @@
 const keyBy = require('lodash/keyBy')
+const some = require('lodash/some')
 const Document = require('./Document')
 
 class BankAccount extends Document {

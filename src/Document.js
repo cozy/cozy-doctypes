@@ -3,6 +3,7 @@ const size = require('lodash/size')
 const omitBy = require('lodash/omitBy')
 const isUndefined = require('lodash/isUndefined')
 const get = require('lodash/get')
+const PromisePool = require('es6-promise-pool')
 
 function mapToObject(arr, fn) {
   const out = {}
@@ -120,6 +121,16 @@ class Document {
 
   static create(attributes) {
     return cozyClient.data.create(this.doctype, attributes)
+  }
+
+  static bulkSave(documents, concurrency = 30) {
+    const kls = this
+    const pool = new PromisePool(function*() {
+      for (let doc of documents) {
+        yield kls.createOrUpdate(doc)
+      }
+    }, concurrency)
+    return pool.start()
   }
 
   static query(index, options) {
