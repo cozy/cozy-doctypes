@@ -4,9 +4,10 @@ const Document = require('./Document')
 
 class BankAccount extends Document {
   static reconciliate(fetchedAccounts, localAccounts) {
-    const byAccountNumber = keyBy(localAccounts, 'number')
+    const numberAttr = BankAccount.numberAttr
+    const byAccountNumber = keyBy(localAccounts, numberAttr)
     return fetchedAccounts.map(fetchedAccount => {
-      const matchedSavedAccount = byAccountNumber[fetchedAccount.number]
+      const matchedSavedAccount = byAccountNumber[fetchedAccount[numberAttr]]
       return {
         ...fetchedAccount,
         _id: matchedSavedAccount && matchedSavedAccount._id
@@ -15,13 +16,12 @@ class BankAccount extends Document {
   }
 
   static isFromNewKonnector(fetchedAccounts, stackAccounts) {
-    const byNumber = keyBy(stackAccounts, this.numberAttr)
+    const numberAttr = this.numberAttr
+    const byNumber = keyBy(stackAccounts, numberAttr)
     const byVendorId = keyBy(stackAccounts, this.vendorIdAttr)
-    // We are saving from a new linxo account if we have at least one account
-    // that has a known account number but an unknown linxoId
     return some(
       fetchedAccounts,
-      acc => byNumber[acc.accountNumber] && !byVendorId[acc.id]
+      acc => byNumber[acc[numberAttr]] && !byVendorId[acc.id]
     )
   }
 }

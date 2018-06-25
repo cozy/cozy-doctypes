@@ -12,10 +12,10 @@ class BankingReconciliator {
 
     // save accounts
     const accountNumbers = new Set(
-      fetchedAccounts.map(account => account[BankAccount.vendorIdAttr])
+      fetchedAccounts.map(account => account[BankAccount.numberAttr])
     )
     const stackAccounts = (await BankAccount.fetchAll()).filter(acc =>
-      accountNumbers.has(acc[BankAccount.vendorIdAttr])
+      accountNumbers.has(acc[BankAccount.numberAttr])
     )
 
     const matchedAccounts = BankAccount.reconciliate(
