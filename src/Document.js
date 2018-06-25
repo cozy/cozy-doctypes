@@ -125,12 +125,13 @@ class Document {
 
   static bulkSave(documents, concurrency = 30) {
     const kls = this
+    const res = []
     const pool = new PromisePool(function*() {
       for (let doc of documents) {
-        yield kls.createOrUpdate(doc)
+        yield kls.createOrUpdate(doc).then(x => res.push(x))
       }
     }, concurrency)
-    return pool.start()
+    return pool.start().then(() => res)
   }
 
   static query(index, options) {

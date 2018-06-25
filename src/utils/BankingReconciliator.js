@@ -1,20 +1,20 @@
 const keyBy = require('lodash/keyBy')
 const fromPairs = require('lodash/fromPairs')
-const log = require('../log')
+const { log } = require('../log')
 
 class BankingReconciliator {
-  constructor({ BankAccount, BankTransaction }) {
-    Object.assign(this, { BankAccount, BankTransaction })
+  constructor(options) {
+    this.options = options
   }
 
-  async save(fetchedAccounts, fetchedTransactions) {
-    const { BankAccount, BankTransaction } = this
+  async save(fetchedAccounts, fetchedTransactions, options) {
+    const { BankAccount, BankTransaction } = this.options
 
     // save accounts
     const accountNumbers = new Set(
       fetchedAccounts.map(account => account[BankAccount.vendorIdAttr])
     )
-    const stackAccounts = BankAccount.fetchAll().filter(acc =>
+    const stackAccounts = (await BankAccount.fetchAll()).filter(acc =>
       accountNumbers.has(acc[BankAccount.vendorIdAttr])
     )
 
@@ -25,8 +25,11 @@ class BankingReconciliator {
 
     log('info', 'BankingReconciliator: Saving accounts...')
     const cozyAccounts = await BankAccount.bulkSave(matchedAccounts)
+    if (options.onAccountsSaved) {
+      options.onAccountsSaved(cozyAccounts)
+    }
 
-    const stackTransactions = BankTransaction.getMostRecentForAccounts(
+    const stackTransactions = await BankTransaction.getMostRecentForAccounts(
       stackAccounts.map(x => x._id)
     )
 
