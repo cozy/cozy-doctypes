@@ -1,19 +1,14 @@
 let logger
 
-const normalize = lvl => {
-  if (lvl === 'debug') {
-    return 'log'
-  } else {
-    return lvl
-  }
-}
+const slice = [].slice
 
 module.exports = {
   log: function (level, msg, msg2, msg3) {
     if (!logger) {
-      console[normalize(level)].apply(console, msg, msg2, msg3)
+      const method = level === 'debug' ? 'log' : level
+      return console[method].apply(console, slice.call(arguments))
     } else {
-      logger.apply(this, arguments)
+      return logger.apply(this, arguments)
     }
   },
 
