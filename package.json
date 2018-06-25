@@ -10,10 +10,12 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "eslint": "^5.0.0",
+    "eslint-config-cozy-app": "^0.8.0",
     "jest": "^23.1.0",
+    "semantic-release": "^15.6.0",
     "semantic-release-cli": "^4.0.5",
-    "travis-deploy-once": "^5.0.0",
-    "semantic-release": "^15.6.0"
+    "travis-deploy-once": "^5.0.0"
   },
   "scripts": {
     "lint": "eslint --fix src/",
