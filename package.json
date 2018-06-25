@@ -1,0 +1,19 @@
+{
+  "name": "cozy-doctypes",
+  "version": "1.0.0",
+  "description": "Definitions for Cozy models",
+  "main": "src/index.js",
+  "repository": "git@github.com:cozy/cozy-doctypes.git",
+  "author": "Cozy",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "jest": "^23.1.0"
+  },
+  "scripts": {
+    "lint": "eslint --fix src/",
+    "test": "jest src/"
+  }
+}
