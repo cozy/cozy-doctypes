@@ -107,10 +107,16 @@ class Transaction extends Document {
       return this.deleteAll(orphanOperations)
     }
   }
+
+  getVendorAccountId() {
+    return this[this.constructor.vendorAccountIdAttr]
+  }
 }
 Transaction.doctype = 'io.cozy.bank.operations'
-Transaction.idAttributes = ['linxoId']
 Transaction.version = 1
+Transaction.vendorAccountIdAttr = 'vendorAccountId'
+Transaction.vendorIdAttr = 'vendorId'
+Transaction.idAttributes = ['vendorId']
 Transaction.checkedAttributes = [
   'label',
   'originalBankLabel',

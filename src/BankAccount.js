@@ -15,8 +15,8 @@ class BankAccount extends Document {
   }
 
   static isFromNewKonnector(fetchedAccounts, stackAccounts) {
-    const byNumber = keyBy(stackAccounts, 'number')
-    const byVendorId = keyBy(stackAccounts, 'vendorId')
+    const byNumber = keyBy(stackAccounts, this.numberAttr)
+    const byVendorId = keyBy(stackAccounts, this.vendorIdAttr)
     // We are saving from a new linxo account if we have at least one account
     // that has a known account number but an unknown linxoId
     return some(
@@ -30,5 +30,7 @@ BankAccount.doctype = 'io.cozy.bank.accounts'
 BankAccount.idAttributes = ['_id']
 BankAccount.version = 1
 BankAccount.checkedAttributes = null
+BankAccount.numberAttr = 'number'
+BankAccount.vendorIdAttr = 'vendorId'
 
 module.exports = BankAccount
