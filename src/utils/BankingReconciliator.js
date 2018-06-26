@@ -7,7 +7,7 @@ class BankingReconciliator {
     this.options = options
   }
 
-  async save(fetchedAccounts, fetchedTransactions, options) {
+  async save(fetchedAccounts, fetchedTransactions, options = {}) {
     const { BankAccount, BankTransaction } = this.options
 
     // save accounts
