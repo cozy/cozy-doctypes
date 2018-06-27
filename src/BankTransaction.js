@@ -13,6 +13,14 @@ const getSplitDate = (linxoTransactions, stackTransactions) => {
   return max(stackTransactions.map(transaction => getDate(transaction)))
 }
 
+const ensureISOString = date => {
+  if (date instanceof Date) {
+    return date.toISOString()
+  } else {
+    return date
+  }
+}
+
 class Transaction extends Document {
   static getDate(transaction) {
     return transaction
@@ -22,7 +30,7 @@ class Transaction extends Document {
     if (!minDate) {
       return true
     } else {
-      const day = this.date.slice(0, 10)
+      const day = ensureISOString(this.date).slice(0, 10)
       if (day !== 'NaN') {
         return day > minDate
       } else {
