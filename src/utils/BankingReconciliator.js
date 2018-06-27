@@ -24,9 +24,9 @@ class BankingReconciliator {
     )
 
     log('info', 'BankingReconciliator: Saving accounts...')
-    const cozyAccounts = await BankAccount.bulkSave(matchedAccounts)
+    const savedAccounts = await BankAccount.bulkSave(matchedAccounts)
     if (options.onAccountsSaved) {
-      options.onAccountsSaved(cozyAccounts)
+      options.onAccountsSaved(savedAccounts)
     }
 
     const stackTransactions = await BankTransaction.getMostRecentForAccounts(
@@ -35,7 +35,7 @@ class BankingReconciliator {
 
     // attach bank accounts to transactions
     const vendorIdToCozyId = fromPairs(
-      cozyAccounts.map(acc => [acc[BankAccount.vendorIdAttr], acc._id])
+      savedAccounts.map(acc => [acc[BankAccount.vendorIdAttr], acc._id])
     )
 
     log('info', vendorIdToCozyId, 'Saved accounts...')
@@ -63,7 +63,11 @@ class BankingReconciliator {
       }
     )
     log('info', 'BankingReconciliator: Saving transactions...')
-    return BankTransaction.bulkSave(transactions)
+    const savedTransactions = await BankTransaction.bulkSave(transactions)
+    return {
+      accounts: savedAccounts,
+      transactions: savedTransactions
+    }
   }
 }
 
