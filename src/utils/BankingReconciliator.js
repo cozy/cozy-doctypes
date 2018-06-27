@@ -33,11 +33,10 @@ class BankingReconciliator {
 
     // Bank accounts saved in Cozy, we can now link transactions to accounts
     // via their cozy id
-    log('info', vendorIdToCozyId, 'Linking transactions to accounts...')
-
     const vendorIdToCozyId = fromPairs(
       savedAccounts.map(acc => [acc[BankAccount.vendorIdAttr], acc._id])
     )
+    log('info', vendorIdToCozyId, 'Linking transactions to accounts...')
 
     fetchedTransactions.forEach(tr => {
       tr.account = vendorIdToCozyId[tr[BankTransaction.vendorAccountIdAttr]]
@@ -69,10 +68,10 @@ class BankingReconciliator {
       fetchedTransactions,
       stackTransactions,
       {
-        isNew: transaction =>
-          !stackTransactionsByVendorId[
-            transaction[BankTransaction.vendorIdAttr]
-          ],
+        isNew: transaction => {
+          let vendorId = transaction[BankTransaction.vendorIdAttr]
+          return !vendorId || !stackTransactionsByVendorId[vendorId]
+        },
         onlyMostRecent: fromNewKonnectorAccount
       }
     )
