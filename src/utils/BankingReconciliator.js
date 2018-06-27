@@ -41,6 +41,12 @@ class BankingReconciliator {
     log('info', vendorIdToCozyId, 'Saved accounts...')
     fetchedTransactions.forEach(tr => {
       tr.account = vendorIdToCozyId[tr[BankTransaction.vendorAccountIdAttr]]
+      if (tr.account === undefined) {
+        log('warn', `Transaction without account`)
+        log('warn', `Vendor id attribute: ${BankTransaction.vendorAccountIdAttr}`)
+        log('warn', 'transaction: ' + JSON.stringify(tr))
+        throw new Error('Transaction without account.')
+      }
     })
 
     const stackTransactionsByVendorId = keyBy(
