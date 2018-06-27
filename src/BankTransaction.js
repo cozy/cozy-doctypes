@@ -3,7 +3,7 @@ const groupBy = require('lodash/groupBy')
 const max = require('lodash/max')
 const Document = require('./Document')
 const BankAccount = require('./BankAccount')
-const { log } = require('./log')
+const log = require('./log')
 
 const getDate = transaction => transaction.date.slice(0, 10)
 

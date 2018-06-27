@@ -1,6 +1,6 @@
 const keyBy = require('lodash/keyBy')
 const fromPairs = require('lodash/fromPairs')
-const { log } = require('../log')
+const log = require('../log')
 
 class BankingReconciliator {
   constructor(options) {
@@ -37,6 +37,8 @@ class BankingReconciliator {
     const vendorIdToCozyId = fromPairs(
       cozyAccounts.map(acc => [acc[BankAccount.vendorIdAttr], acc._id])
     )
+
+    log('info', vendorIdToCozyId, 'Saved accounts...')
     fetchedTransactions.forEach(tr => {
       tr.account = vendorIdToCozyId[tr[BankTransaction.vendorAccountIdAttr]]
     })
