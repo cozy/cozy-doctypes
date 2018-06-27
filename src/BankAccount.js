@@ -8,10 +8,9 @@ class BankAccount extends Document {
     const byAccountNumber = keyBy(localAccounts, numberAttr)
     return fetchedAccounts.map(fetchedAccount => {
       const matchedSavedAccount = byAccountNumber[fetchedAccount[numberAttr]]
-      return {
-        ...fetchedAccount,
+      return Object.assign({}, fetchedAccount, {
         _id: matchedSavedAccount && matchedSavedAccount._id
-      }
+      })
     })
   }
 
