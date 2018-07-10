@@ -15,7 +15,7 @@
 - `amount`: {number} - Amount of the bill, __always positive__ even if it is a refund
 - `currency` : the currency, must respects ISO standard : https://en.wikipedia.org/wiki/ISO_4217
 
-### Optionnal attributes (but some are important depending the context)
+### Optional attributes (but some are important depending the context)
 
 - `isRefund`: {boolean} - Indicate if the bill represents a refund/reimbursement
 - `subtype`: {string} - Used for labelling the bill. ie: "Ostéopathie"
