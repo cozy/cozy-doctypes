@@ -63,10 +63,12 @@ This doctype stors informations about a bank transaction:
 - `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} - The amount of the transaction
 - `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
+- `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated
 - `manualCategoryId`: {string} - A category that apply to the transaction and is manually selected by the user
 - `cozyCategoryId`: {string} - A category found by Cozy
 - `cozyCategoryProba`: {number} - The probability of Cozy category
-- `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated
+- `localCategoryId`: {string} - A category found by Cozy, based on the user recategorization habits
+- `localCategoryProba`: {number} - The probability of local category
 - `account`: {identifier} - The related account id the transaction belongs to
 - `bills`: {array[<io.cozy.bills._id>]} - List of bills id.
 - `reimbursements`: {array[<io.cozy.bills._id>]} - List of bills id.
