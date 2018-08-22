@@ -3,6 +3,10 @@ const size = require('lodash/size')
 const omitBy = require('lodash/omitBy')
 const isUndefined = require('lodash/isUndefined')
 const fromPairs = require('lodash/fromPairs')
+const pickBy = require('lodash/pickBy')
+const flatMap = require('lodash/flatMap')
+const groupBy = require('lodash/groupBy')
+const sortBy = require('lodash/sortBy')
 const get = require('lodash/get')
 const PromisePool = require('es6-promise-pool')
 
@@ -56,9 +60,12 @@ async function createOrUpdate(
   attributes,
   checkAttributes
 ) {
-  const selector = fromPairs(idAttributes.map(idAttribute =>
-    [idAttribute, get(attributes, sanitizeKey(idAttribute))]
-  ))
+  const selector = fromPairs(
+    idAttributes.map(idAttribute => [
+      idAttribute,
+      get(attributes, sanitizeKey(idAttribute))
+    ])
+  )
   let results = []
   const compactedSelector = withoutUndefined(selector)
   if (size(compactedSelector) === idAttributes.length) {
@@ -162,6 +169,39 @@ class Document {
 
   static async deleteAll(docs) {
     return this.updateAll(docs.map(flagForDeletion))
+  }
+
+  /**
+   * Find duplicates in a list of documents according to the
+   * idAttributes of the class. Priority is given to the document
+   * prior in the list.
+   *
+   * To introduce the notion of priority, you can sort your input docs
+   * according to this priorirty.
+   *
+   * @param  {Array[object]} docs
+   * @return {Array[object]} Duplicates
+   */
+  static findDuplicates(docs) {
+    const fieldSeparator = '#$$$$#'
+    const idAttributes = this.idAttributes
+    const key = doc => {
+      return idAttributes
+        .map(idAttrPath => get(doc, idAttrPath))
+        .join(fieldSeparator)
+    }
+    const groups = pickBy(groupBy(docs, key), group => group.length > 1)
+    const duplicates = flatMap(groups, group => group.slice(1))
+    return duplicates
+  }
+
+  static async deleteDuplicates(priorityFn) {
+    let allDocs = this.fetchAll()
+    if (priorityFn) {
+      allDocs = sortBy(allDocs, priorityFn)
+    }
+    const duplicates = this.findDuplicates(allDocs)
+    return this.deleteAll(duplicates)
   }
 }
 
