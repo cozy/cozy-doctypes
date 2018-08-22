@@ -43,6 +43,25 @@ describe('Document', () => {
     )
   })
 
+  describe('duplicates', () => {
+    it('should find duplicates', () => {
+      const data = [
+        {a: 1, b: 1, c: 4},
+        {a: 1, b: 1, c: 5},
+        {a: 3, b: 4, c: 5},
+        {a: 3, b: 5, c: 5},
+        {a: 3, b: 5, c: 7},
+      ]
+      class AB extends Document {}
+      AB.idAttributes = ['a', 'b']
+      const dups = AB.findDuplicates(data)
+      expect(dups).toEqual([
+        {a: 1, b: 1, c: 5},
+        {a: 3, b: 5, c: 7}
+      ])
+    })
+  })
+
   it('should do bulk delete', async () => {
     await Simpson.deleteAll([
       { _id: 1, name: 'Marge' },
