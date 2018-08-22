@@ -2,7 +2,6 @@ const BalanceHistory = require('./BalanceHistory')
 const Document = require('./Document')
 const { cozyClient } = require('./testUtils')
 
-
 describe('Balance history', () => {
   let queryResult = []
 
@@ -34,19 +33,20 @@ describe('Balance history', () => {
     })
     expect(cozyClient.data.create).toHaveBeenCalledTimes(1)
 
-    queryResult = [{
-      year: 2018,
-      relationships: {
-        account: {
-          data: {
-            _id: 3
+    queryResult = [
+      {
+        year: 2018,
+        relationships: {
+          account: {
+            data: {
+              _id: 3
+            }
           }
         }
       }
-    }]
+    ]
 
     await BalanceHistory.createOrUpdate(doc)
     expect(cozyClient.data.create).toHaveBeenCalledTimes(1)
   })
-
 })
