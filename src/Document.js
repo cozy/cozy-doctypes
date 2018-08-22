@@ -2,16 +2,9 @@ const { omit, pick } = require('lodash')
 const size = require('lodash/size')
 const omitBy = require('lodash/omitBy')
 const isUndefined = require('lodash/isUndefined')
+const fromPairs = require('lodash/fromPairs')
 const get = require('lodash/get')
 const PromisePool = require('es6-promise-pool')
-
-function mapToObject(arr, fn) {
-  const out = {}
-  arr.forEach(function(k) {
-    out[k] = fn(k)
-  })
-  return out
-}
 
 let cozyClient
 
@@ -63,11 +56,12 @@ async function createOrUpdate(
   attributes,
   checkAttributes
 ) {
-  const selector = mapToObject(idAttributes, idAttribute =>
-    get(attributes, sanitizeKey(idAttribute))
-  )
+  const selector = fromPairs(idAttributes.map(idAttribute =>
+    [idAttribute, get(attributes, sanitizeKey(idAttribute))]
+  ))
   let results = []
-  if (size(withoutUndefined(selector)) === idAttributes.length) {
+  const compactedSelector = withoutUndefined(selector)
+  if (size(compactedSelector) === idAttributes.length) {
     const index = await getIndex(doctype, idAttributes)
     results = await cozyClient.data.query(index, { selector })
   }
