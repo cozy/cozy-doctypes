@@ -40,7 +40,6 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `url`: {string}
   - `label?`: {string} A user-provided localized type of instance
   - `primary?`: {boolean} Indicates a preferred-use instance
-- `groups`: {array} An array containing a list of ids of `io.cozy.contacts.groups` documents that this contact is part of
 - `relationships`: {object} links between documents
   - `groups`: {object} groups the contact belongs to
     - `data`: {array} list of groups
