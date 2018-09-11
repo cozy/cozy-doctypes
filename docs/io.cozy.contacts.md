@@ -6,7 +6,6 @@
 
 The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools.ietf.org/html/rfc6350), in that some of the attributes have been renamed for clarity. The attributes with a `?` are optional.
 
-- `fullname?`: {string} Unstructured representation of the name (example: `"Dr. Gregory House, M.D."`)
 - `name?`: {object} Optional structured representation of the name, with the following possible attributes:
   - `familyName?`: {string} (example: `"House"`)
   - `givenName?`: {string} (example: `"Gregory"`)
