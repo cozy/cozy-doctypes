@@ -20,6 +20,9 @@ The `auth` attribute may also contain other data, like  `accountName`, `folderPa
 * `folderPath` should purely and simply disappear, the folder information is stored in `io.cozy.trigger`.
 * `accountName` is in reality the `label`, change should be made soon to fix this mistake.
 * `frequency` should move at the root of the account.
+* `namePath`: The name of the last folder. Usually saved along with `folderPath`.
+
+The `auth` attributes also contain all values for the fields attribute specified in the `manifest.konnector` file.
 
 ### About `login`
 
