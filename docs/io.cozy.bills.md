@@ -11,7 +11,7 @@
 
 - `type`: {string} - Type of the bill
 - `vendor`: {string} - Vendor which issued the bill
-- `date`: {date} - Date the bill was emitted, a string formated  (what you get with a `new Date().toString()`)
+- `date`: {date} - Date the bill was emitted, a string ISO8601 formated  (in JS you can have that with `(new Date()).toJSON()`)
 - `amount`: {number} - Amount of the bill, __always positive__ even if it is a refund
 - `currency` : the currency, must respects ISO standard : https://en.wikipedia.org/wiki/ISO_4217
 
