@@ -27,7 +27,8 @@
 - `isThirdPartyPayer`: {boolean} - Indicate if the bill has been already covered by a third party payer. This attribute can be useful when Cozy retrieves bills issued by french medical insurances.
 When this attribute is in "true" no associated debit is expected to be found in the client bank
 statements.
-- `invoice`: {string} - The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
+- `document`: {string} - The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
+- `invoice`: {string} - (legacy) The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
 - `fileUrl`: {string} - The url used to download the pdf from vendor.
 - `debitOperations`: {array[io.cozy.bank.operations._id]} - List of debit operations id
 - `creditOperations`: {array[io.cozy.bank.operations._id]} - List of credit operations id
@@ -38,6 +39,7 @@ statements.
 
 - `health_costs`: Health related bills
 - `phone`: Phone related bills
+- `pay`: salary
 
 ### Some more attributes for reimbursement bills
 
@@ -68,5 +70,32 @@ are there to help the connector to link this bills to their original debit opera
   "subtype": "Consultation spécialiste",
   "type": "health_costs",
   "vendor": "Harmonie"
+}
+```
+
+### Attributes for pay type
+
+- `date`: {date} - The payment date
+- `periodStart`: {date} - The start of the payment period
+- `periodEnd`: {date} - The end of the payment period
+- `isRefund`: {boolean} - Indicates that the pay represents a positive operation
+- `employer`: {boolean} - The employer name
+
+### Example
+
+```
+{
+  "_id": "62e5d80d6e11d19992b7efce794263f0",
+  "vendor": "Payfit",
+  "type": "pay",
+  "amount": 1500,
+  "date": "2018-10-31T00:00:00.000Z",
+  "periodStart": "2018-10-01T00:00:00.000Z",
+  "periodEnd": "2018-10-31T00:00:00.000Z",
+  "isRefund": true,
+  "metadata": {
+    "version": 1
+  }
+  "payslip": "io.cozy.files:c43645a93831827c7ec512eac3006e51"
 }
 ```
