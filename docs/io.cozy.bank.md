@@ -63,7 +63,7 @@ This doctype stors informations about a bank transaction:
 - `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} - The amount of the transaction
 - `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
-- `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated
+- `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated. This property should be hydrated by the connector. See the «&nbsp;categories&nbsp;» section below to know more about categories
 - `manualCategoryId`: {string} - A category that apply to the transaction and is manually selected by the user
 - `cozyCategoryId`: {string} - A category found by Cozy
 - `cozyCategoryProba`: {number} - The probability of Cozy category
@@ -80,6 +80,12 @@ This doctype stors informations about a bank transaction:
 For the dates, any string or integer which can be interpreted by new Date(date) is possible but the
 best the result of Date.toString() -> like 'Fri Mar 09 2018 19:04:40 GMT+0100 (CET)' which contains
 the time zones.
+
+### Categories
+
+There are up to four categories that can be assigned to a `io.cozy.bank.operations` document. But there is only one that a connector have to set when retrieving the transactions from a bank: `automaticCategoryId`. This property have to be one of the categories ID listed [here](https://github.com/cozy/cozy-banks/blob/master/src/ducks/categories/tree.json). If you want to see more human labels, you can check the translations of each label in [english](https://github.com/cozy/cozy-banks/blob/master/src/locales/en.json) or [french](https://github.com/cozy/cozy-banks/blob/master/src/locales/fr.json).
+
+Other category properties are to be set by other sources: the user or Cozy Banks services.
 
 ### Example
 
