@@ -96,6 +96,6 @@ are there to help the connector to link this bills to their original debit opera
   "metadata": {
     "version": 1
   }
-  "payslip": "io.cozy.files:c43645a93831827c7ec512eac3006e51"
+  "document": "io.cozy.files:c43645a93831827c7ec512eac3006e51"
 }
 ```
