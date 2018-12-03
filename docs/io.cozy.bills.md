@@ -32,7 +32,7 @@ statements.
 - `fileUrl`: {string} - The url used to download the pdf from vendor.
 - `debitOperations`: {array[io.cozy.bank.operations._id]} - List of debit operations id
 - `creditOperations`: {array[io.cozy.bank.operations._id]} - List of credit operations id
-- `vendorRef` : {string} - Vendor reference for this bill. Ex : `'INV-2018-09-12534'k`
+- `vendorRef` : {string} - Vendor reference for this bill. Ex : `'INV-2018-09-12534'`
 
 
 ### Types
