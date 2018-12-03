@@ -92,10 +92,15 @@ are there to help the connector to link this bills to their original debit opera
   "date": "2018-10-31T00:00:00.000Z",
   "periodStart": "2018-10-01T00:00:00.000Z",
   "periodEnd": "2018-10-31T00:00:00.000Z",
+  "employer": "COZY CLOUD",
   "isRefund": true,
   "metadata": {
     "version": 1
   }
-  "document": "io.cozy.files:c43645a93831827c7ec512eac3006e51"
+  "relationships": {
+    "document": {
+      "data": { "_id": "c43645a93831827c7ec512eac3006e51", "_type": "io.cozy.files" }
+    }
+  }
 }
 ```
