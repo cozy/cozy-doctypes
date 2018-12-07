@@ -27,7 +27,16 @@
 - `isThirdPartyPayer`: {boolean} - Indicate if the bill has been already covered by a third party payer. This attribute can be useful when Cozy retrieves bills issued by french medical insurances.
 When this attribute is in "true" no associated debit is expected to be found in the client bank
 statements.
-- `document`: {string} - The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
+- `document relationship`: {object} - The associated file. ex:
+```js
+"relationships": {
+  "document": {
+    "data": { "_id": "c43645a93831827c7ec512eac3006e51", "_type": "io.cozy.files" }
+  }
+}
+```
+
+`io.cozy.files:c43645a93831827c7ec512eac3006e51`
 - `invoice`: {string} - (legacy) The associated file. ex: `io.cozy.files:c43645a93831827c7ec512eac3006e51`
 - `fileUrl`: {string} - The url used to download the pdf from vendor.
 - `debitOperations`: {array[io.cozy.bank.operations._id]} - List of debit operations id
@@ -92,10 +101,15 @@ are there to help the connector to link this bills to their original debit opera
   "date": "2018-10-31T00:00:00.000Z",
   "periodStart": "2018-10-01T00:00:00.000Z",
   "periodEnd": "2018-10-31T00:00:00.000Z",
+  "employer": "COZY CLOUD",
   "isRefund": true,
   "metadata": {
     "version": 1
   }
-  "document": "io.cozy.files:c43645a93831827c7ec512eac3006e51"
+  "relationships": {
+    "document": {
+      "data": { "_id": "c43645a93831827c7ec512eac3006e51", "_type": "io.cozy.files" }
+    }
+  }
 }
 ```
