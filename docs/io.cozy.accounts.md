@@ -24,6 +24,25 @@ The `auth` attribute may also contain other data, like  `accountName`, `folderPa
 
 The `auth` attributes also contain all values for the fields attribute specified in the `manifest.konnector` file.
 
+## Relationships
+
+### `parent`
+
+An account may have a `parent` relationship. It is used to indicate that this accounts depends on another one.
+Generally, the konnector should be able to handle by itself this kind of relationshiop, like querying the database to get the information it needs. A `parent` relationship is aimed to be an account overriden by the account it is linked to, but it can also be use as an _aggregator_ account. See [Cozy-stack documentation about aggregator accounts)[https://github.com/cozy/cozy-stack/blob/master/docs/konnectors-workflow.md#aggregator-accounts].
+
+#### Example
+```json
+{
+  "relationships": {
+    "parent": {
+      "_id": "aggregator-service-account",
+      "_doctype": "io.cozy.accounts"
+    }
+  }
+}
+```
+
 ### About `login`
 
 Some konnectors does not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
