@@ -24,24 +24,70 @@ This repository is where the declaration of remote doctypes is done. Read more a
 
 - [Bets Unibet](com.unibet.bets): Bets from Unibet website
 
-## Metadata
+## Generic model
 
-Every doctype should have `metadata` fields.
+### Relationships
 
-- `version` is be useful for migrations
-- `dateImport` is useful for debugging purposes
+Relations between documents are under a `relationships` object at the root of the document. Relations are referenced by their names.
 
-```
+Each relation is an object with a `data` property containing `null`, one reference or an array of references.
+
+A reference is an object containing at least a `_type` with the name of the referenced doctype and an `_id` with the id of the referenced document inside its doctype.
+
+```json
+
 {
-  _id: '123456',
-  metadata: {
-    version: 1,
-    dateImport: '2018-02-22T14:54:36.861Z'
+  "_id": "mobydick",
+  "relationships": {
+    "authors": {
+      "data": [
+        { "_id": "hermanmelville", "_type": "io.cozy.contacts" }
+      ]
+    }
   }
 }
 ```
 
-## Date format
+### Document metadata
+
+We distinguish three levels : the data (a list of songs from a playlist), the metadata about the data (the creation date of the playlist itself), the metadata of the cozy document (the creation date of the cozy document describing the playlist).
+
+The third level (metadata of the wrapping document) is describe by an object named `cozyMetadata` at the root of the document.
+
+The following keys have a standard meaning: 
+
+- `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in it's version 2")
+- `createdAt`: Creation date of the cozy document
+- `createdByApp`: Slug of the app or connector which did create the document
+- `createdByAppVersion`: Version identifier of the app 
+- `updatedAt`: Last modification date of the cozy document
+- `updatedByApps`: List of applications (slugs) that did modify the cozy document in its life
+- `importedAt`: If the document originated from elsewhere, date from when it was first imported
+- `importedFrom`: Where it was imported from (free text)
+- `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
+
+By convention, the first app (slug) listed in `updatedByApps` is the one which did the last update.
+
+Note: All these attributes are optionnal and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
+
+```json
+{
+  "_id": "xxxx",
+  "cozyMetadata": { 
+    "doctypeVersion": 4,
+    "createdAt": "xxxxx",
+    "createdByApp": "xxxx",
+    "createdByAppVersion": "xxxx",
+    "updatedAt": "xxxxx",
+    "updatedByApps": [ "…" ],
+    "importedAt": "xxxxx",
+    "sourceAccount": "xxxxx",
+    "importedFrom": "xxxxx",
+  },
+} 
+```
+
+### Date format
 
 Date should be formatted in [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) :
 
