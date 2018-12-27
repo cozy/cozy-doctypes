@@ -9,7 +9,6 @@
 
 ### Mandatory attributes
 
-- `type`: {string} - Type of the bill
 - `vendor`: {string} - Vendor which issued the bill
 - `date`: {date} - Date the bill was emitted, a string ISO8601 formated  (in JS you can have that with `(new Date()).toJSON()`)
 - `amount`: {number} - Amount of the bill, __always positive__ even if it is a refund
@@ -17,6 +16,7 @@
 
 ### Optional attributes (but some are important depending the context)
 
+- `type`: {string} - Type of the bill (see below for existing types)
 - `isRefund`: {boolean} - Indicate if the bill represents a refund/reimbursement
 - `subtype`: {string} - Used for labelling the bill. ie: "Ostéopathie"
 - `originalDate` - For health bills, represents the date of the health act (presumably the date the account was charged)
