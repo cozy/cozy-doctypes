@@ -61,7 +61,7 @@ The following keys have a standard meaning:
 - `createdByApp`: Slug of the app or connector which did create the document
 - `createdByAppVersion`: Version identifier of the app 
 - `updatedAt`: Last modification date of the cozy document
-- `updatedByApps`: List of applications (slugs) that did modify the cozy document in its life
+- `updatedByApps`: List of applications (slugs) which modified the cozy document in its life
 - `importedAt`: If the document originated from elsewhere, date from when it was first imported
 - `importedFrom`: Where it was imported from (free text)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
