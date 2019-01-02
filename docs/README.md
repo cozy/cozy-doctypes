@@ -58,7 +58,7 @@ The following keys have a standard meaning:
 
 - `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in it's version 2")
 - `createdAt`: Creation date of the cozy document
-- `createdByApp`: Slug of the app or connector which did create the document
+- `createdByApp`: Slug of the app or connector which created the document
 - `createdByAppVersion`: Version identifier of the app 
 - `updatedAt`: Last modification date of the cozy document
 - `updatedByApps`: List of applications (slugs) which modified the cozy document in its life
