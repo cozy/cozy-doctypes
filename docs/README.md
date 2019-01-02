@@ -54,7 +54,7 @@ We distinguish three levels : the data (a list of songs from a playlist), the me
 
 The third level (metadata of the wrapping document) is describe by an object named `cozyMetadata` at the root of the document.
 
-The following keys have a standard meaning: 
+The following keys are reserved and have special meanings: 
 
 - `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in it's version 2")
 - `createdAt`: Creation date of the cozy document
