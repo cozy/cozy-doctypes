@@ -52,7 +52,7 @@ A reference is an object containing at least a `_type` with the name of the refe
 
 We distinguish three levels : the data (a list of songs from a playlist), the metadata about the data (the creation date of the playlist itself), the metadata of the cozy document (the creation date of the cozy document describing the playlist).
 
-The third level (metadata of the wrapping document) is describe by an object named `cozyMetadata` at the root of the document.
+The third level (metadata of the wrapping document) is described by an object named `cozyMetadata` at the root of the document.
 
 The following keys are reserved and have special meanings: 
 
