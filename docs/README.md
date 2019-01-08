@@ -30,7 +30,7 @@ This repository is where the declaration of remote doctypes is done. Read more a
 
 Relations between documents are under a `relationships` object at the root of the document. Relations are referenced by their names.
 
-Each relation is an object with a `data` property containing `null`, one reference or an array of references.
+Each relation is an object with a `data` property containing either `null`, one reference or an array of references.
 
 A reference is an object containing at least a `_type` with the name of the referenced doctype and an `_id` with the id of the referenced document inside its doctype.
 
