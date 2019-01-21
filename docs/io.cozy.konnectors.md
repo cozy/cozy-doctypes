@@ -4,7 +4,7 @@
 
 The `io.cozy.konnectors` doctype is used to store installed connectors.
 
-[Connectors](https://docs.cozy.io/en/dev/konnector/) are autonomous applications ran on the stack to connect to external services or API.
+[Connectors](https://docs.cozy.io/en/tutorials/konnector/) are autonomous applications ran on the stack to connect to external services or API.
 
 When installing a konnector, the Cozy stack creates a new `io.cozy.konnector` document from the fields in the `manifest.konnector`. See the [reference](https://github.com/cozy/cozy-collect/blob/master/docs/konnector-manifest.md) for more information on each attributes.
 
