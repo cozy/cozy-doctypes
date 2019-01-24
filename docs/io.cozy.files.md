@@ -27,14 +27,29 @@ The attributes of a file are:
 - `name`: {string} the file name
 - `trashed`: {bool} true if the file is in the trash
 - `md5sum`: {string} the checksum of its content, computed with the MD5 algorithm
-- `created_at`: {timestamp} the date of the creation of this directory
-- `updated_at`: {timestamp} the date of the last update of this directory
+- `created_at`: {date} the date of the creation of this directory
+- `updated_at`: {date} the date of the last update of this directory
 - `tags`: {array of strings} a list of tags
 - `size`: {number} the size of its content, in bytes
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
 - `mime`: {string} the full mime-type
 - `metadata`: {map} an optional map of metadata (for example `width`, `height`, and `datetime` for an image)
+  - `width`: {number}
+  - `height`: {number}
+  - `datetime`: {date} : date in original image file metadata
+  - `gps`: {map} : localization metadata with the following attributes
+    - `lat`: {float}: latitude
+    - `long`: {float}: longitude
+    - `city`: {string}: nearest city (optional)
+    - `zip`: {string}: postal code of the nearest city (optional)
+    - `country`: {string}: name of the associated country if any (optional)
+  - `persons`: {array}: the maps can have the following attributes (optional)
+    - `name`: {string}: then name of the tagged person on the photo
+    - `create_at`: {date}: date of creation of the tag
+    - `x`: {float}: x coordinate in the photo where the person is
+    - `y`: {float}: y coordinate in the photo where the person is
+
 
 It also has a relationship with its `parent` in the JSON-API representation.
 
