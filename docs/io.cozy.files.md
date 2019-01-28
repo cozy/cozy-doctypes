@@ -46,7 +46,7 @@ The attributes of a file are:
     - `country`: {string}: name of the associated country if any (optional)
   - `persons`: {array}: the maps can have the following attributes (optional)
     - `name`: {string}: then name of the tagged person on the photo
-    - `create_at`: {date}: date of creation of the tag
+    - `created_at`: {date}: date of creation of the tag
     - `x`: {float}: x coordinate in the photo where the person is
     - `y`: {float}: y coordinate in the photo where the person is
 
