@@ -72,3 +72,18 @@ Used to group contacts together. A group can obviously have multiple contacts, b
 - `trashed`: {boolean} is `true` if the group is marked for removal and will be deleted soon
 - `metadata`: {object}
   - `version`: {integer} Used for migrations. Current version is **1**
+
+## `io.cozy.contacts.accounts`
+
+Used to know which accounts (Google, Apple, etc) a contact is related to.
+
+- `id`: {id} id of the io.cozy.contacts.account object
+- `name`: {string} name of the account (example: `"toto@gmail.com"`)
+- `type`: {string} konnector type (example: `"konnector-google"`)
+- `canLinkContacts`: {boolean} whether contacts can be linked or unlinked to this source
+- `shouldSyncOrphan`: {boolean} whether we should sync orphans with this account or not
+- `sourceAccount`: {string} id of the related io.cozy.accounts
+- `lastSync`: {date} last remote sync (example: `"2018-10-19T10:58:37.025688+02:00"`)
+- `lastLocalSync`: {date} last local sync (example: `"2018-10-19T10:58:37.025688+02:00"`)
+- `syncToken`: {string} used to only retrieve what have been edited since last sync (See [request sync token](https://apis-nodejs.firebaseapp.com/people/interfaces/Params$Resource$People$Connections$List.html#requestSyncToken))
+- `version`: {integer}
