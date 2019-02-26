@@ -54,16 +54,14 @@ We distinguish three levels : the data (a list of songs from a playlist), the me
 
 The third level (metadata of the wrapping document) is described by an object named `cozyMetadata` at the root of the document.
 
-The following keys are reserved and have special meanings: 
+The following keys are reserved and have special meanings:
 
 - `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in it's version 2")
 - `createdAt`: Creation date of the cozy document
 - `createdByApp`: Slug of the app or connector which created the document
-- `createdByAppVersion`: Version identifier of the app 
+- `createdByAppVersion`: Version identifier of the app
 - `updatedAt`: Last modification date of the cozy document
 - `updatedByApps`: List of applications (slugs) which modified the cozy document in its life
-- `importedAt`: If the document originated from elsewhere, date from when it was first imported
-- `importedFrom`: Where it was imported from (free text)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
 
 By convention, the first app (slug) listed in `updatedByApps` is the one which did the last update.
@@ -73,18 +71,16 @@ Note: All these attributes are optionnal and taken care by the apps modifying th
 ```json
 {
   "_id": "xxxx",
-  "cozyMetadata": { 
+  "cozyMetadata": {
     "doctypeVersion": 4,
     "createdAt": "xxxxx",
     "createdByApp": "xxxx",
     "createdByAppVersion": "xxxx",
     "updatedAt": "xxxxx",
     "updatedByApps": [ "…" ],
-    "importedAt": "xxxxx",
-    "sourceAccount": "xxxxx",
-    "importedFrom": "xxxxx",
+    "sourceAccount": "xxxxx"
   },
-} 
+}
 ```
 
 ### Date format
