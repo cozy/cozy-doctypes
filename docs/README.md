@@ -61,10 +61,8 @@ The following keys are reserved and have special meanings:
 - `createdByApp`: Slug of the app or connector which created the document
 - `createdByAppVersion`: Version identifier of the app
 - `updatedAt`: Last modification date of the cozy document
-- `updatedByApps`: List of applications (slugs) which modified the cozy document in its life
+- `updatedByApps`: List of objects representing the applications (slugs and versions) which modified the cozy document in its life and the last update date for each of those apps (one entry per slug, apps should just update the value)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
-
-By convention, the first app (slug) listed in `updatedByApps` is the one which did the last update.
 
 Note: All these attributes are optionnal and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
 
@@ -77,9 +75,15 @@ Note: All these attributes are optionnal and taken care by the apps modifying th
     "createdByApp": "xxxx",
     "createdByAppVersion": "xxxx",
     "updatedAt": "xxxxx",
-    "updatedByApps": [ "…" ],
+    "updatedByApps": [
+      {
+        "slug": "xxxxx",
+        "date": "xxxxx",
+        "version": 3
+      }
+    ],
     "sourceAccount": "xxxxx"
-  },
+  }
 }
 ```
 
