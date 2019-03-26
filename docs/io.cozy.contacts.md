@@ -54,7 +54,13 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 
 - `trashed`: {boolean} is `true` if the contact is marked for removal and will be deleted soon (e.g. after remote deletion is confirmed)
 
--   `me`: {boolean} whether the contact matches the cozy owner (defaults to `false`)
+- `me`: {boolean} whether the contact matches the cozy owner (defaults to `false`)
+
+- `metadata`: {object} previous metadata information.
+
+  - `cozy`: {boolean} whether the contact has been created by cozy
+  - `google`: {object} Google metadata
+  - `version`: {integer} used for migrations. Current version is **1**
 
 - `cozyMetaData`: {object}
 
