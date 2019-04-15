@@ -71,7 +71,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
     - `ded4265b38c54b0683408c76d9ebd`: {object} id of the sourceContactsAccount
 
       - `konnector`: {string} example : `"google"`
-      - `lastSync`: {date} (example: `"2018-10-19T10:58:37.025688+02:00"`)
+      - `lastSync`: {date} (example: `"2018-10-19T10:58:37.025688+02:00"`) Last time a sync task updated this contact
       - `contactsAccountsId`: {string} id of the io.cozy.contacts.accounts object
       - `id`: {string} id of the remote object
       - `remoteRev`: {string} latest rev of the remote object
