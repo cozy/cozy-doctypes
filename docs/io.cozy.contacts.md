@@ -84,6 +84,12 @@ Used to group contacts together. A group can obviously have multiple contacts, b
 - `trashed`: {boolean} is `true` if the group is marked for removal and will be deleted soon
 - `metadata`: {object}
   - `version`: {integer} Used for migrations. Current version is **1**
+- `relationships`: {object} links between documents
+
+  - `accounts`: {object}
+    - `data`: {array} list of accounts
+      - `_id`: {string} id of the io.cozy.contacts.accounts document
+      - `_type`: {string} doctype "io.cozy.contacts.accounts"
 - `cozyMetaData`: {object}
 
   - ...`cozyMetadata`: [Document metadata](./README.md#document-metadata)
