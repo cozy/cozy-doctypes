@@ -68,7 +68,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - ...`cozyMetadata`: [Document metadata](./README.md#document-metadata)
   - `sync`: {object}
 
-    - `ded4265b38c54b0683408c76d9ebd`: {object} id of the sourceContactsAccount
+    - `ded4265b38c54b0683408c76d9ebd`: {object} id of io.cozy.contacts.accounts object
 
       - `konnector`: {string} example : `"google"`
       - `lastSync`: {date} (example: `"2018-10-19T10:58:37.025688+02:00"`)
@@ -95,7 +95,7 @@ Used to group contacts together. A group can obviously have multiple contacts, b
   - ...`cozyMetadata`: [Document metadata](./README.md#document-metadata)
   - `sync`: {object}
 
-    - `ded4265b38c54b0683408c76d9ebd`: {object} id of the sourceContactsAccount
+    - `ded4265b38c54b0683408c76d9ebd`: {object} id of the io.cozy.contacts.accounts object
 
       - `konnector`: {string} example : `"google"`
       - `lastSync`: {date} (example: `"2018-10-19T10:58:37.025688+02:00"`)
