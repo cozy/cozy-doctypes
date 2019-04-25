@@ -53,7 +53,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
       - `_id`: {string} id of the io.cozy.contacts.accounts document
       - `_type`: {string} doctype "io.cozy.contacts.accounts"
 
-- `trashed`: {boolean} is `true` if the contact is marked for removal and will be deleted soon (e.g. after remote deletion is confirmed)
+- `trashed?`: {boolean} is `true` if the contact is marked for removal and will be deleted soon (e.g. after remote deletion is confirmed)
 
 - `me`: {boolean} whether the contact matches the cozy owner (defaults to `false`)
 
@@ -81,7 +81,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 Used to group contacts together. A group can obviously have multiple contacts, but contacts can also be part of multiple groups.
 
 - `name`: {string} is the group's public name
-- `trashed`: {boolean} is `true` if the group is marked for removal and will be deleted soon
+- `trashed?`: {boolean} is `true` if the group is marked for removal and will be deleted soon
 - `metadata`: {object}
   - `version`: {integer} Used for migrations. Current version is **1**
 
