@@ -48,7 +48,7 @@ statements.
 
 - `health_costs`: Health related bills
 - `phone`: Phone related bills
-- `pay`: salary
+- `income`: Salary income or allowances related bills
 
 ### Some more attributes for reimbursement bills
 
