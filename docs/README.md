@@ -56,7 +56,7 @@ The third level (metadata of the wrapping document) is described by an object na
 
 The following keys are reserved and have special meanings:
 
-- `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in it's version 2")
+- `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in its version 2")
 - `metadataVersion`: Version of the `cozyMetadata`
 - `createdAt`: Creation date of the cozy document
 - `createdByApp`: Slug of the app or connector which created the document
