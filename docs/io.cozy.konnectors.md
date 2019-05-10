@@ -21,7 +21,7 @@ The available attributes in a `io.cozy.konnectors` document are :
 * `doctypes`
 * `editor`
 * `fields`
-* `frequency`
+* `frequency` - Value can be: `['hourly', 'daily', 'weekly', 'monthly']`
 * `icon`
 * `langs`
 * `language`
