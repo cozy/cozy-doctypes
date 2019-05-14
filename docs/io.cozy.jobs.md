@@ -25,7 +25,7 @@ The `io.cozy.jobs` doctype holds the informations about the instance jobs. Jobs 
   ...)
 - `manual_execution` {bool}: Tells if the job had beed manually excuted
 - `event` {object}: Holds the informations for realtime
-- `options` {object}: Custom overrided options for the job (`max_exec_count`, `max_exec_time`, `timeout`)
+- `options` {object}: Custom overriden options for the job (`max_exec_count`, `max_exec_time`, `timeout`)
 - `state` {string}: State of the job. Can be `queued`, `running`, `errored` or `done`
 - `queued_at` {timestamp}: When the job has been queued
 - `started_at` {timestamp}: When the job has been started
