@@ -3,6 +3,10 @@
 
 # Cozy triggers state doctype
 
+> Note: This doctype is only virtual. It is computed each time by agggregating
+> informations about a trigger based on its jobs
+
+
 ## `io.cozy.triggers.state`
 
 The `io.cozy.triggers.state` doctype gather the data of a trigger from its jobs

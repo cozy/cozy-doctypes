@@ -11,9 +11,9 @@ The `io.cozy.account_types` can be used for two main purposes:
   (API Tokens, API URLS, ...). Every time a konnector job is executed, the stack
   can give some of these secret parameters to the konnector
 
-- It can contain an OAuth configuration for a service. It makes possible for the
-  stack to talk to external services without allowing the konnector to directly
-  access the outside world
+- It can contain an OAuth configuration for a service. It simplifies the
+  development of konnectors for OAuth providers, and avoids race conditions when
+  the same account is used by several konnectors.
 
 
 - `grant_mode` {string}: Grant mode, part of the OAuth standard

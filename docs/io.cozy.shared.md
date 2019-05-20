@@ -15,3 +15,5 @@ tracks the sharings and its references, its infos & revisions across the stack.
     or the document does no longer match the sharing rule
   - `binary` {bool}: Only true if the sharing is a file and has not been
     trashed
+
+For more informations, see the [official documentation](https://docs.cozy.io/en/cozy-stack/sharing-design/#iocozyshared)
