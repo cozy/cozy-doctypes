@@ -9,10 +9,11 @@
 - [Contacts](io.cozy.contacts.md): instance owner contacts
 - [Files](io.cozy.files.md): files documents
 - [Konnectors](io.cozy.konnectors.md): Connectors
+- [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
 - [Photos Albums](io.cozy.photos.albums.md): photos albums
+- [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
 - [Settings](io.cozy.settings.md): Instance settings
-- [Shared](io.cozy.shared.md): cozy-stack doctype for sharings
 - [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
 
 ## Technical doctypes
@@ -22,14 +23,13 @@
 - [Autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
 - [Exports](io.cozy.exports.md): Instances exports
 - [Jobs](io.cozy.jobs.md): Instance jobs
-- [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [OAuth Clients](io.cozy.oauth.clients.md): OAuth clients informations of the stack
 - [OAuth Access Codes](io.cozy.oauth.access_codes.md): Access codes specific to OAuth flow
 - [Triggers](io.cozy.triggers.md): Job triggers
 - [Triggers state](io.cozy.triggers.state.md): Job triggers states
 - [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
 - [Sessions](io.cozy.sessions.md): cozy-stack sessions
-- [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
+- [Shared](io.cozy.shared.md): cozy-stack doctype for sharings
 
 ## Remote doctypes
 
