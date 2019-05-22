@@ -3,18 +3,33 @@
 ## Cozy doctypes
 
 - [Accounts](io.cozy.accounts.md): Konnector accounts
-- [Autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
+- [Apps](io.cozy.apps.md): Apps
 - [Bank](io.cozy.bank.md): banking related data
 - [Bills](io.cozy.bills.md): bills
 - [Contacts](io.cozy.contacts.md): instance owner contacts
 - [Files](io.cozy.files.md): files documents
-- [Konnectors](io.cozy.konnectors): Connectors
+- [Konnectors](io.cozy.konnectors.md): Connectors
 - [Notifications](io.cozy.notifications.md): notifications made by the apps
+- [Permissions](io.cozy.permissions.md): Permissions of the instance
 - [Photos Albums](io.cozy.photos.albums.md): photos albums
-- [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
 - [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
+- [Settings](io.cozy.settings.md): Instance settings
 - [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
+
+## Technical doctypes
+
+- [Accounts Types](io.cozy.account_types.md): OAuth informations and secrets
+  for apps & konnectors
+- [Autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
+- [Exports](io.cozy.exports.md): Instances exports
+- [Jobs](io.cozy.jobs.md): Instance jobs
+- [OAuth Clients](io.cozy.oauth.clients.md): OAuth clients informations of the stack
+- [OAuth Access Codes](io.cozy.oauth.access_codes.md): Access codes specific to OAuth flow
 - [Triggers](io.cozy.triggers.md): Job triggers
+- [Triggers state](io.cozy.triggers.state.md): Job triggers states
+- [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
+- [Sessions](io.cozy.sessions.md): cozy-stack sessions
+- [Shared](io.cozy.shared.md): cozy-stack doctype for sharings
 
 ## Remote doctypes
 
