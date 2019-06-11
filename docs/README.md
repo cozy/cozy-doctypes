@@ -12,6 +12,7 @@
 - [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
 - [Photos Albums](io.cozy.photos.albums.md): photos albums
+- [Procedures](io.cozy.procedures.md): Administrative procedures
 - [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
 - [Settings](io.cozy.settings.md): Instance settings
 - [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
@@ -50,14 +51,11 @@ Each relation is an object with a `data` property containing either `null`, one 
 A reference is an object containing at least a `_type` with the name of the referenced doctype and an `_id` with the id of the referenced document inside its doctype.
 
 ```json
-
 {
   "_id": "mobydick",
   "relationships": {
     "authors": {
-      "data": [
-        { "_id": "hermanmelville", "_type": "io.cozy.contacts" }
-      ]
+      "data": [{ "_id": "hermanmelville", "_type": "io.cozy.contacts" }]
     }
   }
 }
