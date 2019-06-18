@@ -13,7 +13,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `additionalName?`: {string} (example: `"J."`)
   - `namePrefix?`: {string} (example: `"Dr."`)
   - `nameSuffix?`: {string} (example: `"III"`)
-- `birthday?`: {date} (example: `"1959-05-15"`)
+- `birthday?`: {date} (example: `"1980-04-22T01:00:00Z"`)
 - `note?`: {string}
 - `email?`: {array} An array of email addresses objects with the following attributes:
   - `address`: {string} Email adress
