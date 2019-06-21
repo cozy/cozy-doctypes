@@ -108,4 +108,5 @@ Date should be formatted in [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) :
 
 - `2017-04-22T01:00:00-05:00` ✅
 - `2017-04-22T01:00:00Z` ✅
+- `2017-04-22` ✅
 - `2017-04-22 01:00` ❌
