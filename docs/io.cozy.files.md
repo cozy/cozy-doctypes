@@ -167,3 +167,48 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
   }
 }
 ```
+
+## `io.cozy.files.versions`
+
+The `io.cozy.files.versions` is used to track old versions of a file content,
+when files versioning is enabled. The attributes of a version are:
+
+- `file_id`: {string} the identifier of the versioned file
+- `size`: {number} the size of its content, in bytes
+- `md5sum`: {string} the checksum of its content, computed with the MD5 algorithm
+- `updated_at`: {date} the date of the last update of this file given by the client
+- `tags`: {array of strings} a list of tags
+- `metadata`: {map} an optional map of metadata.
+
+It also has the same `cozyMetadata` that a file (including the `uploaded*` fields).
+
+### Example (CouchDB format)
+
+```json
+{
+  "_id": "9152d568-7e7c-11e6-a377-37cbfb190b4b/3-0e6d5b72",
+  "_rev": "1-782839bf19cf4edbc29b82f77b28482f",
+  "file_id": "9152d568-7e7c-11e6-a377-37cbfb190b4b",
+  "updated_at": "2019-06-12T12:38:04Z",
+  "size": "12",
+  "md5sum": "ODZmYjI2OWQxOTBkMmM4NQo=",
+  "tags": [],
+  "metadata": {
+    "datetime": "2018-01-02T20:38:04Z",
+    "height": 1080,
+    "width": 1920
+  },
+  "cozyMetadata": {
+    "doctypeVersion": "1",
+    "metadataVersion": 1,
+    "createdAt": "2019-06-11T20:34:56Z",
+    "createdOn": "https://alice.cozy.example",
+    "updatedAt": "2019-06-11T20:34:56Z",
+    "uploadedAt": "2019-06-11T20:34:56Z",
+    "uploadedBy": {
+      "slug": "drive"
+    },
+    "uploadedOn": "https://alice.cozy.example"
+  }
+}
+```
