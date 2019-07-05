@@ -51,6 +51,38 @@ This doctypes stores informations about a Bank account:
 }
 ```
 
+## `io.cozy.bank.accounts.stats`
+
+This doctype stores aggregated data about bank accounts:
+
+- `income`: {number} - The average income on the last 3 months
+- `additionalIncome`: {number} - The average additional income on the last 3 months
+- `mortgage`: {number} - The average mortgage expense on the last 3 months
+- `loans`: {number} - The average total loans expense on the last 3 months
+
+### Relationships
+
+- `account`: {object} - The associated account
+
+### Example
+
+```
+{
+  "_id": "f1aacd3254509687c07e48279b42cd50",
+  "income": 2345.67,
+  "additionalIncome": 123.45,
+  "mortgage": 567.89,
+  "loans": 678.9
+  "relationships": {
+    "account": {
+      "data": {
+        "_id": "f1aacd3254509687c07e48279b42f3de",
+        "_type": "io.cozy.bank.accounts"
+      }
+    }
+  }
+}
+```
 
 ## `io.cozy.bank.operations`
 
