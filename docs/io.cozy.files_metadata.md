@@ -3,23 +3,23 @@
 
 ## Data structure
 
-**Common attributes**
+### Common attributes
 There attributes are share by all the documents types covered by the specification.
 
 
-    `classification`: (string) Document types
-    `datetime` : (timestamp) Functionnal date of the document, most of the time the document issue date
-    `datetimeLabel`: (string) Functionnal meaning of datetime
-    `contentAuthor`: (string) Author of the content of the document, can be different of the source connector
+- `classification`: (string) Document types
+- `datetime` : (timestamp) Functionnal date of the document, most of the time the document issue date
+- `datetimeLabel`: (string) Functionnal meaning of datetime
+- `contentAuthor`: (string) Author of the content of the document, can be different of the source connector
 
-**Other Attributes**
+### Other Attributes
 These attributes depend on the `classification`.
 
 
-    `subClassification`: (string) subType of the document (ex: invoice, payment_statement, payment_schedules)
-    `categories`: (array of string) list of tags referring to the field of activity, can be deduced from the categories of connectors
-    `subjects` : (array of string) list of tags referring to the subject of the document
-    ... 
+-  `subClassification`: (string) Subtype of the document (ex: invoice, payment_statement, payment_schedules)
+-  `categories`: (array of string) List of tags referring to the field of activity, can be deduced from the categories of connectors
+-  `subjects` : (array of string) List of tags referring to the subject of the document
+  ...
 
 
 ## Description of different document types
@@ -27,143 +27,143 @@ These attributes depend on the `classification`.
 **Invoices and documents related to payments**
 
 
-    `classification` : "invoicing"
-    `datetime` : equal to issueDate
-    `datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `categories` : [phone, isp, energy, public_service, health…] (array)
-    `subClassification` : (invoice, payment_statement, payment_schedule)
-    `issueDate` : issue date of the document
-    `invoiceNumber` : 
-    `contractReference` : 
-    `isSubscription` : (bool) true if the invoice is related to a subscription plan
+- `classification` : (string) `"invoicing"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string)
+- `subClassification` : (string) `["invoice"`, `"payment_statement"`, `"payment_schedule"`]
+- `categories` : (array of strings) [`"phone"`, `"isp"`, `"energy"`, `"public_service"`, `"health"`, …]
+- `issueDate` : Issue date of the document
+- `invoiceNumber` : (string) Invoice number
+- `contractReference` : (string) Reference of the related contract, if any
+- `isSubscription` : (bool) True if the invoice is related to a subscription plan
 
 **Payslips**
 
-    `classification` : "payslip"
-    `datetime` : equal to startDate
-    `datetimeLabel` : "startDate"
-    `contentAuthor` : employer
-    `startDate` : first day of the worked period
-    `endDate` : last day of the worked period
-    `issueDate` : issue date of the document
+- `classification` : (string) `"payslip"`
+- `datetime` : (timestamp) Equals to `startDate`
+- `datetimeLabel` : (string) `"startDate"`
+- `contentAuthor` : (string) Employer on the payslip
+- `startDate` : (timestamp) First day of the worked period
+- `endDate` : (timestamp) Last day of the worked period
+- `issueDate` : (timestamp) Issue date of the document
 
 **Tax Notices**
 
-    `classification` : "tax_notice"
-    `datetime` : equal to issueDate
-    `datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `subjects` : [income, property, residence, corporate] (array)
-    `issueDate` : issue date of the document
+- `classification` : (string) `"tax_notice"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string) 
+- `subjects` : (string) [`"income"`, `"property"`, `"residence"`, `"corporate"`]
+- `issueDate` : (timestamp) Issue date of the document
 
 **Tax Returns**
 
-    `classification` : "tax_return"
-    `datetime` : equal to issueDate
-    datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `subjects` : [income, property, residence, corporate] (array)
-    `issueDate` : issue date of the document
-    `formReference` : reference of the form (ex: "2042RICI")
+- `classification` : (string) `"tax_return"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string) 
+- `subjects` : (array of string) [`"income"`, `"property"`, `"residence"`, `"corporate"`]
+- `issueDate` : (timestamp) Issue date of the document
+- `formReference` : (string) Reference of the form (ex: "2042RICI")
 
 **Contracts**
 
-	   `classification` : "contract"
-	   `datetime` : equal to startDate
-	   `datetimeLabel` : "startDate"
-	   `contentAuthor` :
-	   `categories` : [insurance, employment, health, energy, phone, isp, real-estate] (array)
-	   `subjects` : [house, car, health, life, rent] (array)
-	   `contractReference` : reference of the contract
-	   `issueDate` : issue date of the document
-	   `startDate` : first day of the validity period
-	   `endDate` : last day of the validity period
+ - `classification` : (string) `"contract"`
+ - `datetime` : (timestamp) Equals to `startDate`
+ - `datetimeLabel` : (string) `"startDate"`
+ - `contentAuthor` : (string) 
+ - `categories` : (array of string) [`"insurance"`, `"employment"`, `"health"`, `"energy"`, `"phone"`, `"isp"`, `"real_estate"`]
+ - `subjects` : (array of string) [`"house"`, `"car"`, `"health"`, `"life"`, `"rent"`]
+ - `contractReference` : (string) Reference of the contract
+ - `issueDate` : (timestamp) Issue date of the document
+ - `startDate` : (timestamp) First day of the validity period
+ - `endDate` : (timestamp) Last day of the validity period
 
 **Certificates**
 
-    `classification` : "certificate"
-    `datetime` : equal to issueDate
-    `datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `categories` : [insurance, employment, health, energy, phone, isp, real-estate, public_service, tax] (array)
-    `subjects` : [house, car, health, life, property, subscription] (array)
-    `issueDate` : issue date of the document
-    `startDate` : first day of the validity period
-    `endDate` : last day of the validity period
+- `classification` : (string) `"certificate"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string) 
+- `categories` : (array of string) [`"insurance"`, `"employment"`, `"health"`, `"energy"`, `"phone"`, `"isp"`, `"real_estate"`, `"public_service"`, `"tax"`]
+- `subjects` : (array of string) [`"house"`, `"car"`, `"health"`, `"life"`, `"property"`, `"subscription"`]
+- `issueDate` : (timestamp) Issue date of the document
+- `startDate` : (timestamp) First day of the validity period
+- `endDate` : (timestamp) Last day of the validity period
 
 **Diplomas and Driving licenses**
 
-    `classification` : "diploma"
-    `datetime` : equal to startDate
-    `datetimeLabel` : "startDate"
-    `contentAuthor` :
-    `subClassification` : (school, driving, flying, sport)
-    `startDate` : first day of the validity period
-    `label` : short description of the diploma
-    `school` : school name
-    `country` : country name
+- `classification` : (string) `"diploma"`
+- `datetime` : (timestamp) Equals to `startDate`
+- `datetimeLabel` : (string) `"startDate"`
+- `contentAuthor` : (string) 
+- `subClassification` : (string) [`"school"`, `"driving"`, `"flying"`, `"sport"`]
+- `startDate` : First day of the validity period
+- `label` : (string) Short description of the diploma
+- `school` : (string) School name
+- `country` : (string) Country name
 
 **Identity documents**
 
-    `classification` : "identity_document"
-    `datetime` : equal to startDate
-    `datetimeLabel` : "startDate"
-    `contentAuthor` :
-    `subClassification` : (national_id_card, passport, family_record_book)
-    `issueDate` : issue date of the document
-    `expirationDate` : last day of validity
-    `number` : document number
-    `school` : school name
-    `country` : country name
+- `classification` : (string) `"identity_document"`
+- `datetime` : (timestamp) Equals to `startDate`
+- `datetimeLabel` : (string) `"startDate"`
+- `contentAuthor` : (string) 
+- `subClassification` : (string) [`"national_id_card"`, `"passport"`, `"family_record_book"`]
+- `issueDate` : (timestamp) Issue date of the document
+- `expirationDate` : (timestamp) Last day of validity
+- `number` : (string) Document number
+- `school` : (string) School name
+- `country` : (string) Country name
 
 **Bank Statements**
 
-    `classification` : "bank_statement"
-    `datetime` : equal to startDate
-    `datetimeLabel` : "startDate"
-    `contentAuthor` :
-    `startDate` : first day of the statement period
-    `endDate` : last day of the statement period
-    `accountNumber` : number of the related account
-    `bankName` : name of the related bank
+- `classification` : (string) `"bank_statement"`
+- `datetime` : (timestamp) Equals to `startDate`
+- `datetimeLabel` : (string) `"startDate"`
+- `contentAuthor` : (string) 
+- `startDate` : (timestamp) First day of the statement period
+- `endDate` : (timestamp) Last day of the statement period
+- `accountNumber` : (string) Number of the related account
+- `bankName` : (string) Name of the related bank
 
 **Bank Details (IBAN)**
 
-    `classification` : "bank_details"
-    `datetime` : equal to issueDate
-    `datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `issueDate` : issue date of the document
-    `accountNumber` : number of the related account
-    `bankName` : name of the related bank
+- `classification` : (string) `"bank_details"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string) 
+- `issueDate` : (timestamp) Issue date of the document
+- `accountNumber` : (string) Number of the related account
+- `bankName` : (string) Name of the related bank
 
 **Mail**
 
-    `classification` : "mail"
-    `datetime` : equal to issueDate
-    `datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `categories` : [insurance, employment, health, energy, phone, isp, real-estate, tax]
+- `classification` : (string) `"mail"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string)
+- `categories` : (array of string) [`"insurance"`, `"employment"`, `"health"`, `"energy"`, `"phone"`, `"isp"`, `"real_estate"`, `"tax"`]
 
 **Report**
 
-    `classification` : "mail"
-    `datetime` : equal to issueDate
-    `datetimeLabel` : "issueDate"
-    `contentAuthor` :
-    `subjects` : [theft, loss, damage, accident] (array)
+- `classification` : (string) `"mail"`
+- `datetime` : (timestamp) Equals to `issueDate`
+- `datetimeLabel` : (string) `"issueDate"`
+- `contentAuthor` : (string) 
+- `subjects` : (array of strings) [`"theft"`, `"loss"`, `"damage"`, `accident`]
 
 **Office**
 
-    `classification` : "office"
-    `subClassification` : (textpad, spreadsheet, slides)
+- `classification` : (string) `"office"`
+- `subClassification` : (string) [`"textpad"`, `"spreadsheet"`, `"slides"`]
 
 
 ## Examples
 
 **Invoices, payment statements, payment schedules**
-    
+
     // invoice - bouygues telecom
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -185,7 +185,7 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
     // payment statement - ameli
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -204,7 +204,7 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
     // payment schedule - EDF
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -246,7 +246,7 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
     // tax return on income
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -270,7 +270,7 @@ These attributes depend on the `classification`.
 **Payslips**
 
 
-    
+
     // payslip - cozycloud
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -293,7 +293,7 @@ These attributes depend on the `classification`.
 **Attestations**
 
 
-    
+
     // contrat certificate - EDF
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -313,7 +313,7 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
     // health insurance certificate - ameli
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -334,7 +334,7 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
     // car insurance certificate - maif
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -355,7 +355,7 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
     // tax certificate - CAF
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -375,13 +375,13 @@ These attributes depend on the `classification`.
         ...
       }
     }
-    
+
 
 
 **Pièces d’identité**
 
 
-    
+
     // id card
     {
       "_id": "62e5d66d6e11d19992b7efce794263f0",
@@ -410,4 +410,3 @@ These attributes depend on the `classification`.
         ...
       }
     }
-
