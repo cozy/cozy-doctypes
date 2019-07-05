@@ -55,10 +55,12 @@ This doctypes stores informations about a Bank account:
 
 This doctype stores aggregated data about bank accounts:
 
-- `income`: {number} - The average income on the last 3 months
-- `additionalIncome`: {number} - The average additional income on the last 3 months
-- `mortgage`: {number} - The average mortgage expense on the last 3 months
-- `loans`: {number} - The average total loans expense on the last 3 months
+- `periodStart`: {date} - The start of the reference period
+- `periodEnd`: {date} - The end of the reference period
+- `income`: {number} - The average income on the reference period
+- `additionalIncome`: {number} - The average additional income on the reference period
+- `mortgage`: {number} - The average mortgage expense on the reference period
+- `loans`: {number} - The average total loans expense on the reference period
 
 ### Relationships
 
@@ -69,6 +71,8 @@ This doctype stores aggregated data about bank accounts:
 ```
 {
   "_id": "f1aacd3254509687c07e48279b42cd50",
+  "periodStart": "2019-03-01T00:00:00",
+  "periodEnd": "2019-06-30T23:59:59",
   "income": 2345.67,
   "additionalIncome": 123.45,
   "mortgage": 567.89,
