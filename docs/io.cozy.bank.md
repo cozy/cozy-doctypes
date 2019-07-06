@@ -51,6 +51,44 @@ This doctypes stores informations about a Bank account:
 }
 ```
 
+## `io.cozy.bank.accounts.stats`
+
+This doctype stores aggregated data about bank accounts:
+
+- `periodStart`: {date} - The start of the reference period
+- `periodEnd`: {date} - The end of the reference period
+- `income`: {number} - The average income on the reference period
+- `additionalIncome`: {number} - The average additional income on the reference period
+- `mortgage`: {number} - The average mortgage expense on the reference period
+- `loans`: {number} - The average total loans expense on the reference period
+- `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
+
+### Relationships
+
+- `account`: {object} - The associated account
+
+### Example
+
+```
+{
+  "_id": "f1aacd3254509687c07e48279b42cd50",
+  "periodStart": "2019-03-01T00:00:00",
+  "periodEnd": "2019-06-30T23:59:59",
+  "income": 2345.67,
+  "additionalIncome": 123.45,
+  "mortgage": 567.89,
+  "loans": 678.9,
+  "currency": "EUR",
+  "relationships": {
+    "account": {
+      "data": {
+        "_id": "f1aacd3254509687c07e48279b42f3de",
+        "_type": "io.cozy.bank.accounts"
+      }
+    }
+  }
+}
+```
 
 ## `io.cozy.bank.operations`
 
