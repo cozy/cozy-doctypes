@@ -76,7 +76,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'tax_notice'`
 - `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `subjects` : {string} [`'income'`, `'property'`, `'residence'`, `'corporate'`]
 - `issueDate` : {date} Issue date of the document
 
@@ -85,7 +85,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'tax_return'`
 - `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `subjects` : {array of strings} [`'income'`, `'property'`, `'residence'`, `'corporate'`]
 - `issueDate` : {date} Issue date of the document
 - `formReference` : {string} Reference of the form (ex: '2042RICI')
@@ -95,7 +95,7 @@ These attributes depend on the `classification`.
  - `classification` : {string} `'contract'`
  - `datetime` : {date} Equals to `startDate`
  - `datetimeLabel` : {string} `'startDate'`
- - `contentAuthor` : {string} 
+ - `contentAuthor` : {string}
  - `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`]
  - `subjects` : {array of strings} [`'house'`, `'car'`, `'health'`, `'life'`, `'rent'`]
  - `contractReference` : {string} Reference of the contract
@@ -108,7 +108,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'certificate'`
 - `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`, `'public_service'`, `'tax'`]
 - `subjects` : {array of strings} [`'house'`, `'car'`, `'health'`, `'life'`, `'property'`, `'subscription'`]
 - `issueDate` : {date} Issue date of the document
@@ -120,7 +120,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'diploma'`
 - `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `subClassification` : {string} [`'school'`, `'driving'`, `'flying'`, `'sport'`]
 - `startDate` : First day of the validity period
 - `label` : {string} Short description of the diploma
@@ -132,7 +132,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'identity_document'`
 - `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `subClassification` : {string} [`'national_id_card'`, `'passport'`, `'family_record_book'`]
 - `issueDate` : {date} Issue date of the document
 - `expirationDate` : {date} Last day of validity
@@ -145,7 +145,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'bank_statement'`
 - `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `startDate` : {date} First day of the statement period
 - `endDate` : {date} Last day of the statement period
 - `accountNumber` : {string} Number of the related account
@@ -156,7 +156,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'bank_details'`
 - `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `issueDate` : {date} Issue date of the document
 - `accountNumber` : {string} Number of the related account
 - `bankName` : {string} Name of the related bank
@@ -174,7 +174,7 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'mail'`
 - `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
-- `contentAuthor` : {string} 
+- `contentAuthor` : {string}
 - `subjects` : {array of strings} [`'theft'`, `'loss'`, `'damage'`, `accident`]
 
 #### Office
@@ -186,249 +186,206 @@ These attributes depend on the `classification`.
 ### Examples
 
 #### Invoices, payment statements, payment schedules
+```js
+// invoice - bouygues telecom
+'metadata': {
+  'classification': 'invoicing',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'issueDate',
+  'contentAuthor': 'bouyguestelecom',
+  'categories': ['phone','isp','telecom'],
+  'subClassification': 'invoice',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+  'contractReference': '0645874398',
+  'invoiceNumber': 'KJF949875',
+  'isSubscription': true,
+},
+'cozyMetadata': {
+  ...
+}
+```
 
-    // invoice - bouygues telecom
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'invoicing',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'issueDate',
-        'contentAuthor': 'bouyguestelecom',
-        'categories': ['phone','isp','telecom'],
-        'subClassification': 'invoice',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        'contractReference': '0645874398',
-        'invoiceNumber': 'KJF949875',
-        'isSubscription': true,
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
+```js
+// payment statement - ameli
+'metadata': {
+  'classification': 'invoicing',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'issueDate',
+  'contentAuthor': 'ameli',
+  'categories': ['insurance', 'health'],
+  'subClassification': 'payment_statement',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
-    // payment statement - ameli
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'invoicing',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'issueDate',
-        'contentAuthor': 'ameli',
-        'categories': ['insurance', 'health'],
-        'subClassification': 'payment_statement',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
-    // payment schedule - EDF
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'invoicing',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'issueDate',
-        'contentAuthor': 'edf',
-        'categories': ['energy'],
-        'subClassification': 'paiement_schedule',
-        'iSubscription': true,
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
+```js
+// payment schedule - EDF
+'metadata': {
+  'classification': 'invoicing',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'issueDate',
+  'contentAuthor': 'edf',
+  'categories': ['energy'],
+  'subClassification': 'paiement_schedule',
+  'iSubscription': true,
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
 #### Taxe notices
 
-
-    // taxe notice on income
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'tax_notice',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'issueDate',
-        'contentAuthor': 'impots.gouv',
-        'subjects': ['income'],
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
-    // tax return on income
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'tax_report',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'issueDate',
-        'contentAuthor': 'impots.gouv',
-        'subjects': ['income'],
-        'formReference': '2042RICI',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
+```js
+// taxe notice on income
+'metadata': {
+  'classification': 'tax_notice',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'issueDate',
+  'contentAuthor': 'impots.gouv',
+  'subjects': ['income'],
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
+```js
+// tax return on income
+'metadata': {
+  'classification': 'tax_report',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'issueDate',
+  'contentAuthor': 'impots.gouv',
+  'subjects': ['income'],
+  'formReference': '2042RICI',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
 #### Payslips
 
-
-    // payslip - cozycloud
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'payslip',
-        'datetime': '2019-05-01T23:00:00.000Z',
-        'datetimeLabel': 'startDate',
-        'contentAuthor': 'cozycloud',
-        'startDate': '2019-05-01T23:00:00.000Z',
-        'endDate': '2019-05-31T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
+```js
+// payslip - cozycloud
+'metadata': {
+  'classification': 'payslip',
+  'datetime': '2019-05-01T23:00:00.000Z',
+  'datetimeLabel': 'startDate',
+  'contentAuthor': 'cozycloud',
+  'startDate': '2019-05-01T23:00:00.000Z',
+  'endDate': '2019-05-31T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
 #### Certificates
 
 
+```js
+// contrat certificate - EDF
+'metadata': {
+  'classification': 'certificate',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'startDate',
+  'contentAuthor': 'edf',
+  'categories': ['energy'],
+  'subjects': ['subscription'],
+  'startDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
-    // contrat certificate - EDF
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'certificate',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'startDate',
-        'contentAuthor': 'edf',
-        'categories': ['energy'],
-        'subjects': ['subscription'],
-        'startDate': '2019-05-10T23:00:00.000Z',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
+```js
+// health insurance certificate - ameli
+'metadata': {
+  'classification': 'certificate',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'startDate',
+  'contentAuthor': 'ameli',
+  'categories': ['insurance'],
+  'subCategories' : ['health'],
+  'startDate': '2019-01-01T23:00:00.000Z',
+  'endDate': '2019-12-31T23:00:00.000Z',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
-    // health insurance certificate - ameli
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'certificate',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'startDate',
-        'contentAuthor': 'ameli',
-        'categories': ['insurance'],
-        'subCategories' : ['health'],
-        'startDate': '2019-01-01T23:00:00.000Z',
-        'endDate': '2019-12-31T23:00:00.000Z',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
+```js
+// car insurance certificate - maif
+'metadata': {
+  'classification': 'certificate',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'startDate',
+  'contentAuthor': 'macif',
+  'categories': ['insurance'],
+  'subCategories' : ['car'],
+  'startDate': '2019-01-01T23:00:00.000Z',
+  'endDate': '2019-12-31T23:00:00.000Z',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
-    // car insurance certificate - maif
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'certificate',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'startDate',
-        'contentAuthor': 'macif',
-        'categories': ['insurance'],
-        'subCategories' : ['car'],
-        'startDate': '2019-01-01T23:00:00.000Z',
-        'endDate': '2019-12-31T23:00:00.000Z',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
-    // tax certificate - CAF
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'certificate',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'startDate',
-        'contentAuthor': 'caf',
-        'categories': ['public_service', 'tax'],
-        'startDate': '2019-01-05T23:00:00.000Z',
-        'endDate': '2019-05-31T23:00:00.000Z',
-        'issueDate': '2019-05-10T23:00:00.000Z',
-        }
-      'cozyMetadata': {
-        ...
-      }
-    }
-
+```js
+// tax certificate - CAF
+'metadata': {
+  'classification': 'certificate',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'startDate',
+  'contentAuthor': 'caf',
+  'categories': ['public_service', 'tax'],
+  'startDate': '2019-01-05T23:00:00.000Z',
+  'endDate': '2019-05-31T23:00:00.000Z',
+  'issueDate': '2019-05-10T23:00:00.000Z',
+},
+'cozyMetadata': {
+  ...
+}
+```
 
 
 #### Identity documents
 
 
-
-    // id card
-    {
-      '_id': '62e5d66d6e11d19992b7efce794263f0',
-      'type': 'file',
-      'class': 'pdf',
-      'metadata': {
-        'classification': 'identity_document',
-        'datetime': '2019-05-10T23:00:00.000Z',
-        'datetimeLabel': 'issueDate',
-        'contentAuthor': 'france',
-        'subClassification': 'national_id_card',
-        'issueDate': '2014-05-10T23:00:00.000Z',
-        'expirationDate': '2029-05-10T23:00:00.000Z',
-        'number': 'ABC123456',
-        'country': 'france',
-        'relationships': {
-          'contacts': {
-            'data': {
-              '_id': 'ce61088e116994e265d7f0e6091d0755',
-              '_type': 'io.cozy.contacts'
-            }
-          }
-        },
-      }
-      'cozyMetadata': {
-        ...
+```js
+// id card
+'metadata': {
+  'classification': 'identity_document',
+  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetimeLabel': 'issueDate',
+  'contentAuthor': 'france',
+  'subClassification': 'national_id_card',
+  'issueDate': '2014-05-10T23:00:00.000Z',
+  'expirationDate': '2029-05-10T23:00:00.000Z',
+  'number': 'ABC123456',
+  'country': 'france',
+  'relationships': {
+    'contacts': {
+      'data': {
+        '_id': 'ce61088e116994e265d7f0e6091d0755',
+        '_type': 'io.cozy.contacts'
       }
     }
+  },
+}
+'cozyMetadata': {
+  ...
+}
+```
