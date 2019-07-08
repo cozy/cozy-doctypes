@@ -1,7 +1,7 @@
 
 # Metadata on `io.cozy.files` documents
 
-## Pictures
+## Image files
 
 For pictures files, like `jpg`, `png`, `gif`...
 
@@ -32,7 +32,7 @@ There attributes are share by all the documents types covered by the specificati
 
 
 - `classification`: {string} Document types
-- `datetime` : {timestamp} Functional date of the document, most of the time the document issue date
+- `datetime` : {date} Functional date of the document, most of the time the document issue date
 - `datetimeLabel`: {string} Functional meaning of datetime
 - `contentAuthor`: {string} Author of the content of the document, can be different of the source connector
 
@@ -51,12 +51,12 @@ These attributes depend on the `classification`.
 #### Invoices and documents related to payments
 
 - `classification` : {string} `'invoicing'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string}
 - `subClassification` : {string} `['invoice'`, `'payment_statement'`, `'payment_schedule'`]
 - `categories` : {array of strings} [`'phone'`, `'isp'`, `'energy'`, `'public_service'`, `'health'`, …]
-- `issueDate` : {timestamp} Issue date of the document
+- `issueDate` : {date} Issue date of the document
 - `invoiceNumber` : {string} Invoice number
 - `contractReference` : {string} Reference of the related contract, if any
 - `isSubscription` : {bool} True if the invoice is related to a subscription plan
@@ -64,61 +64,61 @@ These attributes depend on the `classification`.
 #### Payslips
 
 - `classification` : {string} `'payslip'`
-- `datetime` : {timestamp} Equals to `startDate`
+- `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
 - `contentAuthor` : {string} Employer on the payslip
-- `startDate` : {timestamp} First day of the worked period
-- `endDate` : {timestamp} Last day of the worked period
-- `issueDate` : {timestamp} Issue date of the document
+- `startDate` : {date} First day of the worked period
+- `endDate` : {date} Last day of the worked period
+- `issueDate` : {date} Issue date of the document
 
 #### Tax Notices
 
 - `classification` : {string} `'tax_notice'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string} 
 - `subjects` : {string} [`'income'`, `'property'`, `'residence'`, `'corporate'`]
-- `issueDate` : {timestamp} Issue date of the document
+- `issueDate` : {date} Issue date of the document
 
 #### Tax Returns
 
 - `classification` : {string} `'tax_return'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string} 
 - `subjects` : {array of strings} [`'income'`, `'property'`, `'residence'`, `'corporate'`]
-- `issueDate` : {timestamp} Issue date of the document
+- `issueDate` : {date} Issue date of the document
 - `formReference` : {string} Reference of the form (ex: '2042RICI')
 
 #### Contracts
 
  - `classification` : {string} `'contract'`
- - `datetime` : {timestamp} Equals to `startDate`
+ - `datetime` : {date} Equals to `startDate`
  - `datetimeLabel` : {string} `'startDate'`
  - `contentAuthor` : {string} 
  - `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`]
  - `subjects` : {array of strings} [`'house'`, `'car'`, `'health'`, `'life'`, `'rent'`]
  - `contractReference` : {string} Reference of the contract
- - `issueDate` : {timestamp} Issue date of the document
- - `startDate` : {timestamp} First day of the validity period
- - `endDate` : {timestamp} Last day of the validity period
+ - `issueDate` : {date} Issue date of the document
+ - `startDate` : {date} First day of the validity period
+ - `endDate` : {date} Last day of the validity period
 
 #### Certificates
 
 - `classification` : {string} `'certificate'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string} 
 - `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`, `'public_service'`, `'tax'`]
 - `subjects` : {array of strings} [`'house'`, `'car'`, `'health'`, `'life'`, `'property'`, `'subscription'`]
-- `issueDate` : {timestamp} Issue date of the document
-- `startDate` : {timestamp} First day of the validity period
-- `endDate` : {timestamp} Last day of the validity period
+- `issueDate` : {date} Issue date of the document
+- `startDate` : {date} First day of the validity period
+- `endDate` : {date} Last day of the validity period
 
 #### Diplomas and Driving licenses
 
 - `classification` : {string} `'diploma'`
-- `datetime` : {timestamp} Equals to `startDate`
+- `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
 - `contentAuthor` : {string} 
 - `subClassification` : {string} [`'school'`, `'driving'`, `'flying'`, `'sport'`]
@@ -130,12 +130,12 @@ These attributes depend on the `classification`.
 #### Identity documents
 
 - `classification` : {string} `'identity_document'`
-- `datetime` : {timestamp} Equals to `startDate`
+- `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
 - `contentAuthor` : {string} 
 - `subClassification` : {string} [`'national_id_card'`, `'passport'`, `'family_record_book'`]
-- `issueDate` : {timestamp} Issue date of the document
-- `expirationDate` : {timestamp} Last day of validity
+- `issueDate` : {date} Issue date of the document
+- `expirationDate` : {date} Last day of validity
 - `number` : {string} Document number
 - `school` : {string} School name
 - `country` : {string} Country name
@@ -143,28 +143,28 @@ These attributes depend on the `classification`.
 #### Bank Statements
 
 - `classification` : {string} `'bank_statement'`
-- `datetime` : {timestamp} Equals to `startDate`
+- `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
 - `contentAuthor` : {string} 
-- `startDate` : {timestamp} First day of the statement period
-- `endDate` : {timestamp} Last day of the statement period
+- `startDate` : {date} First day of the statement period
+- `endDate` : {date} Last day of the statement period
 - `accountNumber` : {string} Number of the related account
 - `bankName` : {string} Name of the related bank
 
 #### Bank Details (IBAN)
 
 - `classification` : {string} `'bank_details'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string} 
-- `issueDate` : {timestamp} Issue date of the document
+- `issueDate` : {date} Issue date of the document
 - `accountNumber` : {string} Number of the related account
 - `bankName` : {string} Name of the related bank
 
 #### Mail
 
 - `classification` : {string} `'mail'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string}
 - `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`, `'tax'`]
@@ -172,7 +172,7 @@ These attributes depend on the `classification`.
 #### Report
 
 - `classification` : {string} `'mail'`
-- `datetime` : {timestamp} Equals to `issueDate`
+- `datetime` : {date} Equals to `issueDate`
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string} 
 - `subjects` : {array of strings} [`'theft'`, `'loss'`, `'damage'`, `accident`]
