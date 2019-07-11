@@ -28,7 +28,7 @@ Mostly imported by the connectors, cozy stores many different types of administr
 ### Data structure
 
 #### Common attributes
-There attributes are share by all the documents types covered by the specification.
+There attributes are shared by all the document types covered by the specification.
 
 
 - `classification`: {string} Document types
@@ -190,12 +190,12 @@ These attributes depend on the `classification`.
 // invoice - bouygues telecom
 'metadata': {
   'classification': 'invoicing',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'issueDate',
   'contentAuthor': 'bouyguestelecom',
   'categories': ['phone','isp','telecom'],
   'subClassification': 'invoice',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
   'contractReference': '0645874398',
   'invoiceNumber': 'KJF949875',
   'isSubscription': true,
@@ -209,12 +209,12 @@ These attributes depend on the `classification`.
 // payment statement - ameli
 'metadata': {
   'classification': 'invoicing',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'issueDate',
   'contentAuthor': 'ameli',
   'categories': ['insurance', 'health'],
   'subClassification': 'payment_statement',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
 },
 'cozyMetadata': {
   ...
@@ -225,13 +225,13 @@ These attributes depend on the `classification`.
 // payment schedule - EDF
 'metadata': {
   'classification': 'invoicing',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'issueDate',
   'contentAuthor': 'edf',
   'categories': ['energy'],
   'subClassification': 'paiement_schedule',
   'iSubscription': true,
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
 },
 'cozyMetadata': {
   ...
@@ -244,11 +244,11 @@ These attributes depend on the `classification`.
 // taxe notice on income
 'metadata': {
   'classification': 'tax_notice',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'issueDate',
   'contentAuthor': 'impots.gouv',
   'subjects': ['income'],
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
 },
 'cozyMetadata': {
   ...
@@ -258,12 +258,12 @@ These attributes depend on the `classification`.
 // tax return on income
 'metadata': {
   'classification': 'tax_report',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'issueDate',
   'contentAuthor': 'impots.gouv',
   'subjects': ['income'],
   'formReference': '2042RICI',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
 },
 'cozyMetadata': {
   ...
@@ -276,11 +276,11 @@ These attributes depend on the `classification`.
 // payslip - cozycloud
 'metadata': {
   'classification': 'payslip',
-  'datetime': '2019-05-01T23:00:00.000Z',
+  'datetime': '2019-05-01',
   'datetimeLabel': 'startDate',
   'contentAuthor': 'cozycloud',
-  'startDate': '2019-05-01T23:00:00.000Z',
-  'endDate': '2019-05-31T23:00:00.000Z',
+  'startDate': '2019-05-01',
+  'endDate': '2019-05-31',
 },
 'cozyMetadata': {
   ...
@@ -294,13 +294,14 @@ These attributes depend on the `classification`.
 // contrat certificate - EDF
 'metadata': {
   'classification': 'certificate',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'startDate',
   'contentAuthor': 'edf',
   'categories': ['energy'],
   'subjects': ['subscription'],
-  'startDate': '2019-05-10T23:00:00.000Z',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
+  'startDate': '2019-01-01',
+  'startDate': '2019-12-31',
 },
 'cozyMetadata': {
   ...
@@ -311,14 +312,14 @@ These attributes depend on the `classification`.
 // health insurance certificate - ameli
 'metadata': {
   'classification': 'certificate',
-  'datetime': '2019-05-10T23:00:00.000Z',
-  'datetimeLabel': 'startDate',
+  'datetime': '2019-05-10',
+  'datetimeLabel': 'issueDate',
   'contentAuthor': 'ameli',
   'categories': ['insurance'],
   'subCategories' : ['health'],
-  'startDate': '2019-01-01T23:00:00.000Z',
-  'endDate': '2019-12-31T23:00:00.000Z',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
+  'startDate': '2019-01-01',
+  'endDate': '2019-12-31',
 },
 'cozyMetadata': {
   ...
@@ -329,14 +330,14 @@ These attributes depend on the `classification`.
 // car insurance certificate - maif
 'metadata': {
   'classification': 'certificate',
-  'datetime': '2019-05-10T23:00:00.000Z',
-  'datetimeLabel': 'startDate',
+  'datetime': '2019-05-10',
+  'datetimeLabel': 'issueDate',
   'contentAuthor': 'macif',
   'categories': ['insurance'],
   'subCategories' : ['car'],
-  'startDate': '2019-01-01T23:00:00.000Z',
-  'endDate': '2019-12-31T23:00:00.000Z',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
+  'startDate': '2019-01-01',
+  'endDate': '2019-12-31',
 },
 'cozyMetadata': {
   ...
@@ -347,13 +348,13 @@ These attributes depend on the `classification`.
 // tax certificate - CAF
 'metadata': {
   'classification': 'certificate',
-  'datetime': '2019-05-10T23:00:00.000Z',
-  'datetimeLabel': 'startDate',
+  'datetime': '2019-05-10',
+  'datetimeLabel': 'issueDate',
   'contentAuthor': 'caf',
   'categories': ['public_service', 'tax'],
-  'startDate': '2019-01-05T23:00:00.000Z',
-  'endDate': '2019-05-31T23:00:00.000Z',
-  'issueDate': '2019-05-10T23:00:00.000Z',
+  'issueDate': '2019-05-10',
+  'startDate': '2019-05-01',
+  'endDate': '2019-05-31',
 },
 'cozyMetadata': {
   ...
@@ -368,12 +369,12 @@ These attributes depend on the `classification`.
 // id card
 'metadata': {
   'classification': 'identity_document',
-  'datetime': '2019-05-10T23:00:00.000Z',
+  'datetime': '2019-05-10',
   'datetimeLabel': 'issueDate',
   'contentAuthor': 'france',
   'subClassification': 'national_id_card',
-  'issueDate': '2014-05-10T23:00:00.000Z',
-  'expirationDate': '2029-05-10T23:00:00.000Z',
+  'issueDate': '2014-05-10',
+  'expirationDate': '2029-05-10',
   'number': 'ABC123456',
   'country': 'france',
   'relationships': {
