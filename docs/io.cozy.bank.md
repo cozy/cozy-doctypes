@@ -61,6 +61,7 @@ This doctype stores aggregated data about bank accounts:
 - `additionalIncome`: {number} - The average additional income on the reference period
 - `mortgage`: {number} - The average mortgage expense on the reference period
 - `loans`: {number} - The average total loans expense on the reference period
+- `fixedCharges`: {number} - The average fixed charges on the reference period
 - `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
 
 ### Relationships
@@ -78,6 +79,7 @@ This doctype stores aggregated data about bank accounts:
   "additionalIncome": 123.45,
   "mortgage": 567.89,
   "loans": 678.9,
+  "fixedCharges": 234.56,
   "currency": "EUR",
   "relationships": {
     "account": {
