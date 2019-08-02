@@ -1,4 +1,5 @@
 # Table of contents
+
 - [Table of contents](#table-of-contents)
 - [Apps doctype](#apps-doctype)
   - [Attributes](#attributes)
@@ -73,4 +74,19 @@ This is the truncated version of the official Cozy `drive` app.
     }
   }
 }
+```
+
+# Special `io.cozy.apps` doctypes
+
+Some folders are remarkable, like the 'Administrative' and the 'Photos' folders. You shouldn't address them by their path as it may vary depending on the user language and the user may have renamed them anyways.
+To identify them, you can ask for a special [`referenced_by` attribute](https://docs.cozy.io/en/cozy-stack/references-docs-in-vfs/#post-filesfile-idrelationshipsreferenced_by).
+For example, a request for all io.cozy.files referended by the doctype `io.cozy.apps` and the document id `administrative` will return you the io.cozy.files document of the folder 'Administrative' whatever its name or path.
+
+Here is the list:
+
+```
+ADMINISTRATIVE FOLDER: io.cozy.apps/administrative
+PHOTOS FOLDER: io.cozy.apps/photos Root Folder of Photos. Used to create PHOTOS_BACKUP FOLDER & PHOTOS_UPLOAD FOLDER
+PHOTOS_BACKUP FOLDER: io.cozy.apps/photos/mobile Folder used to put photos synched by the native app
+PHOTOS_UPLOAD FOLDER: io.cozy.apps/photos/upload Folder used to put photos uploaded by the Photo web app.
 ```
