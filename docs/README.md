@@ -8,6 +8,7 @@
 - [Bills](io.cozy.bills.md): bills
 - [Contacts](io.cozy.contacts.md): instance owner contacts
 - [Files](io.cozy.files.md): files documents
+- [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
 - [Konnectors](io.cozy.konnectors.md): Connectors
 - [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
