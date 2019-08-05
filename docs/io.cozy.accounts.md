@@ -4,7 +4,7 @@
 
 The `io.cozy.accounts` doctype stores authentification informations used by [konnectors](https://github.com/konnectors) to connect to external services or API.
 
-Accounts can be managed in [Cozy-Collect](http://github.com/cozy/cozy-collect/). They are generally associated to a [`io.cozy.triggers`](io.cozy.triggers) document.
+Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib)). They are generally associated to a [`io.cozy.triggers`](io.cozy.triggers) document.
 
 `io.cozy.accounts` attributes are:
 
@@ -12,6 +12,11 @@ Accounts can be managed in [Cozy-Collect](http://github.com/cozy/cozy-collect/).
 - `auth`: {object} Contains authentification data, typically a couple with `login`/`password`. It could also contain an attribute `token` for OAuth konnectors.
 - `data`: {object} Additional custom data.
 - `label`: {string} Label given by user.
+- `state`: {string} The account state is used to communicate between the konnector and [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) to ask for a needed 2FA Code or to tell to reset the konnector session for example. Here are the used values for now:
+  - `TWOFA_NEEDED`: The service is asking for a Two Factor connexion and the related code (sent by the service) must be provided by the user.
+  - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one.
+  - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
+- `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
 
 ### `auth`
 
@@ -29,7 +34,7 @@ The `auth` attributes also contain all values for the fields attribute specified
 ### `parent`
 
 An account may have a `parent` relationship. It is used to indicate that this accounts depends on another one.
-Generally, the konnector should be able to handle by itself this kind of relationshiop, like querying the database to get the information it needs. A `parent` relationship is aimed to be an account overriden by the account it is linked to, but it can also be use as an _aggregator_ account. See [Cozy-stack documentation about aggregator accounts)[https://github.com/cozy/cozy-stack/blob/master/docs/konnectors-workflow.md#aggregator-accounts].
+Generally, the konnector should be able to handle by itself this kind of relationshiop, like querying the database to get the information it needs. A `parent` relationship is aimed to be an account overriden by the account it is linked to, but it can also be use as an _aggregator_ account. See [Cozy-stack documentation about aggregator accounts](https://docs.cozy.io/en/cozy-stack/konnectors-workflow/#aggregator-accounts).
 
 #### Example
 ```json

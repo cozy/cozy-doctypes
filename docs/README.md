@@ -3,18 +3,35 @@
 ## Cozy doctypes
 
 - [Accounts](io.cozy.accounts.md): Konnector accounts
-- [Autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
+- [Apps](io.cozy.apps.md): Apps
 - [Bank](io.cozy.bank.md): banking related data
 - [Bills](io.cozy.bills.md): bills
 - [Contacts](io.cozy.contacts.md): instance owner contacts
 - [Files](io.cozy.files.md): files documents
-- [Konnectors](io.cozy.konnectors): Connectors
+- [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
+- [Konnectors](io.cozy.konnectors.md): Connectors
 - [Notifications](io.cozy.notifications.md): notifications made by the apps
+- [Permissions](io.cozy.permissions.md): Permissions of the instance
 - [Photos Albums](io.cozy.photos.albums.md): photos albums
-- [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
+- [Procedures](io.cozy.procedures.md): Administrative procedures
 - [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
+- [Settings](io.cozy.settings.md): Instance settings
 - [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
+
+## Technical doctypes
+
+- [Accounts Types](io.cozy.account_types.md): OAuth informations and secrets
+  for apps & konnectors
+- [Autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
+- [Exports](io.cozy.exports.md): Instances exports
+- [Jobs](io.cozy.jobs.md): Instance jobs
+- [OAuth Clients](io.cozy.oauth.clients.md): OAuth clients informations of the stack
+- [OAuth Access Codes](io.cozy.oauth.access_codes.md): Access codes specific to OAuth flow
 - [Triggers](io.cozy.triggers.md): Job triggers
+- [Triggers state](io.cozy.triggers.state.md): Job triggers states
+- [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
+- [Sessions](io.cozy.sessions.md): cozy-stack sessions
+- [Shared](io.cozy.shared.md): cozy-stack doctype for sharings
 
 ## Remote doctypes
 
@@ -35,14 +52,11 @@ Each relation is an object with a `data` property containing either `null`, one 
 A reference is an object containing at least a `_type` with the name of the referenced doctype and an `_id` with the id of the referenced document inside its doctype.
 
 ```json
-
 {
   "_id": "mobydick",
   "relationships": {
     "authors": {
-      "data": [
-        { "_id": "hermanmelville", "_type": "io.cozy.contacts" }
-      ]
+      "data": [{ "_id": "hermanmelville", "_type": "io.cozy.contacts" }]
     }
   }
 }
@@ -56,7 +70,7 @@ The third level (metadata of the wrapping document) is described by an object na
 
 The following keys are reserved and have special meanings:
 
-- `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in it's version 2")
+- `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in its version 2")
 - `metadataVersion`: Version of the `cozyMetadata`
 - `createdAt`: Creation date of the cozy document
 - `createdByApp`: Slug of the app or connector which created the document
@@ -95,4 +109,5 @@ Date should be formatted in [ISO8601](https://fr.wikipedia.org/wiki/ISO_8601) :
 
 - `2017-04-22T01:00:00-05:00` ✅
 - `2017-04-22T01:00:00Z` ✅
+- `2017-04-22` ✅
 - `2017-04-22 01:00` ❌

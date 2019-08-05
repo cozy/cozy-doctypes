@@ -5,7 +5,7 @@
 ## `io.cozy.bills`
 
 ### Description
-- Represents the a bill (invoice) or refund from a vendor.
+- Represents a bill (invoice) or a refund from a vendor.
 
 ### Mandatory attributes
 
@@ -16,6 +16,17 @@
 
 ### Optional attributes (but some are important depending the context)
 
+- `matchingCriterias`: {object} some criterias which can be used to match bills with bank
+  operations
+    - `labelRegex`: {string} (example: `"\\bcpam\\b"`) : regexp used to match operation label
+    - `amountLowerDelta`: (float): dafault 0.001 : positive value. Authorized lower difference between bill amount and
+      bank operation value
+    - `amountUpperDelta`: (float): default 0.001 : positive value. Authorized upper difference between bill amount and
+      bank operation value
+    - `dateLowerDelta`: (int): default 15 : (positive value). Authorized lower difference in days between the
+      bill date and the bank operation date
+    - `dateUpperDelta`: (int): default 29 : (positive value). Authorized upper difference in days between the
+      bill date and the bank operation date
 - `type`: {string} - Type of the bill (see below for existing types)
 - `isRefund`: {boolean} - Indicate if the bill represents a refund/reimbursement
 - `subtype`: {string} - Used for labelling the bill. ie: "Ostéopathie"
@@ -48,7 +59,7 @@ statements.
 
 - `health_costs`: Health related bills
 - `phone`: Phone related bills
-- `pay`: salary
+- `income`: Salary income or allowances related bills
 
 ### Some more attributes for reimbursement bills
 
