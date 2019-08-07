@@ -32,6 +32,7 @@
 - [Remote requests](io.cozy.remote.requests.md): logs of requests via the remote doctypes
 - [Sessions](io.cozy.sessions.md): cozy-stack sessions
 - [Shared](io.cozy.shared.md): cozy-stack doctype for sharings
+- [Terms](io.cozy.terms.md): Contains terms of services the user has signed
 
 ## Remote doctypes
 
