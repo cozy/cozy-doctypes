@@ -10,13 +10,14 @@
 - [Files](io.cozy.files.md): Files
 - [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
 - [Connectors](io.cozy.konnectors.md): Connectors installed in the cozy
+- [Identities](io.cozy.identities.md): Instance owner identities
 - [Notifications](io.cozy.notifications.md): Notifications made by the apps (Email or Push notifications)
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
-- [Photos Albums](io.cozy.photos.albums.md): photos albums
+- [Photos Albums](io.cozy.photos.albums.md): Photos albums
 - [Procedures](io.cozy.procedures.md): Administrative procedures
-- [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
+- [Sessions Logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [Settings](io.cozy.settings.md): Instance settings
-- [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
+- [Sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
 
 ## Technical doctypes
 
