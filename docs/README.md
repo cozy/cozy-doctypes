@@ -3,15 +3,15 @@
 ## Cozy doctypes
 
 - [Accounts](io.cozy.accounts.md): Konnector accounts
-- [Apps](io.cozy.apps.md): Apps
+- [Apps](io.cozy.apps.md): Apps installed in the Cozy
 - [Bank](io.cozy.bank.md): Banking related data
 - [Bills](io.cozy.bills.md): Bills
-- [Contacts](io.cozy.contacts.md): Instance owner contacts
-- [Files](io.cozy.files.md): Files documents
+- [Contacts](io.cozy.contacts.md): Contacts
+- [Files](io.cozy.files.md): Files
 - [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
+- [Connectors](io.cozy.konnectors.md): Connectors installed in the cozy
 - [Identities](io.cozy.identities.md): Instance owner identities
-- [Konnectors](io.cozy.konnectors.md): Connectors
-- [Notifications](io.cozy.notifications.md): notifications made by the apps
+- [Notifications](io.cozy.notifications.md): Notifications made by the apps (Email or Push notifications)
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
 - [Photos Albums](io.cozy.photos.albums.md): Photos albums
 - [Procedures](io.cozy.procedures.md): Administrative procedures
