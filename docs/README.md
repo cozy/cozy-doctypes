@@ -4,19 +4,20 @@
 
 - [Accounts](io.cozy.accounts.md): Konnector accounts
 - [Apps](io.cozy.apps.md): Apps
-- [Bank](io.cozy.bank.md): banking related data
-- [Bills](io.cozy.bills.md): bills
-- [Contacts](io.cozy.contacts.md): instance owner contacts
-- [Files](io.cozy.files.md): files documents
+- [Bank](io.cozy.bank.md): Banking related data
+- [Bills](io.cozy.bills.md): Bills
+- [Contacts](io.cozy.contacts.md): Instance owner contacts
+- [Files](io.cozy.files.md): Files documents
 - [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
+- [Identities](io.cozy.identities.md): Instance owner identities
 - [Konnectors](io.cozy.konnectors.md): Connectors
 - [Notifications](io.cozy.notifications.md): notifications made by the apps
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
-- [Photos Albums](io.cozy.photos.albums.md): photos albums
+- [Photos Albums](io.cozy.photos.albums.md): Photos albums
 - [Procedures](io.cozy.procedures.md): Administrative procedures
-- [Sessions Logins](io.cozy.sessions.logins.md): sessions logins entry
+- [Sessions Logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [Settings](io.cozy.settings.md): Instance settings
-- [Sharings](io.cozy.sharings.md): documents used for Cozy to Cozy sharings
+- [Sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
 
 ## Technical doctypes
 
