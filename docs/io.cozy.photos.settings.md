@@ -22,7 +22,7 @@ to automatically group photos in the timeline.
     - `eps_spatial`: {number} the spatial epsilon parameter for the clustering.
     - `eps_temporal`: {number} the temporal epsilon parameter for the clustering.
     - `gradient_angle`: {number} the angle parameter for the gradient.
-  - `evaluation`: {object} used to update the parameters.
-    - `currentCount`: {number} number of new objects since the last param evaluation
-    - `threshold`: {number} new objects' threshold to re-evaluate the parameters
 - `lastSeq`: {string} the last recorded sequence number.
+- `evaluation`: {object} used to update the parameters.
+  - `currentCount`: {number} number of new objects since the last param evaluation
+  - `threshold`: {number} new objects' threshold to re-evaluate the parameters
