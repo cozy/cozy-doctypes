@@ -1,2 +1,1 @@
 GET http://localhost:8008/dispers/query/{{idquery}}
-Accept: "application/json"

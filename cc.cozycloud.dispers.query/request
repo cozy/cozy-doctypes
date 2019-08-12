@@ -1,17 +1,4 @@
-POST http://localhost:8008/dispers/query/
-Content-Type: "application/json"
-Accept: "application/json"
+POST http://localhost:8008/dispers/query
+Content-Type: application/json
 
-{
-  "concepts": {{json concepts}},
-  "pseudo_concepts": {{json pseudoconcepts}},
-  "encrypted": {{json boolean}},
-  "localquery": {{json mangoquery}},
-  "operation": {{json localquery}},
-  "nb_actors": {
-    "ci": 1,
-    "tf": 1,
-    "t": 1
-  },
-  "layers_da": {{json layers}}
-}
+{{data}}
