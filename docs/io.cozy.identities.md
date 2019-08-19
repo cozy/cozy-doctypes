@@ -10,7 +10,7 @@
 ### Mandatory attributes
 
 - `identifier`: {string} - login or other identifier unique to the data source
-- `contact`: {object} - identity data following the [io.cozy.contacts](./docs/io.cozy.contacts.md) format
+- `contact`: {object} - identity data following the [io.cozy.contacts](./io.cozy.contacts.md) format
 
 Multiple connectors may create an identity for a given identifier. That is why an identity will
 unique by identifier **and** cozyMetadata.createdByApp
