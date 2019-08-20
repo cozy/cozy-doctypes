@@ -19,7 +19,7 @@
 - `matchingCriterias`: {object} some criterias which can be used to match bills with bank
   operations
     - `labelRegex`: {string} (example: `"\\bcpam\\b"`) : regexp used to match operation label
-    - `amountLowerDelta`: (float): dafault 0.001 : positive value. Authorized lower difference between bill amount and
+    - `amountLowerDelta`: (float): default 0.001 : positive value. Authorized lower difference between bill amount and
       bank operation value
     - `amountUpperDelta`: (float): default 0.001 : positive value. Authorized upper difference between bill amount and
       bank operation value
