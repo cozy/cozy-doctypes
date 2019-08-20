@@ -55,6 +55,7 @@ Some konnectors does not use a `login` parameter, but `identifier` or `email`. T
 ### Examples
 
 #### Freemobile (regular connector, with current deprecation)
+
 ```json
 {
   "auth": {
@@ -67,7 +68,9 @@ Some konnectors does not use a `login` parameter, but `identifier` or `email`. T
   }
 }
 ```
+
 What we aim:
+
 ```json
 {
   "auth": {
