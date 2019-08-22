@@ -1,4 +1,16 @@
-# Table of contents
+# Doctypes
+
+Doctypes represent different types of data. Their primary use is for permissions: an app or konnector will request permissions
+for one or several doctypes and will not be able to access other doctypes.
+
+!!! note
+    Example: A banking application requests permissions for banking doctypes (`io.cozy.bank.accounts`, `io.cozy.bank.operations` etc..)
+    but cannot access files (`io.cozy.files`).
+    
+This ensure the segregation and security of your data.
+
+In this repository, every (known) doctype and the fields that they contain is described. If you feel the need
+for another doctype, feel free to open a PR with the description and role of your doctype.
 
 ## Cozy doctypes
 
