@@ -13,9 +13,9 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
 - `data`: {object} Additional custom data.
 - `label`: {string} Label given by user.
 - `state`: {string} The account state is used to communicate between the konnector and [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) to ask for a needed 2FA Code or to tell to reset the konnector session for example. Here are the used values for now:
-  - `TWOFA_NEEDED`: The service is asking for a Two Factor connexion and the related code (sent by the service) must be provided by the user.
-  - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one.
-  - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
+    - `TWOFA_NEEDED`: The service is asking for a Two Factor connexion and the related code (sent by the service) must be provided by the user.
+    - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one.
+    - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
 - `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
 
 ### `auth`
