@@ -60,7 +60,8 @@ An account can be synced in a password manager. In that case, the `vaultCipher` 
   "relationships": {
     "vaultCipher": {
       "_id": "123abc",
-      "_doctype": "$bitwarden"
+      "_doctype": "com.bitwarden.cipher"
+      "_protocol": "bitwarden"
     }
   }
 }
