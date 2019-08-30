@@ -20,7 +20,7 @@ When an app is installed, the Cozy stack creates a new `io.cozy.apps` document i
 ## Attributes
 
 The available attributes in a `io.cozy.apps` document are available in the official docs:
-https://docs.cozy.io/en/cozy-apps-registry/README/#properties-meaning-reference
+https://docs.cozy.io/en/cozy-apps-registry/#properties-meaning-reference
 
 ## Example
 
