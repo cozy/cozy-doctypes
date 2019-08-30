@@ -8,7 +8,7 @@ The `io.cozy.konnectors` doctype is used to store installed konnectors.
 
 When installing a konnector, the Cozy stack creates a new `io.cozy.konnector` document from the fields in the `manifest.konnector`. See the [reference](https://github.com/cozy/cozy-collect/blob/master/docs/konnector-manifest.md) for more information on each attributes.
 
-`io.cozy.konnectors` are used by [Cozy-Store](http://github.com/cozy/cozy-store/) to install and uninstall konnectors, and by [Cozy-Collect](http://github.com/cozy/cozy-collect/) to manage [accounts](io.cozy.accounts) for konnectors
+`io.cozy.konnectors` are used by [Cozy-Store](http://github.com/cozy/cozy-store/) to install and uninstall konnectors, and by [Cozy-Collect](http://github.com/cozy/cozy-collect/) to manage [accounts](io.cozy.accounts.md) for konnectors
 
 ## Attributes
 ### Retrieved from `manifest.konnector`

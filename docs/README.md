@@ -53,7 +53,7 @@ This repository is where the declaration of remote doctypes is done. Read more a
 
 ## External doctypes
 
-- [Bets Unibet](com.unibet.bets): Bets from Unibet website
+- [Bets Unibet](com.unibet.bets.md): Bets from Unibet website
 
 ## Generic model
 
