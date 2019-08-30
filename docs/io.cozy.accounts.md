@@ -4,7 +4,7 @@
 
 The `io.cozy.accounts` doctype stores authentification informations used by [konnectors](https://github.com/konnectors) to connect to external services or API.
 
-Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib)). They are generally associated to a [`io.cozy.triggers`](io.cozy.triggers) document.
+Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib)). They are generally associated to a [`io.cozy.triggers`](io.cozy.triggers.md) document.
 
 `io.cozy.accounts` attributes are:
 
