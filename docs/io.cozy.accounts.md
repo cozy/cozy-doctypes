@@ -44,7 +44,7 @@ Generally, the konnector should be able to handle by itself this kind of relatio
   "relationships": {
     "parent": {
       "_id": "aggregator-service-account",
-      "_doctype": "io.cozy.accounts"
+      "_type": "io.cozy.accounts"
     }
   }
 }
