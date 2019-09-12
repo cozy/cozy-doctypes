@@ -14,7 +14,7 @@ documents and files from her cozy instance to other people.
   and why)
 - a flag `active` that says if the sharing is currently active for at least
   one member
-- a flag `owner`, true for the document on the cozy of the sharer, and false
+- a flag `owner`, true for the document on the cozy of the sharer, and absent
   on the other cozy instance
 * a flag `open_sharing`:
   * `true` if any member of the sharing can add a new recipient
