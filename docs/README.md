@@ -6,7 +6,6 @@ for one or several doctypes and will not be able to access other doctypes.
 !!! note
     Example: A banking application requests permissions for banking doctypes (`io.cozy.bank.accounts`, `io.cozy.bank.operations` etc..)
     but cannot access files (`io.cozy.files`).
-    
 This ensure the segregation and security of your data.
 
 In this repository, every (known) doctype and the fields that they contain is described. If you feel the need
@@ -25,7 +24,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [Identities](io.cozy.identities.md): Instance owner identities
 - [Notifications](io.cozy.notifications.md): Notifications made by the apps (Email or Push notifications)
 - [Permissions](io.cozy.permissions.md): Permissions of the instance
-- [Photos Albums](io.cozy.photos.albums.md): Photos albums
+- [Photos](io.cozy.photos.md): Photos
 - [Procedures](io.cozy.procedures.md): Administrative procedures
 - [Sessions Logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [Settings](io.cozy.settings.md): Instance settings
