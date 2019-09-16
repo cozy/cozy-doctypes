@@ -4,25 +4,26 @@
 
 ## `io.cozy.photos.settings`
 
-This doctype is used to store settings for photos, e.g. the computed parameters
-to automatically group photos in the timeline.
+This doctype is used to store settings for photos, useful for the clustering.
 
-- `type`: {string} the type of settings, e.g. clustering.
+- `type`: {string} the type of settings, e.g. `clustering`.
 
 ### Clustering settings
 
+- `lastDate`: {date} the date of the last clustered photo (based on `created_at`).
+- `jobStatus`: {string} the execution status, can be `running`, `postponed` or empty.
+- `lastExecution`: {timestamp} the last service execution timestamp. Useful when `jobStatus` is `postponed`, to know if the service should be run or not.
+- `evaluationCount`: {number} indicates the number of photos clustered since the last parameters evaluation. Set to 0 if a new evaluation is performed.
+- `runs`: {number} number of clustering runs
 - `parameters`: {array} a list of parameters for the clustering with the following attributes:
-  - `period`: {string} the temporal period considered for this set of parameters.
-    - `name`: {string} period name, e.g. 'all', '2018', etc.
-    - `start`: {timestamp} the start of the period
-    - `end`: {timestamp} the end of the period
+  - `period`: {object} the temporal period of the clustererd photos for this set of parameters.
+    - `start`: {date} the start of the period
+    - `end`: {date} the end of the period
   - `modes`: {array} a list of granularity modes parameters, with the following attributes:
-    - `name`: {string} the name of the mode, e.g. 'default' or 'macro'
-    - `eps`: {number} the epsilon parameter for the clustering.
-    - `eps_spatial`: {number} the spatial epsilon parameter for the clustering.
-    - `eps_temporal`: {number} the temporal epsilon parameter for the clustering.
-    - `gradient_angle`: {number} the angle parameter for the gradient.
-- `lastSeq`: {string} the last recorded sequence number.
-- `evaluation`: {object} used to update the parameters.
-  - `currentCount`: {number} number of new objects since the last param evaluation
-  - `threshold`: {number} new objects' threshold to re-evaluate the parameters
+    - `name`: {string} the name of the mode, e.g. `default` or `macro`.
+    - `eps_temporal`: {number} the temporal epsilon parameter.
+    - `eps_spatial`: {number} the spatial epsilon parameter.
+  - `evaluation`: {object} the evaluation period on which the parameters have been computed.
+    - `start`: {date} the start of the period
+    - `end`: {date} the end of the period
+  - `defaultEvaluation`: {bool} if the current evaluation use default parameters because there was not enough photos.
