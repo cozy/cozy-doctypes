@@ -52,7 +52,7 @@ Generally, the konnector should be able to handle by itself this kind of relatio
 
 ### Vault Cipher
 
-An account can be synced in a password manager. In that case, the `vaultCipher` relationship can be used to store synchronization data.
+An account can be synced in a password manager. In that case, the `vaultCipher` relationship can be used to store data used to synchronize the document with the remote endpoint.
 
 #### Example
 ```json
