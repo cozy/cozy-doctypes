@@ -17,7 +17,7 @@ The `com.bitwarden.ciphers` doctype is used to store secret things for the
 * `favorite`: {bool} - true if the cipher has been marked as a favorite in a client
 * `name`: {string} - the name of the cipher, encrypted as a cipherString with AES
 * `notes`: {string} - some notes about the cipher, encrypted
-* `folder_id`: {string} - the identifier of a bitwarden folder
+* `folder_id`: {string} - the identifier of a [bitwarden folder](./com.bitwarden.folders.md)
 * `login`: {object} - an object only used when type is 1 (see below)
 * `data`: {object} - a map of encrypted properties on the cipher
 * `fields`: {array} - a list of objects, with `type`, `name`, and `value` (encrypted)

@@ -53,6 +53,7 @@ This repository is where the declaration of remote doctypes is done. Read more a
 ## External doctypes
 
 - [bitwarden ciphers](com.bitwarden.ciphers.md): Ciphers for bitwarden clients
+- [bitwarden folders](com.bitwarden.folders.md): Folders for bitwarden clients
 - [Bets Unibet](com.unibet.bets.md): Bets from Unibet website
 
 ## Generic model
