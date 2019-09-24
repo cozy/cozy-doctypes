@@ -75,6 +75,23 @@ A reference is an object containing at least a `_type` with the name of the refe
 }
 ```
 
+#### External relationships
+
+Relationships that reference a document that lives outside the couchdb of the user will have a `_type` in a different namespace than `io.cozy.*`, and will have an additional `_protocol` field.
+
+At the moment the only available external relationship is `bitwarden` with the following format:
+
+```json
+{
+  "_id": "secretsafe",
+  "relationships": {
+    "vaultCipher": {
+      "data": [{ "_id": "123abc", "_type": "com.bitwarden.ciphers", "_protocol": "bitwarden" }]
+    }
+  }
+}
+```
+
 ### Document metadata
 
 We distinguish three levels : the data (a list of songs from a playlist), the metadata about the data (the creation date of the playlist itself), the metadata of the cozy document (the creation date of the cozy document describing the playlist).

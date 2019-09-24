@@ -50,6 +50,23 @@ Generally, the konnector should be able to handle by itself this kind of relatio
 }
 ```
 
+### Vault Cipher
+
+An account can be synced in a password manager. In that case, the `vaultCipher` relationship can be used to store data used to synchronize the document with the remote endpoint.
+
+#### Example
+```json
+{
+  "relationships": {
+    "vaultCipher": {
+      "_id": "123abc",
+      "_type": "com.bitwarden.ciphers",
+      "_protocol": "bitwarden"
+    }
+  }
+}
+```
+
 ### About `login`
 
 Some konnectors does not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
