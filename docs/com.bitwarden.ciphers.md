@@ -12,7 +12,7 @@ The `com.bitwarden.ciphers` doctype is used to store secret things for the
 
 ## Attributes
 
-* `type`: {int} - from 1 for login to 4 for identity
+* `type`: {int} - from 1 for login to 4 for identity (see the list above)
 * `shared_with_cozy`: {bool} - true if the cipher is in the cozy organization
 * `favorite`: {bool} - true if the cipher has been marked as a favorite in a client
 * `name`: {string} - the name of the cipher, encrypted as a cipherString with AES
