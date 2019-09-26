@@ -8,7 +8,7 @@ The `com.bitwarden.ciphers` doctype is used to store secret things for the
 1. Login
 2. Secure note
 3. Card
-4. Identity.
+4. Identity
 
 ## Attributes
 
