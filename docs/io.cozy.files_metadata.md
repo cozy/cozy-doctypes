@@ -23,12 +23,12 @@ For pictures files, like `jpg`, `png`, `gif`...
 
 ## Administrative documents
 
-Mostly imported by the connectors, cozy stores many different types of administrative documents, like invoices, contracts or certificates.
+Mostly imported by the connectors, Cozy stores many different types of administrative documents, like invoices, contracts or certificates.
 
 ### Data structure
 
 #### Common attributes
-There attributes are shared by all the document types covered by the specification.
+These attributes are shared by all the document types covered by the specification.
 
 
 - `classification`: {string} Document types
