@@ -32,6 +32,24 @@ This doctypes stores informations about a Bank account:
 - `number`: {string} - The bank account number in its institution
 - `iban`: {string} - The bank account international identifier
 - `serviceID`: {number} - In case of external service used to import transactions, this key can stores the service's account ID; can be `undefined` is the account isn't managed by any external service
+- `loan`: {Object} - Specific properties for loan accounts. Will be undefined for all other account types
+  - `contactName`: {string} - The name of the contact in the credit institution
+  - `totalAmount`: {number} - The total amount of the loan
+  - `availableAmount`: {number} - The currently available amount
+  - `usedAmount`: {number} - The amount already used
+  - `subscriptionDate`: {date} - The date on which the loan has been subscribed
+  - `maturityDate`: {date} - The end date of the loan
+  - `nextPaymentAmount`: {number} - The amount of the next payment
+  - `nextPaymentDate`: {date} - The date of the next payment
+  - `rate`: {number} - The loan rate (between 0 and 100)
+  - `nbPaymentsLeft`: {number} - The number of remaining payments
+  - `nbPaymentsDone`: {number} - The number of payments made
+  - `nbPaymentsTotal`: {number} - The total number of payments
+  - `lastPaymentAmount`: {number} - The amount of the last payment
+  - `lastPaymentDate`: {date} - The date of the last payment
+  - `accountLabel`: {string} - The loan account label
+  - `insuranceLabel`: {string} - The insurance label
+  - `duration`: {number} - The loan duration in months
 
 ### Example
 
