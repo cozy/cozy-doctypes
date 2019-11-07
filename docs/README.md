@@ -29,6 +29,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [Sessions Logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [Settings](io.cozy.settings.md): Instance settings
 - [Sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
+- [App suggestions](io.cozy.apps.suggestions.md): Suggestions for apps that the user might find useful
 
 ## Technical doctypes
 
