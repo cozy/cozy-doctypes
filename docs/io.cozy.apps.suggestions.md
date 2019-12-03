@@ -24,7 +24,7 @@ The available attributes in a `io.cozy.apps.suggestions` document are :
 ## Example
 
 ```json
-{ 
+{
   "slug": "deezer",
   "silenced": false,
   "reason": {
@@ -49,3 +49,4 @@ See [`cozyMetadata` documentation](README.md#document-metadata) for more informa
 ## Reason codes
 
 * `FOUND_TRANSACTION`: a banking transaction matching this app was found
+* `FOUND_CIPHER`: a bitwarden cipher matching this app was found
