@@ -13,21 +13,22 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
 - `data`: {object} Additional custom data.
 - `label`: {string} Label given by user.
 - `state`: {string} The account state is used to communicate between the konnector and [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) to ask for a needed 2FA Code or to tell to reset the konnector session for example. Here are the used values for now:
-    - `TWOFA_NEEDED`: The service is asking for a Two Factor connexion and the related code (sent by the service) must be provided by the user. This status can be further precised with its type. This allows the UI presented to the user to have custom messages, depending on the type of two factor authentication required by the vendor.
-        - `TWOFA_NEEDED.EMAIL`: If the two factor authentication is done by email
-        - `TWOFA_NEEDED.SMS`: If the two factor authentication is done by SMS
-    - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one. `TWO_FA_NEEDED_RETRY.EMAIL` and `TWO_FA_NEEDED_RETRY.SMS` can also be used.
-    - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
+  - `TWOFA_NEEDED`: The service is asking for a Two Factor connexion and the related code (sent by the service) must be provided by the user. This status can be further precised with its type. This allows the UI presented to the user to have custom messages, depending on the type of two factor authentication required by the vendor.
+    - `TWOFA_NEEDED.EMAIL`: If the two factor authentication is done by email
+    - `TWOFA_NEEDED.SMS`: If the two factor authentication is done by SMS
+  - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one. `TWO_FA_NEEDED_RETRY.EMAIL` and `TWO_FA_NEEDED_RETRY.SMS` can also be used.
+  - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
 - `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
+- `mutedErrors`: {array} A list of errors that that have been discarded by the user and are no longer shown in the UI.
 
 ### `auth`
 
-The `auth` attribute may also contain other data, like  `accountName`, `folderPath` or `frequency`. As `auth` should only be used for authentication mechanisms, those two values should disappear soon.
+The `auth` attribute may also contain other data, like `accountName`, `folderPath` or `frequency`. As `auth` should only be used for authentication mechanisms, those two values should disappear soon.
 
-* `folderPath` should purely and simply disappear, the folder information is stored in `io.cozy.trigger`.
-* `accountName` is in reality the `label`, change should be made soon to fix this mistake.
-* `frequency` should move at the root of the account.
-* `namePath`: The name of the last folder. Usually saved along with `folderPath`.
+- `folderPath` should purely and simply disappear, the folder information is stored in `io.cozy.trigger`.
+- `accountName` is in reality the `label`, change should be made soon to fix this mistake.
+- `frequency` should move at the root of the account.
+- `namePath`: The name of the last folder. Usually saved along with `folderPath`.
 
 The `auth` attributes also contain all values for the fields attribute specified in the `manifest.konnector` file.
 
@@ -39,6 +40,7 @@ An account may have a `parent` relationship. It is used to indicate that this ac
 Generally, the konnector should be able to handle by itself this kind of relationshiop, like querying the database to get the information it needs. A `parent` relationship is aimed to be an account overriden by the account it is linked to, but it can also be use as an _aggregator_ account. See [Cozy-stack documentation about aggregator accounts](https://docs.cozy.io/en/cozy-stack/konnectors-workflow/#aggregator-accounts).
 
 #### Example
+
 ```json
 {
   "relationships": {
@@ -57,6 +59,7 @@ Generally, the konnector should be able to handle by itself this kind of relatio
 An account can be synced in a password manager. In that case, the `vaultCipher` relationship can be used to store data used to synchronize the document with the remote endpoint.
 
 #### Example
+
 ```json
 {
   "relationships": {
@@ -75,7 +78,7 @@ An account can be synced in a password manager. In that case, the `vaultCipher` 
 
 ### About `login`
 
-Some konnectors does not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
+Some konnectors do not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
 
 ### Examples
 
@@ -94,7 +97,7 @@ Some konnectors does not use a `login` parameter, but `identifier` or `email`. T
 }
 ```
 
-What we aim:
+What we aim for:
 
 ```json
 {
@@ -130,7 +133,25 @@ The connectors based on Linxo API are storing specific informations into `data` 
     "status": "connected",
     "token": "f415e",
     "uuid": "deadbeef-912e-4ba8-9378-067c5c3e4f54"
-
   }
+}
+```
+
+## `mutedErrors` field
+
+This field is used to keep track of konnector errors that have been muted by the user and shouldn't be featured in the UI anymore.
+
+```json
+{
+  "account_type": "example-konnector",
+  "auth": {
+    "identifier": "0000000000"
+  },
+  "mutedErrors": [
+    {
+      "type": "LOGIN_FAILED",
+      "mutedAt": "2019-12-01T00:48:01.404911778Z"
+    }
+  ]
 }
 ```
