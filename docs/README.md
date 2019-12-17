@@ -108,6 +108,7 @@ The following keys are reserved and have special meanings:
 - `createdAt`: Creation date of the cozy document
 - `createdByApp`: Slug of the app or connector which created the document
 - `createdByAppVersion`: Version identifier of the app
+- `createdOn`: URL of the cozy where the document was created
 - `updatedAt`: Last modification date of the cozy document
 - `updatedByApps`: List of objects representing the applications (slugs and versions) which modified the cozy document in its life and the last update date for each of those apps (one entry per slug, apps should just update the value)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
@@ -123,6 +124,7 @@ Note: All these attributes are optionnal and taken care by the apps modifying th
     "createdAt": "xxxxx",
     "createdByApp": "xxxx",
     "createdByAppVersion": "xxxx",
+    "createdOn": "http://cozy.tools",
     "updatedAt": "xxxxx",
     "updatedByApps": [
       {
