@@ -19,7 +19,7 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
   - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one. `TWO_FA_NEEDED_RETRY.EMAIL` and `TWO_FA_NEEDED_RETRY.SMS` can also be used.
   - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
 - `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
-- `mutedErrors`: A list of errors that that have been discarded by the user and are no longer shown in the UI.
+- `mutedErrors`: {array} A list of errors that that have been discarded by the user and are no longer shown in the UI.
 
 ### `auth`
 
