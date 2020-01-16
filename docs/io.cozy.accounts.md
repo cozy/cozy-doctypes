@@ -64,13 +64,11 @@ An account can be synced in a password manager. In that case, the `vaultCipher` 
 {
   "relationships": {
     "vaultCipher": {
-      "data": [
-        {
-          "_id": "123abc",
-          "_type": "com.bitwarden.ciphers",
-          "_protocol": "bitwarden"
-        }
-      ]
+      "data": {
+        "_id": "123abc",
+        "_type": "com.bitwarden.ciphers",
+        "_protocol": "bitwarden"
+      }
     }
   }
 }
