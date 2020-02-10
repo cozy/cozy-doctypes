@@ -168,6 +168,62 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
 }
 ```
 
+### Shortcuts
+
+The shortcuts (or hyperlinks) are a special types of files. They are served
+with the `application/shortcut` mime-type, they have a `.url` extension, and
+respect the [URL file
+format](http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficial_guide.html).
+
+They can have some `metadata`:
+
+- `sharing-status` will be set if the link can be used to open a sharing. 2
+  values are possible: `new` and `seen`, depending on the fact that the link
+  has been opened or not.
+- `target-cozy` is set to the cozy instance when relevant (mostly sharing
+  and internal links)
+- `target-doctype` is the doctype of the destination of the link (when the link
+  goes to a sharing or document inside a cozy)
+- `target-mime` is the mime-type of the destination of the link (when it is a
+  file)
+- `target-app` is the slug of the destination app (internal links only).
+
+#### Example (JSON format)
+
+```json
+{
+  "_id": "629fb233be550a21174ac8e19f0043af",
+  "_rev": "1-61c7804bdb4f9f8dae5a363cb9a30dd8",
+  "type": "file",
+  "name": "sunset.jpg.url",
+  "dir_id": "629fb233be550a21174ac8e19f003e4a",
+  "trashed": false,
+  "md5sum": "vfEMDpJShs8QeIlsDmw9VA==",
+  "created_at": "2020-02-10T20:38:04Z",
+  "updated_at": "2020-02-10T20:38:04Z",
+  "tags": [],
+  "metadata": {
+    "sharing-status": "new",
+    "target-cozy": "https://alice.cozy.example/",
+    "target-doctype": "io.cozy.files",
+    "target-mime": "image/jpg"
+  },
+  "size": 62,
+  "executable": false,
+  "class": "shortcut",
+  "mime": "application/shortcut",
+  "cozyMetadata": {
+    "doctypeVersion": 1,
+    "metadataVersion": 1,
+    "createdAt": "2020-02-10T20:38:04Z",
+    "createdOn": "https://bob.cozy.example/",
+    "updatedAt": "2020-02-10T20:38:04Z",
+    "uploadedAt": "2020-02-10T20:38:04Z",
+    "uploadedOn": "https://bob.cozy.example/"
+  }
+}
+```
+
 ## `io.cozy.files.versions`
 
 The `io.cozy.files.versions` is used to track old versions of a file content,
