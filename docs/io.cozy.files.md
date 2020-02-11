@@ -175,7 +175,7 @@ with the `application/shortcut` mime-type, they have a `.url` extension, and
 respect the [URL file
 format](http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficial_guide.html).
 
-They can have some `metadata`:
+They can have `metadata`:
 
 - `sharing-status` will be set if the link can be used to open a sharing. 2
   values are possible: `new` and `seen`, depending on the fact that the link
