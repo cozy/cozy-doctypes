@@ -178,7 +178,8 @@ format](http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficia
 They can have `metadata`:
 
 - `sharing-status` will be set if the link can be used to open a sharing. 2
-  values are possible: `new` and `seen`, depending on the fact that the link
+  values are possible: `new` and `seen`, depending on whether the link
+  has been opened.
   has been opened or not.
 - `target-cozy` is set to the cozy instance when relevant (mostly sharing
   and internal links)
