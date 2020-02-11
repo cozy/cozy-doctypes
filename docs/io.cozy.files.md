@@ -180,7 +180,6 @@ They can have `metadata`:
 - `sharing-status` will be set if the link can be used to open a sharing. 2
   values are possible: `new` and `seen`, depending on whether the link
   has been opened.
-  has been opened or not.
 - `target-cozy` is set to the cozy instance when relevant (mostly sharing
   and internal links)
 - `target-doctype` is the doctype of the destination of the link (when the link
