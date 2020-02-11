@@ -170,7 +170,7 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
 
 ### Shortcuts
 
-The shortcuts (or hyperlinks) are a special types of files. They are served
+Shortcuts (or hyperlinks) are a special type of files. They are served
 with the `application/shortcut` mime-type, they have a `.url` extension, and
 respect the [URL file
 format](http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficial_guide.html).
