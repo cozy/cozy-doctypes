@@ -177,16 +177,16 @@ format](http://www.lyberty.com/encyc/articles/tech/dot_url_format_-_an_unofficia
 
 They can have `metadata`:
 
-- `sharing-status` will be set if the link can be used to open a sharing. 2
+- `sharing.status` will be set if the link can be used to open a sharing. 2
   values are possible: `new` and `seen`, depending on whether the link
   has been opened.
-- `target-cozy` is set to the cozy instance when relevant (mostly sharing
-  and internal links)
-- `target-doctype` is the doctype of the destination of the link (when the link
+- `target.cozyMetadata.instance` is set to the cozy instance when relevant
+  (mostly sharing and internal links)
+- `target._type` is the doctype of the destination of the link (when the link
   goes to a sharing or document inside a cozy)
-- `target-mime` is the mime-type of the destination of the link (when it is a
+- `target.mime` is the mime-type of the destination of the link (when it is a
   file)
-- `target-app` is the slug of the destination app (internal links only).
+- `target.app` is the slug of the destination app (internal links only).
 
 #### Example (JSON format)
 
@@ -203,10 +203,16 @@ They can have `metadata`:
   "updated_at": "2020-02-10T20:38:04Z",
   "tags": [],
   "metadata": {
-    "sharing-status": "new",
-    "target-cozy": "https://alice.cozy.example/",
-    "target-doctype": "io.cozy.files",
-    "target-mime": "image/jpg"
+    "sharing": {
+      "status": "new"
+    },
+    "target": {
+      "cozyMetadata": {
+        "instance": "https://alice.cozy.example/"
+      },
+      "_type": "io.cozy.files",
+      "mime": "image/jpg"
+    }
   },
   "size": 62,
   "executable": false,
