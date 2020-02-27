@@ -34,7 +34,7 @@ The attributes of a file are:
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
 - `mime`: {string} the full mime-type
-- `icon`: {string} : Optionnal, a small svg file or the URL of an image to use as icon for this file
+- `icon`: {string} : Optional, a small SVG file or the URL of an image to use as icon for this file
 - `metadata`: {map} an optional map of metadata, with for example:
     - `width`: {number}
     - `height`: {number}
