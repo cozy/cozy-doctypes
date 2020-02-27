@@ -34,6 +34,7 @@ The attributes of a file are:
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
 - `mime`: {string} the full mime-type
+- `icon`: {string} : Optionnal, a small svg file or the URL of an image to use as icon for this file
 - `metadata`: {map} an optional map of metadata, with for example:
     - `width`: {number}
     - `height`: {number}
@@ -49,7 +50,6 @@ The attributes of a file are:
         - `created_at`: {date}: date of creation of the tag
         - `x`: {float}: x coordinate in the photo where the person is
         - `y`: {float}: y coordinate in the photo where the person is
-    - `icon`: {string} : A small svg file or the URL of an image to use as icon for this file
 
 It also has a relationship with its `parent` in the JSON-API representation.
 
