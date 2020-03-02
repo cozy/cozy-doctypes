@@ -34,7 +34,6 @@ The attributes of a file are:
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
 - `mime`: {string} the full mime-type
-- `icon`: {string} : Optional, a small SVG file or the URL of an image to use as icon for this file
 - `metadata`: {map} an optional map of metadata, with for example:
     - `width`: {number}
     - `height`: {number}
@@ -50,6 +49,7 @@ The attributes of a file are:
         - `created_at`: {date}: date of creation of the tag
         - `x`: {float}: x coordinate in the photo where the person is
         - `y`: {float}: y coordinate in the photo where the person is
+    - `icon`: {string} : A small SVG file to use as icon for this file (optional) 
 
 It also has a relationship with its `parent` in the JSON-API representation.
 
@@ -94,7 +94,8 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
       "metadata": {
         "datetime": "2018-01-02T20:38:04Z",
         "height": 1080,
-        "width": 1920
+        "width": 1920,
+        "icon": "<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd" transform="translate(0 2)"><rect width="32" height="26" y="2" fill="#B2D3FF" rx="2"/><path fill="#197BFF" d="M0 1a1 1 0 011-1h12c.55 0 1.31.31 1.71.71l.58.58c.4.4 1.15.71 1.71.71h13a2 2 0 012 2H17c-.55 0-1.31.31-1.71.71l-.58.58c-.4.4-1.16.71-1.72.71H1.01A1 1 0 010 5V1z"/></g></svg>"
       },
       "size": 12,
       "executable": false,
