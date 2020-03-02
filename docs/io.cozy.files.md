@@ -95,7 +95,7 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
         "datetime": "2018-01-02T20:38:04Z",
         "height": 1080,
         "width": 1920,
-        "icon": "<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><g fill="none" fill-rule="evenodd" transform="translate(0 2)"><rect width="32" height="26" y="2" fill="#B2D3FF" rx="2"/><path fill="#197BFF" d="M0 1a1 1 0 011-1h12c.55 0 1.31.31 1.71.71l.58.58c.4.4 1.15.71 1.71.71h13a2 2 0 012 2H17c-.55 0-1.31.31-1.71.71l-.58.58c-.4.4-1.16.71-1.72.71H1.01A1 1 0 010 5V1z"/></g></svg>"
+        "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><g fill='none' fill-rule='evenodd' transform='translate(0 2)'><rect width='32' height='26' y='2' fill='#B2D3FF' rx='2'/><path fill='#197BFF' d='M0 1a1 1 0 011-1h12c.55 0 1.31.31 1.71.71l.58.58c.4.4 1.15.71 1.71.71h13a2 2 0 012 2H17c-.55 0-1.31.31-1.71.71l-.58.58c-.4.4-1.16.71-1.72.71H1.01A1 1 0 010 5V1z'/></g></svg>"
       },
       "size": 12,
       "executable": false,
