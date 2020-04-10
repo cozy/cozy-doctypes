@@ -16,6 +16,12 @@
 
 ### Optional attributes (but some are important depending the context)
 
+- `recurrence`: {string} : this means that the bills is a recurring one and the value of this
+  attribute gives the frequency. Here is a list of possible values.
+    - `weekly`
+    - `monthly`
+    - `bi-monthly`
+    - `yearly`
 - `matchingCriterias`: {object} some criterias which can be used to match bills with bank
   operations
     - `labelRegex`: {string} (example: `"\\bcpam\\b"`) : regexp used to match operation label
