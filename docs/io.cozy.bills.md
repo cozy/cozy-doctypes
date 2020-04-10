@@ -16,7 +16,7 @@
 
 ### Optional attributes (but some are important depending the context)
 
-- `recurrence`: {String} : this means that the bills is a recurring one and the value of this
+- `recurrence`: {string} : this means that the bills is a recurring one and the value of this
   attribute gives the frequency. Here is a list of possible values.
     - `weekly`
     - `monthly`
