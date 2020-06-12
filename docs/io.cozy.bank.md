@@ -205,3 +205,19 @@ This doctype stores a year of daily balances :
   }
 }
 ```
+
+## io.cozy.bank.recurrence
+
+Stores a recurrence group information. Those objects are created by the recurrence service
+that tries to find recurring transactions. Transactions that are found as recurrent have
+a HasOne relationship to a `io.cozy.bank.recurrence` object.
+
+- `manualLabel`: {string} - The year of the balances
+- `automaticLabel`: {string} - A day (YYYY-MM-DD format) / balance (number) map
+- `amounts`: {Array<number>} - Amounts that can be matched to the recurrence (come from the transactions)
+- `categoryIds`: {Array<string>} - Category ids of the transactions that have been linked
+- `status`: {Enum<"ongoing","finished">} - A recurrence can be stated as "finished" if transactions should not longer match it. For example if a telco contract has finished.
+- `stats`: {Object} - Statistics used during matching
+- `stats.deltas.median` : Median time distance in days between operations. For example, for a monthly recurrence, this should be 30.
+
+
