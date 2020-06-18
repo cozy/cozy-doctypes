@@ -112,6 +112,7 @@ The following keys are reserved and have special meanings:
 - `updatedAt`: Last modification date of the cozy document
 - `updatedByApps`: List of objects representing the applications (slugs and versions) which modified the cozy document in its life and the last update date for each of those apps (one entry per slug, apps should just update the value)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
+- `sourceAccountIdentifier`: When the document was imported from a connector, identifier of the account on targeted web service (the email address most of the time)
 
 Note: All these attributes are optional and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
 
@@ -132,7 +133,8 @@ Note: All these attributes are optional and taken care by the apps modifying the
         "version": 3
       }
     ],
-    "sourceAccount": "xxxxx"
+    "sourceAccount": "xxxxx",
+    "sourceAccountIdentifier": "test@mail.fr"
   }
 }
 ```
