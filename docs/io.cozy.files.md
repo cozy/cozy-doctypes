@@ -49,7 +49,7 @@ The attributes of a file are:
         - `created_at`: {date}: date of creation of the tag
         - `x`: {float}: x coordinate in the photo where the person is
         - `y`: {float}: y coordinate in the photo where the person is
-    - `icon`: {string} : A small SVG file to use as icon for this file (optional) 
+    - `icon`: {string} : A small SVG file to use as icon for this file (optional)
 
 It also has a relationship with its `parent` in the JSON-API representation.
 
@@ -63,7 +63,7 @@ It appears in the JSON-API representation as a `refererenced_by` relationship.
 
 ### CozyMetadata
 
-The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.io/en/cozy-doctypes/docs/README/#document-metadata), but with some more fields:
+The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.io/en/cozy-doctypes/docs/#document-metadata), but with some more fields:
 
 - `createdOn`: {string} the instance URL on which the file has created (useful if the file is shared between several cozy instances)
 - `uploadedAt`: {date} the server date/time of the last upload (when the content was changed)
