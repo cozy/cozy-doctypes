@@ -6,6 +6,9 @@
 
 The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools.ietf.org/html/rfc6350), in that some of the attributes have been renamed for clarity. The attributes with a `?` are optional.
 
+- `indexes` : {object} Used to sort contacts in different ways
+    - `byFamilyNameGivenNameEmailCozyUrl`: {string}
+- `displayName` : {string} Displayed name in cozy applications
 - `fullname?`: {string} Unstructured representation of the name (example: `"Dr. Gregory House, M.D."`)
 - `name?`: {object} Optional structured representation of the name, with the following possible attributes:
     - `familyName?`: {string} (example: `"House"`)
@@ -16,7 +19,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 - `birthday?`: {date} (example: `"1959-05-15"`)
 - `note?`: {string}
 - `email?`: {array} An array of email addresses objects with the following attributes:
-    - `address`: {string} Email adress
+    - `address`: {string} Email address
     - `type?`: {string} Programmatic type of email (`"work"`, `"home"`, `"other"`)
     - `label?`: {string} A user-provided localized type of email (example: `"Work"`)
     - `primary?`: {boolean} Indicates a preferred-use address
