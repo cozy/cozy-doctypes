@@ -50,6 +50,9 @@ This doctypes stores informations about a Bank account:
   - `accountLabel`: {string} - The loan account label
   - `insuranceLabel`: {string} - The insurance label
   - `duration`: {number} - The loan duration in months
+- `relationships`: {Object} - Relationships to other documents
+  - `connection`: the `io.cozy.accounts` that was used to retrieve this document. This is used by Harvest to be able to edit an `io.cozy.bank.accounts`
+    through the "Configuration" tab of an `io.cozy.accounts`.
 
 ### Example
 
@@ -65,7 +68,13 @@ This doctypes stores informations about a Bank account:
   },
   "number": "03791 00048085818",
   "shortLabel": "Livret Dévelop. Durable",
-  "type": "Savings"
+  "type": "Savings",
+  "relationships": {
+    "connection": {
+      "_id": "2165d9a310deadbeeffc08d54c45404",
+      "_type": "io.cozy.accounts"
+    }
+  }
 }
 ```
 
