@@ -51,8 +51,11 @@ This doctypes stores informations about a Bank account:
   - `insuranceLabel`: {string} - The insurance label
   - `duration`: {number} - The loan duration in months
 - `relationships`: {Object} - Relationships to other documents
-  - `connection`: the `io.cozy.accounts` that was used to retrieve this document. This is used by Harvest to be able to edit an `io.cozy.bank.accounts`
+  - `connection`: {`HasOne<io.cozy.accounts>`} The account used to retrieve this document. This is used by Harvest to be able to edit an `io.cozy.bank.accounts`
     through the "Configuration" tab of an `io.cozy.accounts`.
+  - `checkingsAccount`: {`HasOne<io.cozy.bank.accounts>`} - In case of a credit card account, links to the bankaccount on which all the transactions will be debited
+     at the end of the month
+  - `owners`: {`HasMany<io.cozy.contacts>`} - List of owners for this account
 
 ### Example
 
@@ -125,7 +128,7 @@ This doctype stors informations about a bank transaction:
 
 - `label`: {string} - The label describing the transaction
 - `type`: {string} - A type in the list : `['none', 'credit card', 'cash', 'check', 'transfer', 'internal transfer', 'debit card', 'deposit', 'financial fee', 'direct debit']`
-- `date`: {date} - The date the transaction is emmited
+- `date`: {date} - The date the transaction is emitted
 - `dateOperation`: {date} - The date the transaction is registered in the account
 - `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} - The amount of the transaction
