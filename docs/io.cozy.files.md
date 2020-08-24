@@ -53,7 +53,8 @@ The attributes of a file are:
 
 It also has a relationship with its `parent` in the JSON-API representation.
 
-For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`.
+For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`. 
+Theses thumbnails' links are valid for 10 minutes. 
 
 ### References
 
