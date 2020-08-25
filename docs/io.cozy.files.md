@@ -34,7 +34,7 @@ The attributes of a file are:
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
 - `mime`: {string} the full mime-type
-- `metadata`: {map} an optional map of metadata, with for example:
+- `metadata`: {map} an optional map of metadata ([Full metadata description](io.cozy.files_metadata.md)), with for example:
     - `width`: {number}
     - `height`: {number}
     - `datetime`: {date} : date in original image file metadata
