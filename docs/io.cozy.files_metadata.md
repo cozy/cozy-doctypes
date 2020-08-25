@@ -19,6 +19,9 @@ For pictures files, like `jpg`, `png`, `gif`...
     - `created_at`: {date}: date of creation of the tag
     - `x`: {float}: x coordinate in the photo where the person is
     - `y`: {float}: y coordinate in the photo where the person is
+- `from`: {object}: describe where this document comes from 
+    - `device_id`: {string} an identifier of the device where the file comes from (can be the device's name, an UDID or else)
+    - `original_id`: {string} an identifier of the file on the device 
 
 
 ## Administrative documents
