@@ -32,6 +32,7 @@ This doctypes stores informations about a Bank account:
 - `number`: {string} - The bank account number in its institution
 - `iban`: {string} - The bank account international identifier
 - `serviceID`: {number} - In case of external service used to import transactions, this key can stores the service's account ID; can be `undefined` is the account isn't managed by any external service
+- `vendorId`: {string} - Id of the bank account on the vendor side
 - `loan`: {Object} - Specific properties for loan accounts. Will be undefined for all other account types
   - `contactName`: {string} - The name of the contact in the credit institution
   - `totalAmount`: {number} - The total amount of the loan
@@ -145,7 +146,8 @@ This doctype stors informations about a bank transaction:
 - `creditOperations`: {array[<io.cozy.bank.operations._id>]} - List of credit operations id
 - `debitOperations`: {array[<io.cozy.bank.operations._id>]} - List of debit operations id
 - `parent`: {_id} - In case of a split transaction, the one refers the global transaction the split one belongs to
-
+- `vendorId`: {string} - Id of the transaction on the vendor side
+- `vendorAccountId`: {string} - Id of the transaction's account on the vendor side
 
 For the dates, any string or integer which can be interpreted by new Date(date) is possible but the
 best the result of Date.toString() -> like 'Fri Mar 09 2018 19:04:40 GMT+0100 (CET)' which contains
