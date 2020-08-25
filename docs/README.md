@@ -47,7 +47,7 @@ for another doctype, feel free to open a PR with the description and role of you
   for apps & konnectors
 - [Autocategorization: cc.cozycloud.autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
 - [Exports: io.cozy.exports](io.cozy.exports.md): Instances exports
-- [Jobs: io.cozy/jobs](io.cozy.jobs.md): Instance jobs
+- [Jobs: io.cozy.jobs](io.cozy.jobs.md): Instance jobs
 - [OAuth Clients: io.cozy.oauth.clients](io.cozy.oauth.clients.md): OAuth clients informations of the stack
 - [OAuth Access Codes: io.cozy.oauth.access_codes](io.cozy.oauth.access_codes.md): Access codes specific to OAuth flow
 - [Triggers: io.cozy.triggers](io.cozy.triggers.md): Job triggers
