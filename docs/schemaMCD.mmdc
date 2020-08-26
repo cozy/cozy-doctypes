@@ -1,0 +1,215 @@
+classDiagram
+
+%% https://mermaid-js.github.io/mermaid-live-editor/#/edit
+
+%% =====================
+%% LEGENDE
+%% =====================
+%% '#' devant un attribut indique que seule la stack est autorisée à le valoriser
+%% les'()' à la fin du nom d'un attribut indique que l'objet qu'il contient est décrit ailleurs et lié à l'objet courant (cette notation UML de la fonction est donc détournée ici)
+%% '<|--' lien de type héritage indique la présence des attrbuts du parent chez l'enfant.
+%% '*--` lien indiquant qu'un attribut est présent dans l'objet d'origine qu'il contient l'objet pointé, si le nom n'est pas identiqué, un label esta jouté sur le lien
+%% `o--`lien indiquant que l'attribut est une liste des objets pointé
+%% `label1:label2` est un attribut de type objet (aka. map) `label1:` contenant un attribut 'label2:' mais non décrit comme un objet à par entier pour simplifier la lecture
+
+
+%% =====================
+%% Common stuff
+%% =====================
+
+	class DOCTYPES_COZY {
+        <<abstract>>
+        # _id
+        ~cozymetadata()
+        ~relationships()*
+	}
+    class relationships{
+		<<object>>
+        objectName:
+        data:_id
+        data:_type
+        data:_protocol()
+    }
+    class _protocol{
+        <<enumeration>>
+        bitwarden
+    }
+    class cozyMetadata{
+		<<object>>
+        doctypeVersion
+        metadataVersion
+        createdAt
+        createdByApp
+        createdByAppVersion
+        updatedAt
+        updatedByApps()
+        sourceAccount
+        sourceAccountIdentifier
+        createdOn
+        uploadedAt
+        uploadedOn
+        # uploadedBy:slug
+        # uploadedBy:version
+        # uploadedBy:oauthClient
+    }
+    class updateByApps{
+        <<object>>
+        slug
+        date
+        version
+    }
+
+%% =====================
+%% Business Data
+%% =====================
+
+%% =====================
+    class ACCOUNTS ~io.cozy.accounts~ {
+        <<doctype>>
+        auth:credentials_encrypted
+        auth:login
+        auth:password
+        data()
+        label
+        folderPath
+        namepath
+        state
+        TWOFA_NEEDED:TWOFA_NEEDED.EMAIL
+        TWOFA_NEEDED:TWOFA_NEEDED.SMS
+        TWOFA_NEEDED_RETRY
+        RESET_SESSION
+        twoFACode
+        mutedErrors
+        relationships(parent,vaultCipher...)
+    }
+%% =====================
+    class BANK_ACCOUNTS ~io.cozy.bank.accounts~{
+        <<doctype>>
+        institutionLabel
+        number
+        label
+        balance
+        type()
+        
+        iban
+        # serviceID
+        connection()
+        checkingsAccount()
+        loan()
+        owners()
+    }
+    class type__bankaccount{
+        <<enumeration>>
+        none
+        bank
+        cash
+        asset
+        credit card
+        liability
+    }
+    class loan{
+        <<object>>
+        contactName
+        totalAmount
+        availableAmount
+        usedAmount
+        subscriptionDate
+        ...TBC
+    }
+%% =====================
+    class CONTACTS~io.cozy.contacts~{
+        <<doctype>>
+        ...TBC
+    }
+%% =====================
+    class FILES~io.cozy.files~{
+        <<doctype>>
+        type()
+        name
+        trashed
+        md5sum
+        created_at
+        updated_at
+        tags
+        size
+        executable
+        class
+        mime
+        parent()
+    }
+    class type__file{
+        <<enumeration>>
+        file
+        directory
+    }
+    class metadata{
+        <<object>>
+        datetime
+        datetimeLabel
+        contentAuthor
+        classification
+        subClassification
+        categories
+        subjects
+        width
+        height
+        gps:lat
+        gps:long
+        gps:city
+        gps:zip
+        gps:country
+        persons:name
+        persons:created_at
+        persons:x
+        persons:y
+
+    }
+
+%% =====================
+%% Tech Data
+%% =====================
+
+    class TRIGGERS~io.cozy.triggerd~{
+        <<doctype>>
+        type
+        worker
+        arguments
+        debounce
+        message:konnector
+        message:account()
+    }
+
+%% =====================
+%% links between objects
+%% =====================
+
+    DOCTYPES_COZY <|-- FILES : inherits from
+    DOCTYPES_COZY <|-- ACCOUNTS : inherits from
+    DOCTYPES_COZY <|-- BANK_ACCOUNTS : inherits from
+    updateByApps "1" o-- "0..*" cozyMetadata : updateByApps()
+    cozyMetadata "1" *-- "0..1" DOCTYPES_COZY
+    relationships "1" o-- "0..*" DOCTYPES_COZY : list
+    _protocol .. relationships
+    BANK_ACCOUNTS .. type__bankaccount
+    BANK_ACCOUNTS "0..1" *-- "1" BANK_ACCOUNTS : checkingAccounts()
+    BANK_ACCOUNTS "1" *-- "0..*" ACCOUNTS : connection()
+    BANK_ACCOUNTS "1..n" *-- "0..n" CONTACTS : owners
+    BANK_ACCOUNTS "0..1" *-- "1" loan : loan()
+    FILES "1" *-- "0..n" FILES~io.cozy.files~ : parent
+    FILES .. type__file : file()
+    metadata o-- FILES
+    ACCOUNTS "0..1" *-- "1" ACCOUNTS : relationships()
+    ACCOUNTS "0..1" --* "1" TRIGGERS : message.account()
+
+%% =====================
+%% links to Cozy doc
+%% =====================
+
+    link cozyMetadata "https://docs.cozy.io/en/cozy-doctypes/docs/#document-metadata"
+    link relashionships "https://docs.cozy.io/en/cozy-doctypes/docs/#relationships"
+    link ACCOUNTS "https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.accounts/" "see in docs.io.cozy"
+    link BANK_ACCOUNTS "https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.bank/#iocozybankaccounts"
+    link CONTACTS "https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.contacts/#cozy-contacts-doctype"
+    link FILES "https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.files/"
+    link TRIGGERS "https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.triggers/"
+    link metadata "https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.files_metadata/"
