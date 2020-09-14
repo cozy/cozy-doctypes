@@ -8,7 +8,7 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
 
 `io.cozy.accounts` attributes are:
 
-- `account_type` (_deprecated_) : {string} Slug of the konnector the account is related to.
+- `account_type`: {string} Slug of the konnector the account is related to. Note this could be a [relationship](https://github.com/cozy/cozy-doctypes/#relationships) to the konnector manifest, but we keep this field for historical reasons.
 - `auth`: {object} Contains authentification data, typically a couple with `login`/`password`. It could also contain an attribute `token` for OAuth konnectors.
 - `data`: {object} Additional custom data.
 - `label`: {string} Label given by user.
