@@ -5,6 +5,7 @@ classDiagram
 %% =====================
 %% LEGENDE
 %% =====================
+%%
 %% '#' devant un attribut indique que seule la stack est autorisée à le valoriser
 %% les'()' à la fin du nom d'un attribut indique que l'objet qu'il contient est décrit ailleurs et lié à l'objet courant (cette notation UML de la fonction est donc détournée ici)
 %% '<|--' lien de type héritage indique la présence des attrbuts du parent chez l'enfant.

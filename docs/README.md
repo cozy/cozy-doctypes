@@ -13,6 +13,8 @@ for another doctype, feel free to open a PR with the description and role of you
 
 ## Cozy doctypes
 
+This is an in progress [MCD like diagram](schemaMCD.pdf) featuring hyperlinks to the documention below.
+
 - [io.cozy.accounts](io.cozy.accounts.md): Konnector accounts
 - [io.cozy.apps](io.cozy.apps.md): Apps installed in the Cozy
   - [io.cozy.apps.suggestions](io.cozy.apps.suggestions.md): Suggestions for apps that the user might find useful
