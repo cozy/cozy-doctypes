@@ -19,7 +19,9 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
   - `TWOFA_NEEDED_RETRY`: The 2FA code provided by the user is wrong, the user can retry by providing a new one. `TWO_FA_NEEDED_RETRY.EMAIL` and `TWO_FA_NEEDED_RETRY.SMS` can also be used.
   - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
 - `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
-- `mutedErrors`: {array} A list of errors that that have been discarded by the user and are no longer shown in the UI.
+- `mutedErrors`: {array} A list of errors that that have been discarded by the user and are no longer shown in the UI. See below for more information.
+
+## Attributes
 
 ### `auth`
 
@@ -32,14 +34,36 @@ The `auth` attribute may also contain other data, like `accountName`, `folderPat
 
 The `auth` attributes also contain all values for the fields attribute specified in the `manifest.konnector` file.
 
+### `login`
+
+Some konnectors do not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
+
+
+### `mutedErrors`
+
+This field is used to keep track of konnector errors that have been muted by the user and shouldn't be featured in the UI anymore.
+
+```json
+{
+  "account_type": "example-konnector",
+  "auth": {
+    "identifier": "0000000000"
+  },
+  "mutedErrors": [
+    {
+      "type": "LOGIN_FAILED",
+      "mutedAt": "2019-12-01T00:48:01.404911778Z"
+    }
+  ]
+}
+```
+
 ## Relationships
 
 ### `parent`
 
 An account may have a `parent` relationship. It is used to indicate that this accounts depends on another one.
 Generally, the konnector should be able to handle by itself this kind of relationshiop, like querying the database to get the information it needs. A `parent` relationship is aimed to be an account overriden by the account it is linked to, but it can also be use as an _aggregator_ account. See [Cozy-stack documentation about aggregator accounts](https://docs.cozy.io/en/cozy-stack/konnectors-workflow/#aggregator-accounts).
-
-#### Example
 
 ```json
 {
@@ -54,11 +78,9 @@ Generally, the konnector should be able to handle by itself this kind of relatio
 }
 ```
 
-### Vault Cipher
+### Vault Cipher `vaultCipher`
 
 An account can be synced in a password manager. In that case, the `vaultCipher` relationship can be used to store data used to synchronize the document with the remote endpoint.
-
-#### Example
 
 ```json
 {
@@ -74,13 +96,52 @@ An account can be synced in a password manager. In that case, the `vaultCipher` 
 }
 ```
 
-### About `login`
+### Contracts `contracts`
 
-Some konnectors do not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
+When the connector brings contracts (in the case of banking connectors, contracts means individual banking accounts), the
+connector stores information on the contracts in the `contracts` relationship. Relationship items store extra information
+in the `metadata` key of the relationship item.
 
-### Examples
+- `vendorId`: the id of the contract on the vendor side
+- `deletedByVendor`: whether it was deleted on the vendor side
+- `imported`: whether it should be imported on the vendor side
+- `label`: Label of the contract
 
-#### Freemobile (regular connector, with current deprecation)
+
+```json
+{
+  "relationships": {
+    "contracts": {
+      "data": [
+        {
+          "_id": "77b662b903f1bac7a78cf8cc12806479",
+          "_type": "io.cozy.bank.accounts",
+          "metadata": {
+            "deletedByVendor": false,
+            "imported": true,
+            "label": "Compte chèque",
+            "vendorId": "1337"
+          }
+        },
+        {
+          "_id": "07c731e303e0d50a5407b7eca9389890",
+          "_type": "io.cozy.bank.accounts",
+          "metadata": {
+            "deletedByVendor": false,
+            "imported": false,
+            "label": "Assurance Vie",
+            "vendorId": "1338"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+## Examples
+
+### Freemobile (regular connector, with current deprecation)
 
 ```json
 {
@@ -110,7 +171,7 @@ What we aim for:
 }
 ```
 
-#### Caisse d'Épargne (Linxo connector)
+### Caisse d'Épargne (Linxo connector)
 
 The connectors based on Linxo API are storing specific informations into `data` attribute.
 
@@ -132,24 +193,5 @@ The connectors based on Linxo API are storing specific informations into `data` 
     "token": "f415e",
     "uuid": "deadbeef-912e-4ba8-9378-067c5c3e4f54"
   }
-}
-```
-
-## `mutedErrors` field
-
-This field is used to keep track of konnector errors that have been muted by the user and shouldn't be featured in the UI anymore.
-
-```json
-{
-  "account_type": "example-konnector",
-  "auth": {
-    "identifier": "0000000000"
-  },
-  "mutedErrors": [
-    {
-      "type": "LOGIN_FAILED",
-      "mutedAt": "2019-12-01T00:48:01.404911778Z"
-    }
-  ]
 }
 ```
