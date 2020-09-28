@@ -4,7 +4,7 @@
 
 ## `io.cozy.rules`
 
-This doctype represents rules, used to target documents in the Cozy.
+This doctype represents rules, used to retrieve documents in the Cozy.
 
 - `_id`: {string} - The fixed rule ID, that should respect this nomenclature: `<editor-reverse-domain-name>.rules/<rule-name>`. For instance: `io.cozy.rules/payslips`.
 - `description`: {string} - The rule description.
@@ -13,7 +13,7 @@ This doctype represents rules, used to target documents in the Cozy.
   - `limit`: {number} - The maximum number of documents to retrieve with this rule.
   - `selector`: {object} - The selector to target documents, following the [Mango syntax](https://docs.couchdb.org/en/stable/api/database/find.html#find-selectors)
 
-Note the rule attributes, i.e. `limit` and `selector` can be parametrised by using a `{var-name}` notation.
+Note the rule attributes, i.e. `limit` and `selector` can be parametrised by using a `{var-name}` notation. In the example below, `{date}` is a rule parameter used to find payslips before this date, while `{limit}` restricts the number of documents retrieved.
 
 
 ### Example
@@ -24,11 +24,11 @@ Note the rule attributes, i.e. `limit` and `selector` can be parametrised by usi
   "description": "Get payslips from the given date",
   "doctype": "io.cozy.files",
   "rule": {
-    "limit": {limit},
+    "limit": "{limit}",
     "selector": {
       "cozyMetadata.classification": "payslip",
       "cozyMetadata.createdAt": {
-        "$lt": {date}
+        "$lt": "{date}"
       }
     }
   }

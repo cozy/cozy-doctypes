@@ -1,10 +1,10 @@
 [Table of contents](README.md#table-of-contents)
 
-# Cozy Todos doctype
+# Cozy Todos doctypes
 
 ## `io.cozy.todos.list`
 
-This doctype represents a list of todos:
+This doctype represents a todo list:
 
 - `title`: {string} - The list title
 - `description`: {string} - The list description
@@ -54,17 +54,20 @@ This doctype represents a todo item:
 
 - `files`: {object} - Files linked to the todo item.
 - `contacts`: {object} - Contacts linked to the todo item.
-- `rules`: {object} - The rules used to match others relationships. See below or in the `rules` [doctype](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.rules) for more details.
+- `rules`: {object} - The rules used to match other relationships, e.g. a rule used to match specific files, such as payslips. See below or in the `rules` [doctype](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.rules) for more details.
 
 
 #### Rules
 
-A file or contact relationship may be associated to a rule, used to matched the documents, e.g. a rule targeting the last 3 files payslips. In which case, the associated rule is specified in a `data.metadata` object in the relationship:
+
+When a document has been linked to a todo through the use of a rule, the rule that was used to find the document is saved in the `metadata` of the relationship.
 
 - `metadata`: {object}
   - `rules`: {object}
     - `matchedBy`: {string} : The rule ID
     - `{...}`: additional fields used as rule parameters, e.g. `limit`, `date`, etc.
+
+In the example below, a rule is targeting the last 3 files payslips from a given date. 
 
 ### Example
 
