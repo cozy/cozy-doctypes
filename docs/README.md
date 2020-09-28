@@ -36,9 +36,14 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.permissions](io.cozy.permissions.md): Permissions of the instance
 - [io.cozy.photos](io.cozy.photos.md): Photos
 - [io.cozy.procedures](io.cozy.procedures.md): Administrative procedures
+- [io.cozy.rules](io.cozy.rules.md): Rules
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [io.cozy.settings](io.cozy.settings.md): Instance settings
 - [io.cozy.sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
+- [io.cozy.todos](io.cozy.todos.md): Todos
+  - [io.cozy.todos.list](io.cozy.todos.md#iocozytodoslist): Todos list
+  - [io.cozy.todos.item](io.cozy.todos.md#iocozytodositem): Todos item
+
 
 ## Technical doctypes
 
@@ -104,6 +109,31 @@ At the moment the only available external relationship is `bitwarden` with the f
   }
 }
 ```
+
+#### Relationships with metadata
+
+A relationship can store additional information, in the `metadata` attribute. For instance, see the [contracts](https://github.com/cozy/cozy-doctypes/blob/master/docs/io.cozy.accounts.md#contracts-contracts) relationship for the accounts.
+
+```json
+"relationships": {
+  "contracts": {
+    "data": [
+      {
+        "_id": "77b662b903f1bac7a78cf8cc12806479",
+        "_type": "io.cozy.bank.accounts",
+        "metadata": {
+          "deletedByVendor": false,
+          "imported": true,
+          "label": "Compte chèque",
+          "vendorId": "1337"
+        }
+      }
+    ]
+  }
+}
+
+```
+
 
 ### Document metadata
 
