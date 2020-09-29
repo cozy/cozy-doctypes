@@ -8,15 +8,14 @@ This is a special doctype which can only be created from an app. We are using it
 
 ## Attributes
 
-| Attribute | Role |
-|-----------|------|
-|`arguments`| Arguments related to the `type` attribute. For example it's a cron configuration when the `type` is set to `@cron`. |
-|`debounce`| Amount of time until the job cannot be run again. This attribute is used to limite the amount of jobs in a burst. |
-|`message`| Parameters to pass to the the worker. For example, when the `worker` is set to `konnector`, `message` contains the related konnector and the related account. |
-|`options`| Parameters related to the job.|
-|`type`| Type of trigger. Can be `@at`, `@cron`, `@event`, `@every`, and `@in`. See the [stack documentation](https://github.com/cozy/cozy-stack/blob/master/docs/jobs.md) for more informations.
-|`worker`| Type of worker. Can be `konnector` or `sendmail`.|
-
+| Attribute   | Role                                                                                                                                                                                     |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `arguments` | Arguments related to the `type` attribute. For example it's a cron configuration when the `type` is set to `@cron`.                                                                      |
+| `debounce`  | Amount of time until the job cannot be run again. This attribute is used to limite the amount of jobs in a burst.                                                                        |
+| `message`   | Parameters to pass to the the worker. For example, when the `worker` is set to `konnector`, `message` contains the related konnector and the related account.                            |
+| `options`   | Parameters related to the job.                                                                                                                                                           |
+| `type`      | Type of trigger. Can be `@at`, `@cron`, `@event`, `@every`, and `@in`. See the [stack documentation](https://github.com/cozy/cozy-stack/blob/master/docs/jobs.md) for more informations. |
+| `worker`    | Type of worker. Can be `konnector` or `sendmail`.                                                                                                                                        |
 
 ## Example
 

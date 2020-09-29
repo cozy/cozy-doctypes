@@ -10,25 +10,25 @@ The `com.ecoledirecte.notes` doctype is used to store the notes for a given stud
 
 The available attributes in a `com.ecoledirecte.notes` document are :
 
-* `student`: {string} - Student unique id
-* `devoir`: {string} - devoir label
-* `codeMatiere`: {string} - subject unique code
-* `libelleMatiere`: {string} - subject label
-* `codeSousMatiere`: {string} - sub subject code
-* `typeDevoir`: {string} - label for homework type
-* `enLettre`: {boolean} - ?
-* `coef`: {number} - coefficient
-* `noteSur`: {number} - note total
-* `valeur`: {float} - note value
-* `nonSignificatif`: {boolean} - should this note be used in average calculation I suppose
-* `date`: {date} - date of the note
-* `dateSaisie`: {date} - date when the note was typed
-* `valeurisee`: {boolean} - ?
-* `moyenneClasse`: {float} - class average
-* `elementsProgramme`: {array} - liste of competencies related to this devoir
-  * `descriptiif`: {string} - description
-  * `idElemProg`: {number} - program item number
-  * `valeur`: {number} -  value, ?
-  * `cdt`: {boolean} -  ?
-  * `idCompetence`: {number} - competency id
-  * `libelleCompetence`: {string} - comptency label
+- `student`: {string} - Student unique id
+- `devoir`: {string} - devoir label
+- `codeMatiere`: {string} - subject unique code
+- `libelleMatiere`: {string} - subject label
+- `codeSousMatiere`: {string} - sub subject code
+- `typeDevoir`: {string} - label for homework type
+- `enLettre`: {boolean} - ?
+- `coef`: {number} - coefficient
+- `noteSur`: {number} - note total
+- `valeur`: {float} - note value
+- `nonSignificatif`: {boolean} - should this note be used in average calculation I suppose
+- `date`: {date} - date of the note
+- `dateSaisie`: {date} - date when the note was typed
+- `valeurisee`: {boolean} - ?
+- `moyenneClasse`: {float} - class average
+- `elementsProgramme`: {array} - liste of competencies related to this devoir
+  - `descriptiif`: {string} - description
+  - `idElemProg`: {number} - program item number
+  - `valeur`: {number} -  value, ?
+  - `cdt`: {boolean} -  ?
+  - `idCompetence`: {number} - competency id
+  - `libelleCompetence`: {string} - comptency label

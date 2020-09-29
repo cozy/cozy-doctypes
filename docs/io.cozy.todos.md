@@ -14,7 +14,6 @@ This doctype represents a todo list:
 
 - `items`: {object} - The list items
 
-
 ### Example
 
 ```json
@@ -40,7 +39,6 @@ This doctype represents a todo list:
 }
 ```
 
-
 ## `io.cozy.todos.item`
 
 This doctype represents a todo item:
@@ -55,7 +53,6 @@ This doctype represents a todo item:
 - `files`: {object} - Files linked to the todo item.
 - `contacts`: {object} - Contacts linked to the todo item.
 - `docrules`: {object} - The rules used to match documents from other relationships, e.g. a rule used to match specific files, such as payslips. See below or in the `docrules` [doctype](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.docrules) for more details.
-
 
 #### DocRules
 

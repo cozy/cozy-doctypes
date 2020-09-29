@@ -16,11 +16,11 @@ the OAuth2 flow.
 - `registration_access_token` {string}: Token used for the web instance
   onboarding
 - `allow_login_scope` {bool}: Allow (or not) a login scope generation
-- `redirect_uris` {[]string}: List of URIs used for redirection after login,
+- `redirect_uris` {\[]string}: List of URIs used for redirection after login,
   declared by the client. Part of the official OAuth Standard
-- `grant_types` {[]string}: Kind of grant for the client (`authorization_code` or
+- `grant_types` {\[]string}: Kind of grant for the client (`authorization_code` or
   `refresh_token`). Part of the official OAuth Standard
-- `response_types` {[]string}: Kind of responses (`code`). Part of the official
+- `response_types` {\[]string}: Kind of responses (`code`). Part of the official
   OAuth Standard
 - `client_name` {string}: Client name
 - `client_kind` {string}: Client kind (mobile, browser, desktop, ...). Optional.

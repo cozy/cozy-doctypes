@@ -11,44 +11,45 @@ When installing a konnector, the Cozy stack creates a new `io.cozy.konnector` do
 `io.cozy.konnectors` are used by [Cozy-Store](http://github.com/cozy/cozy-store/) to install and uninstall konnectors, and by [Cozy-Collect](http://github.com/cozy/cozy-collect/) to manage [accounts](io.cozy.accounts.md) for konnectors
 
 ## Attributes
+
 ### Retrieved from `manifest.konnector`
 
 The available attributes in a `io.cozy.konnectors` document are :
 
-* `categories`
-* `data_types`
-* `developer`
-* `doctypes`
-* `editor`
-* `fields`
-* `frequency` - Value can be: `['hourly', 'daily', 'weekly', 'monthly']`
-* `icon`
-* `langs`
-* `language`
-* `license`
-* `locales`
-* `messages`
-* `name`
-* `name_prefix`
-* `notifications`
-* `oauth`
-* `parameters`
-* `permissions`
-* `platforms`
-* `screenshots`
-* `slug`
-* `source`
-* `state`
-* `tags`
-* `time_interval`
-* `type`
-* `vendor_link`
-* `version`
+- `categories`
+- `data_types`
+- `developer`
+- `doctypes`
+- `editor`
+- `fields`
+- `frequency` - Value can be: `['hourly', 'daily', 'weekly', 'monthly']`
+- `icon`
+- `langs`
+- `language`
+- `license`
+- `locales`
+- `messages`
+- `name`
+- `name_prefix`
+- `notifications`
+- `oauth`
+- `parameters`
+- `permissions`
+- `platforms`
+- `screenshots`
+- `slug`
+- `source`
+- `state`
+- `tags`
+- `time_interval`
+- `type`
+- `vendor_link`
+- `version`
 
 ### Other Attributes
 
-| Attribute | Role |
-|-----------|------|
+| Attribute | Role                                                                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `state`   | Store the installation state of the konnector. Value can be `AVAILABLE`, `INSTALLING`, `UPGRADING`, `UNINSTALLING`, `INSTALLED`, `READY` |
 
 ## Example

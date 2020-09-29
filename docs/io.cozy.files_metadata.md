@@ -1,4 +1,3 @@
-
 # Metadata on `io.cozy.files` documents
 
 ## Image files
@@ -9,17 +8,16 @@ For pictures files, like `jpg`, `png`, `gif`...
 - `height`: {number}
 - `datetime`: {date} : date in original image file metadata
 - `gps`: {map} : localization metadata with the following attributes
-    - `lat`: {float}: latitude
-    - `long`: {float}: longitude
-    - `city`: {string}: nearest city (optional)
-    - `zip`: {string}: postal code of the nearest city (optional)
-    - `country`: {string}: name of the associated country if any (optional)
+  - `lat`: {float}: latitude
+  - `long`: {float}: longitude
+  - `city`: {string}: nearest city (optional)
+  - `zip`: {string}: postal code of the nearest city (optional)
+  - `country`: {string}: name of the associated country if any (optional)
 - `persons`: {array}: the maps can have the following attributes (optional)
-    - `name`: {string}: then name of the tagged person on the photo
-    - `created_at`: {date}: date of creation of the tag
-    - `x`: {float}: x coordinate in the photo where the person is
-    - `y`: {float}: y coordinate in the photo where the person is
-
+  - `name`: {string}: then name of the tagged person on the photo
+  - `created_at`: {date}: date of creation of the tag
+  - `x`: {float}: x coordinate in the photo where the person is
+  - `y`: {float}: y coordinate in the photo where the person is
 
 ## Administrative documents
 
@@ -28,8 +26,8 @@ Mostly imported by the connectors, Cozy stores many different types of administr
 ### Data structure
 
 #### Common attributes
-These attributes are shared by all the document types covered by the specification.
 
+These attributes are shared by all the document types covered by the specification.
 
 - `classification`: {string} Document types
 - `datetime` : {date} Functional date of the document, most of the time the document issue date
@@ -37,14 +35,13 @@ These attributes are shared by all the document types covered by the specificati
 - `contentAuthor`: {string} Author of the content of the document, can be different of the source connector
 
 #### Other Attributes
+
 These attributes depend on the `classification`.
 
-
--  `subClassification`: {string} Subtype of the document (ex: invoice, payment_statement, payment_schedules)
--  `categories`: {array of strings} List of tags referring to the field of activity, can be deduced from the categories of connectors
--  `subjects` : {array of strings} List of tags referring to the subject of the document
+- `subClassification`: {string} Subtype of the document (ex: invoice, payment_statement, payment_schedules)
+- `categories`: {array of strings} List of tags referring to the field of activity, can be deduced from the categories of connectors
+- `subjects` : {array of strings} List of tags referring to the subject of the document
   ...
-
 
 ### Description of different document types
 
@@ -92,16 +89,16 @@ These attributes depend on the `classification`.
 
 #### Contracts
 
- - `classification` : {string} `'contract'`
- - `datetime` : {date} Equals to `startDate`
- - `datetimeLabel` : {string} `'startDate'`
- - `contentAuthor` : {string}
- - `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`]
- - `subjects` : {array of strings} [`'house'`, `'car'`, `'health'`, `'life'`, `'rent'`]
- - `contractReference` : {string} Reference of the contract
- - `issueDate` : {date} Issue date of the document
- - `startDate` : {date} First day of the validity period
- - `endDate` : {date} Last day of the validity period
+- `classification` : {string} `'contract'`
+- `datetime` : {date} Equals to `startDate`
+- `datetimeLabel` : {string} `'startDate'`
+- `contentAuthor` : {string}
+- `categories` : {array of strings} [`'insurance'`, `'employment'`, `'health'`, `'energy'`, `'phone'`, `'isp'`, `'real_estate'`]
+- `subjects` : {array of strings} [`'house'`, `'car'`, `'health'`, `'life'`, `'rent'`]
+- `contractReference` : {string} Reference of the contract
+- `issueDate` : {date} Issue date of the document
+- `startDate` : {date} First day of the validity period
+- `endDate` : {date} Last day of the validity period
 
 #### Certificates
 
@@ -182,10 +179,10 @@ These attributes depend on the `classification`.
 - `classification` : {string} `'office'`
 - `subClassification` : {string} [`'textpad'`, `'spreadsheet'`, `'slides'`]
 
-
 ### Examples
 
 #### Invoices, payment statements, payment schedules
+
 ```js
 // invoice - bouygues telecom
 'metadata': {
@@ -254,6 +251,7 @@ These attributes depend on the `classification`.
   ...
 }
 ```
+
 ```js
 // tax return on income
 'metadata': {
@@ -288,7 +286,6 @@ These attributes depend on the `classification`.
 ```
 
 #### Certificates
-
 
 ```js
 // contrat certificate - EDF
@@ -361,9 +358,7 @@ These attributes depend on the `classification`.
 }
 ```
 
-
 #### Identity documents
-
 
 ```js
 // id card

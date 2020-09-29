@@ -4,7 +4,6 @@
 
 Cozy can stores and manipulate bank related datas, distributed across several doctypes.
 
-
 ## `io.cozy.bank.settings`
 
 This doctype store informations about Bank application settings. There is only one document, by default:
@@ -19,7 +18,6 @@ This doctype store informations about Bank application settings. There is only o
   }
 }
 ```
-
 
 ## `io.cozy.bank.accounts`
 
@@ -134,7 +132,7 @@ This doctype stors informations about a bank transaction:
 - `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} - The amount of the transaction
 - `currency`: {string} - A 3 uppercased chars defining the currecny used for the transaction as stated in [ISO4217](https://www.currency-iso.org/en/home/tables/table-a1.html)
-- `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated. This property should be hydrated by the connector. See the «&nbsp;categories&nbsp;» section below to know more about categories
+- `automaticCategoryId`: {string} - A category that apply to the transaction and is automatically calculated. This property should be hydrated by the connector. See the « categories » section below to know more about categories
 - `manualCategoryId`: {string} - A category that apply to the transaction and is manually selected by the user
 - `cozyCategoryId`: {string} - A category found by Cozy
 - `cozyCategoryProba`: {number} - The probability of Cozy category
@@ -145,7 +143,7 @@ This doctype stors informations about a bank transaction:
 - `reimbursements`: {array[<io.cozy.bills._id>]} - List of bills id.
 - `creditOperations`: {array[<io.cozy.bank.operations._id>]} - List of credit operations id
 - `debitOperations`: {array[<io.cozy.bank.operations._id>]} - List of debit operations id
-- `parent`: {_id} - In case of a split transaction, the one refers the global transaction the split one belongs to
+- `parent`: {\_id} - In case of a split transaction, the one refers the global transaction the split one belongs to
 - `vendorId`: {string} - Id of the transaction on the vendor side
 - `vendorAccountId`: {string} - Id of the transaction's account on the vendor side
 
@@ -182,7 +180,6 @@ Other category properties are to be set by other sources: the user or Cozy Banks
   "type": "transfer"
 }
 ```
-
 
 ## `io.cozy.bank.balancehistories`
 
@@ -230,8 +227,6 @@ a HasOne relationship to a `io.cozy.bank.recurrence` object.
 - `automaticLabel`: {string} - A day (YYYY-MM-DD format) / balance (number) map
 - `amounts`: {Array<number>} - Amounts that can be matched to the recurrence (come from the transactions)
 - `categoryIds`: {Array<string>} - Category ids of the transactions that have been linked
-- `status`: {Enum<"ongoing","finished">} - A recurrence can be stated as "finished" if transactions should not longer match it. For example if a telco contract has finished.
+- `status`: {Enum&lt;"ongoing","finished">} - A recurrence can be stated as "finished" if transactions should not longer match it. For example if a telco contract has finished.
 - `stats`: {Object} - Statistics used during matching
 - `stats.deltas.median` : Median time distance in days between operations. For example, for a monthly recurrence, this should be 30.
-
-

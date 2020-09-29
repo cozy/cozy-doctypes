@@ -5,49 +5,53 @@
 This doctype describes a sharing, ie an action made by some user to share some
 documents and files from her cozy instance to other people.
 
-* An identifier (the same for all members of the sharing)
-* A list of `members`. The first one is the owner. For each member,
+- An identifier (the same for all members of the sharing)
+- A list of `members`. The first one is the owner. For each member,
   we have the URL of the cozy, a public name, an email, a status and some
   credentials to authorize the transfer of data between the owner and the
   recipients
-* A `description` (one sentence that will help people understand what is shared
+- A `description` (one sentence that will help people understand what is shared
   and why)
+
+
 - a flag `active` that says if the sharing is currently active for at least
   one member
 - a flag `owner`, true for the document on the cozy of the sharer, and absent
   on the other cozy instance
-* a flag `open_sharing`:
-  * `true` if any member of the sharing can add a new recipient
-  * `false` if only the owner can add a new recipient
-* Some technical data (`created_at`, `updated_at`, `app_slug`, `preview_path`,
+
+
+- a flag `open_sharing`:
+  - `true` if any member of the sharing can add a new recipient
+  - `false` if only the owner can add a new recipient
+- Some technical data (`created_at`, `updated_at`, `app_slug`, `preview_path`,
   `triggers`, `credentials`)
-* A list of sharing `rules`, each rule being composed of:
-  * a `title`, that will be displayed to the recipients before they accept the
+- A list of sharing `rules`, each rule being composed of:
+  - a `title`, that will be displayed to the recipients before they accept the
     sharing
-  * a `doctype`
-  * a `selector` (by default, it’s the `id`) and `values` (one identifier, a
+  - a `doctype`
+  - a `selector` (by default, it’s the `id`) and `values` (one identifier, a
     list of identifiers, files and folders inside a folder, files that are
     referenced by the same document, documents bound to a previous sharing rule)
-  * `local`: by default `false`, but it can false `true` for documents that are
+  - `local`: by default `false`, but it can false `true` for documents that are
     useful for the preview page but doesn’t need to be send to the recipients
     (e.g. a setting document of the application)
-  * `add`: a behavior when a new document matches this rule (the document is
+  - `add`: a behavior when a new document matches this rule (the document is
     created, or it was a document that didn’t match the rule and is modified and
     the new version matches the rule):
-    * `none`: the updates are never propagated (the default)
-    * `push`: the updates made on the owner are sent to the recipients
-    * `sync`: the updates on any member are propagated to the other members
-  * `update`: a behavior when a document matched by this rule is modified. Can be:
-    * `none`: the updates are never propagated (the default)
-    * `push`: the updates made on the owner are sent to the recipients
-    * `sync`: the updates on any member are propagated to the other members
-  * `remove`: a behavior when a document no longer matches this rule (the
+    - `none`: the updates are never propagated (the default)
+    - `push`: the updates made on the owner are sent to the recipients
+    - `sync`: the updates on any member are propagated to the other members
+  - `update`: a behavior when a document matched by this rule is modified. Can be:
+    - `none`: the updates are never propagated (the default)
+    - `push`: the updates made on the owner are sent to the recipients
+    - `sync`: the updates on any member are propagated to the other members
+  - `remove`: a behavior when a document no longer matches this rule (the
     document is deleted, or it was a document that matched the rule, and is
     modified and the new version doesn’t match the rule):
-    * `none`: the updates are never propagated (the default)
-    * `push`: the updates made on the owner are sent to the recipients
-    * `sync`: the updates on any member are propagated to the other members
-    * `revoke`: the sharing is revoked.
+    - `none`: the updates are never propagated (the default)
+    - `push`: the updates made on the owner are sent to the recipients
+    - `sync`: the updates on any member are propagated to the other members
+    - `revoke`: the sharing is revoked.
 
 ## Example
 
@@ -126,16 +130,16 @@ documents and files from her cozy instance to other people.
 This doctype is an internal one for the stack. It is used to track what
 documents are shared, and to replicate changes from one Cozy to the others.
 
-* `_id`: its identifier is the doctype and id of the referenced objet, separated by
+- `_id`: its identifier is the doctype and id of the referenced objet, separated by
   a `/` (e.g. `io.cozy.contacts/c1f5dae4-0d87-11e8-b91b-1f41c005768b`)
-* `_rev`: the CouchDB default revision for this document (not very meaningful,
+- `_rev`: the CouchDB default revision for this document (not very meaningful,
   it’s here to avoid concurrency issues)
-* `revisions`: a tree with the last known `_rev`s of the referenced object
-* `infos`, a map of sharing ids → `{rule, removed, binary}`
-  * `rule` says which rule from the sharing must be applied for this document
-  * `removed` will be true for a deleted document, a trashed file, or if the
+- `revisions`: a tree with the last known `_rev`s of the referenced object
+- `infos`, a map of sharing ids → `{rule, removed, binary}`
+  - `rule` says which rule from the sharing must be applied for this document
+  - `removed` will be true for a deleted document, a trashed file, or if the
     document does no longer match the sharing rule
-  * `binary` is a boolean flag that is true only for files (and not even
+  - `binary` is a boolean flag that is true only for files (and not even
     folders) with `removed: false`
 
 ## Example

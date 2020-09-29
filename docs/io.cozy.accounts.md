@@ -38,7 +38,6 @@ The `auth` attributes also contain all values for the fields attribute specified
 
 Some konnectors do not use a `login` parameter, but `identifier` or `email`. The usage of anything except `login` is deprecated and should not be done.
 
-
 ### `mutedErrors`
 
 This field is used to keep track of konnector errors that have been muted by the user and shouldn't be featured in the UI anymore.
@@ -106,7 +105,6 @@ in the `metadata` key of the relationship item.
 - `deletedByVendor`: whether it was deleted on the vendor side
 - `imported`: whether it should be imported on the vendor side
 - `label`: Label of the contract
-
 
 ```json
 {
