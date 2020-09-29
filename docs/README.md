@@ -110,9 +110,9 @@ At the moment the only available external relationship is `bitwarden` with the f
 }
 ```
 
-#### Relationships with metadata
+#### Relationships with metadata
 
-A relationship can store additional information, in the `metadata` attribute. For instance, see the [contracts](https://github.com/cozy/cozy-doctypes/blob/master/docs/io.cozy.accounts.md#contracts-contracts) relationship for the accounts.
+A relationship can store additional information, in the `metadata` attribute. For instance, see the [contracts](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.accounts/#contracts-contracts) relationship for the accounts.
 
 ```json
 "relationships": {
