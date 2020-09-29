@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "remark-frontmatter": "^2.0.0",
+    "remark-preset-lint-recommended": "^4.0.1"
+  }
+}
