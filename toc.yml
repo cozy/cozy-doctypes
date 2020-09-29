@@ -6,6 +6,7 @@
 - Bills: ./docs/io.cozy.bills.md
 - Connectors: ./docs/io.cozy.konnectors.md
 - Contacts: ./docs/io.cozy.contacts.md
+- DocRules: ./docs/io.cozy.docrules.md
 - Files: ./docs/io.cozy.files.md
 - Files metadata: ./docs/io.cozy.files_metadata.md
 - Identities: ./docs/io.cozy.identities.md
@@ -14,7 +15,6 @@
 - Permissions: ./docs/io.cozy.permissions.md
 - Photos: ./docs/io.cozy.photos.md
 - Procedures: ./docs/io.cozy.procedures.md
-- Rules: ./docs/io.cozy.rules.md
 - Sessions Logins: ./docs/io.cozy.sessions.logins.md
 - Settings: ./docs/io.cozy.settings.md
 - Sharings: ./docs/io.cozy.sharings.md

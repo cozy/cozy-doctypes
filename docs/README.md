@@ -36,7 +36,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.permissions](io.cozy.permissions.md): Permissions of the instance
 - [io.cozy.photos](io.cozy.photos.md): Photos
 - [io.cozy.procedures](io.cozy.procedures.md): Administrative procedures
-- [io.cozy.rules](io.cozy.rules.md): Rules
+- [io.cozy.docrules](io.cozy.docrules.md): Rules to retrieve documents
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [io.cozy.settings](io.cozy.settings.md): Instance settings
 - [io.cozy.sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
