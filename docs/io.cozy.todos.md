@@ -54,20 +54,19 @@ This doctype represents a todo item:
 
 - `files`: {object} - Files linked to the todo item.
 - `contacts`: {object} - Contacts linked to the todo item.
-- `rules`: {object} - The rules used to match other relationships, e.g. a rule used to match specific files, such as payslips. See below or in the `rules` [doctype](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.rules) for more details.
+- `docrules`: {object} - The rules used to match documents from other relationships, e.g. a rule used to match specific files, such as payslips. See below or in the `docrules` [doctype](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.docrules) for more details.
 
 
-#### Rules
-
+#### DocRules
 
 When a document has been linked to a todo through the use of a rule, the rule that was used to find the document is saved in the `metadata` of the relationship.
 
 - `metadata`: {object}
-  - `rules`: {object}
+  - `docrules`: {object}
     - `matchedBy`: {string} : The rule ID
     - `{...}`: additional fields used as rule parameters, e.g. `limit`, `date`, etc.
 
-In the example below, a rule is targeting the last 3 files payslips from a given date. 
+In the example below, a docrule is targeting the last 3 files payslips from a given date. 
 
 ### Example
 
@@ -85,8 +84,8 @@ In the example below, a rule is targeting the last 3 files payslips from a given
           "_id": "8bffbc24e67716b63e08c71bd0059fea",
           "_type": "io.cozy.files",
           "metadata": {
-            "rules": {
-              "matchedBy": "io.cozy.rules/payslip",
+            "docrules": {
+              "matchedBy": "io.cozy.docrules/payslip",
               "date": "2020-01-01T23:59:59Z",
               "limit": 3
             }
@@ -96,8 +95,8 @@ In the example below, a rule is targeting the last 3 files payslips from a given
           "_id": "8bffbc24e67716b63e08c71bd0068f52",
           "_type": "io.cozy.files",
           "metadata": {
-            "rules": {
-              "matchedBy": "io.cozy.rules/payslip",
+            "docrules": {
+              "matchedBy": "io.cozy.docrules/payslip",
               "date": "2020-01-01T23:59:59Z",
               "limit": 3
             }
@@ -113,11 +112,11 @@ In the example below, a rule is targeting the last 3 files payslips from a given
         }
       ]
     },
-    "rules": {
+    "docrules": {
       "data": [
         {
-          "_id": "io.cozy.rules/payslips",
-          "_type": "io.cozy.rules"
+          "_id": "io.cozy.docrules/payslips",
+          "_type": "io.cozy.docrules"
         }
       ]
     }
