@@ -223,6 +223,13 @@ remark-message-control@^6.0.0:
     mdast-comment-marker "^1.0.0"
     unified-message-control "^3.0.0"
 
+remark-preset-cozy@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/remark-preset-cozy/-/remark-preset-cozy-1.1.0.tgz#e4ff0457063934ce5246600d44c09f1e9066b31b"
+  integrity sha512-XRu/Cl6CUJgvvGTqt1S24dKfxJooefO3LXyJbGbX0X9Nw2UQhtTPnM15cplgvxOPPkFNtduWnWANjIiG4kGAKQ==
+  dependencies:
+    remark-preset-lint-recommended "^4.0.1"
+
 remark-preset-lint-recommended@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/remark-preset-lint-recommended/-/remark-preset-lint-recommended-4.0.1.tgz#2077b38706759277c0eb304c57453ebfa3e63207"
