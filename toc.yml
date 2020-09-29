@@ -14,7 +14,7 @@
 - Permissions: ./docs/io.cozy.permissions.md
 - Photos: ./docs/io.cozy.photos.md
 - Procedures: ./docs/io.cozy.procedures.md
-- Rules: './docs/io.cozy.rules.md'
+- Rules: ./docs/io.cozy.rules.md
 - Sessions Logins: ./docs/io.cozy.sessions.logins.md
 - Settings: ./docs/io.cozy.settings.md
 - Sharings: ./docs/io.cozy.sharings.md
