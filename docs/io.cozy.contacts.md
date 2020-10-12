@@ -30,7 +30,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
     - `region?`: {string}
     - `postcode?`: {string}
     - `country?`: {string}
-    - `type?`: {string} Programmatic type of email (`"work"`, `"home"`, `"other"`)
+    - `type?`: {string} Programmatic type of address (`"work"`, `"home"`, `"other"`)
     - `primary?`: {boolean} Indicates a preferred-use address
     - `label?`: {string}
     - `formattedAddress?`: {string} Unstructured version of the address
