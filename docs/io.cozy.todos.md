@@ -46,6 +46,7 @@ This doctype represents a todo list:
 This doctype represents a todo item:
 
 - `label`: {string} - The label of the todo item, e.g. "Do stuff".
+- `description`: {string} - A description of the item.
 - `done`: {bool} - Whether the item is done or not.
 - `limitDate`: {date} - The limit date to complete this item.
 - `completionDate`: {date} - The actual completion date of the item.
@@ -73,7 +74,8 @@ In the example below, a docrule is targeting the last 3 files payslips from a gi
 ```json
 {
   "_id": "8bffbc24e67716b63e08c71bd0059fea",
-  "label": "Get last 3 payslips",
+  "label": "Get the last 3 payslips",
+  "description": "This is required to prove the income",
   "done": false,
   "limitDate": "2020-01-31T23:59:59Z",
   "completionDate": null,
