@@ -12,14 +12,10 @@ documents and files from her cozy instance to other people.
   recipients
 - A `description` (one sentence that will help people understand what is shared
   and why)
-
-
 - a flag `active` that says if the sharing is currently active for at least
   one member
 - a flag `owner`, true for the document on the cozy of the sharer, and absent
   on the other cozy instance
-
-
 - a flag `open_sharing`:
   - `true` if any member of the sharing can add a new recipient
   - `false` if only the owner can add a new recipient
@@ -28,24 +24,24 @@ documents and files from her cozy instance to other people.
 - A list of sharing `rules`, each rule being composed of:
   - a `title`, that will be displayed to the recipients before they accept the
     sharing
-  - a `doctype`
+  - the `doctype`
   - a `selector` (by default, it’s the `id`) and `values` (one identifier, a
     list of identifiers, files and folders inside a folder, files that are
     referenced by the same document, documents bound to a previous sharing rule)
   - `local`: by default `false`, but it can false `true` for documents that are
     useful for the preview page but doesn’t need to be send to the recipients
     (e.g. a setting document of the application)
-  - `add`: a behavior when a new document matches this rule (the document is
+  - `add`: What to do when a new document matches this rule (the document is
     created, or it was a document that didn’t match the rule and is modified and
-    the new version matches the rule):
+    the new version matches the rule). Can be:
     - `none`: the updates are never propagated (the default)
     - `push`: the updates made on the owner are sent to the recipients
     - `sync`: the updates on any member are propagated to the other members
-  - `update`: a behavior when a document matched by this rule is modified. Can be:
+  - `update`: What to do when a document matched by this rule is modified. Can be:
     - `none`: the updates are never propagated (the default)
     - `push`: the updates made on the owner are sent to the recipients
     - `sync`: the updates on any member are propagated to the other members
-  - `remove`: a behavior when a document no longer matches this rule (the
+  - `remove`: What to do when a document no longer matches this rule (the
     document is deleted, or it was a document that matched the rule, and is
     modified and the new version doesn’t match the rule):
     - `none`: the updates are never propagated (the default)

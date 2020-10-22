@@ -23,7 +23,7 @@ The `io.cozy.jobs` doctype holds the informations about the instance jobs. Jobs 
   - `updates`: Handle app/konnectors updates
 - `message` {object}: Contains all the specific-worker data (slug, script name,
   ...)
-- `manual_execution` {bool}: Tells if the job had beed manually excuted
+- `manual_execution` {bool}: Tells if the job has been manually excuted
 - `event` {object}: Holds the informations for realtime
 - `options` {object}: Custom overriden options for the job (`max_exec_count`, `max_exec_time`, `timeout`)
 - `state` {string}: State of the job. Can be `queued`, `running`, `errored` or `done`
