@@ -17,7 +17,6 @@ Note the rule attributes, i.e. `limit` and `selector` can be parametrised by usi
 
 See [here](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.todos#docrules) for an example on how to pass parameters to a rule. 
 
-
 ### Example
 
 ```json

@@ -17,5 +17,5 @@ mobile app, and a summary can be sent by email.
   intent what happens when clicking on the link.
 - `created_at`: {timestamp} the date of the creation.
 
-See also [the notification documentation](https://github.com/cozy/cozy-stack/blob/master/docs/notifications.md)
+See also [the notification documentation](https://docs.cozy.io/en/cozy-stack/notifications/)
 for more informations.

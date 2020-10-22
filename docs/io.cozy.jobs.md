@@ -32,5 +32,4 @@ The `io.cozy.jobs` doctype holds the informations about the instance jobs. Jobs 
 - `finished_at` {timestamp}: When the job has been finished
 - `error` {string}: Contains the error message if the job failed
 
-
 You can get more informations on the [official documentation](https://docs.cozy.io/en/cozy-stack/jobs/)

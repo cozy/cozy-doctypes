@@ -1,0 +1,6 @@
+{
+  "plugins": [
+    "remark-preset-cozy",
+    "remark-frontmatter"
+  ]
+}

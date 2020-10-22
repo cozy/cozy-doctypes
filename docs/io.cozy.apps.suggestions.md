@@ -10,16 +10,16 @@ The `io.cozy.apps.suggestions` doctype is used to store apps that are not yet in
 
 The available attributes in a `io.cozy.apps.suggestions` document are :
 
-* `slug`: {string} - The suggested app's slug
-* `silenced`: {boolean} - Whether the user asked to silence the suggestion or not
-* `reason`: {Object} - An object describing why the suggestion is made
-* `reason.code`: {string} - A code describing the reason of the suggestion. See below for existing codes
+- `slug`: {string} - The suggested app's slug
+- `silenced`: {boolean} - Whether the user asked to silence the suggestion or not
+- `reason`: {Object} - An object describing why the suggestion is made
+- `reason.code`: {string} - A code describing the reason of the suggestion. See below for existing codes
 
 ## Relationships
 
 `io.cozy.apps.suggestions` can have the following relationships:
 
-* `transactions`: an array of relationships pointing to `io.cozy.bank.operations` documents that match with the app
+- `transactions`: an array of relationships pointing to `io.cozy.bank.operations` documents that match with the app
 
 ## Example
 
@@ -48,5 +48,5 @@ See [`cozyMetadata` documentation](README.md#document-metadata) for more informa
 
 ## Reason codes
 
-* `FOUND_TRANSACTION`: a banking transaction matching this app was found
-* `FOUND_CIPHER`: a bitwarden cipher matching this app was found
+- `FOUND_TRANSACTION`: a banking transaction matching this app was found
+- `FOUND_CIPHER`: a bitwarden cipher matching this app was found

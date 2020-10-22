@@ -22,7 +22,7 @@ The `io.cozy.account_types` can be used for two main purposes:
 - `auth_endpoint` {string}: The endpoint of the external service authentication
 - `token_endpoint` {bool}: The endpoint of the external service token exchange
 - `token_mode` {string}: Mode of token auth retreiving(`form`/`basic`/`get`)
-- `redirect_uri` {[]string}: List of redirect URIs given by the client. Part of
+- `redirect_uri` {\[]string}: List of redirect URIs given by the client. Part of
   the OAuth standard
 - `extras` {map[string]string}: Extra auth query parameters
 - `slug` {string}: Slug of the webapp/konnector

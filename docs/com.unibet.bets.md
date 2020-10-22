@@ -5,9 +5,8 @@
 ## `com.unibet.bets`
 
 ### Description
+
 - Represents a bet from the Unibet website api.
-
-
 
 ### Mandatory attributes
 

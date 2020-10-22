@@ -69,7 +69,6 @@ this note will be persisted as an `io.cozy.files`. Its attributes are:
 }
 ```
 
-
 ## `io.cozy.notes.steps`
 
 This doctype is used for prosemirror steps. You can see them as a kind of patch

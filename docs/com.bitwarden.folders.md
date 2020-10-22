@@ -7,8 +7,8 @@ The `com.bitwarden.folders` doctype is used to organize
 
 ## Attributes
 
-* `name`: {string} - the name of the folder, encrypted as a cipherString with AES
-* `cozyMetadata`: {object} - the [cozyMetadata](README.md#document-metadata)
+- `name`: {string} - the name of the folder, encrypted as a cipherString with AES
+- `cozyMetadata`: {object} - the [cozyMetadata](README.md#document-metadata)
 
 ## Example
 

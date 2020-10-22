@@ -12,5 +12,4 @@ the OAuth2 flow.
 - `issued_at` {timestamp}: When the access code has been issued
 - `scope` {string}: Scope allowed for this access code ([see here](https://docs.cozy.io/en/cozy-stack/permissions/#inline))
 
-
 More informations are available on the [official documentation](https://docs.cozy.io/en/cozy-stack/auth/)

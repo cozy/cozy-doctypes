@@ -5,6 +5,7 @@
 ## `io.cozy.identities`
 
 ### Description
+
 - Represents the differents identities fetched by datasources (connectors most of the time)
 
 ### Mandatory attributes

@@ -44,12 +44,11 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.todos.list](io.cozy.todos.md#iocozytodoslist): Todos list
   - [io.cozy.todos.item](io.cozy.todos.md#iocozytodositem): Todos item
 
-
 ## Technical doctypes
 
 - [Accounts Types: io.cozy.account_types
-](io.cozy.account_types.md): OAuth informations and secrets
-  for apps & konnectors
+  ](io.cozy.account_types.md): OAuth informations and secrets
+    for apps & konnectors
 - [cc.cozycloud.autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
 - [io.cozy.exports](io.cozy.exports.md): Instances exports
 - [io.cozy.jobs](io.cozy.jobs.md): Instance jobs
@@ -110,9 +109,9 @@ At the moment the only available external relationship is `bitwarden` with the f
 }
 ```
 
-#### Relationships with metadata
+\#### Relationships with metadata
 
-A relationship can store additional information, in the `metadata` attribute. For instance, see the [contracts](https://github.com/cozy/cozy-doctypes/blob/master/docs/io.cozy.accounts.md#contracts-contracts) relationship for the accounts.
+A relationship can store additional information, in the `metadata` attribute. For instance, see the [contracts](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.accounts/#contracts-contracts) relationship for the accounts.
 
 ```json
 "relationships": {
@@ -133,7 +132,6 @@ A relationship can store additional information, in the `metadata` attribute. Fo
 }
 
 ```
-
 
 ### Document metadata
 
