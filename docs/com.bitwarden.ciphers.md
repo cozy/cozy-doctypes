@@ -22,6 +22,7 @@ The `com.bitwarden.ciphers` doctype is used to store secret things for the
 - `data`: {object} - a map of encrypted properties on the cipher
 - `fields`: {array} - a list of objects, with `type`, `name`, and `value` (encrypted)
 - `cozyMetadata`: {object} - the [cozyMetadata](README.md#document-metadata)
+- `deletedDate`: {string} - the [soft deletion date](https://docs.cozy.io/en/cozy-stack/bitwarden/#put-bitwardenapiciphersiddelete) of the cipher. It is used to trash ciphers.
 
 ### Logins
 
