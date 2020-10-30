@@ -9,7 +9,13 @@ documents and files from her cozy instance to other people.
 - A list of `members`. The first one is the owner. For each member,
   we have the URL of the cozy, a public name, an email, a status and some
   credentials to authorize the transfer of data between the owner and the
-  recipients
+  recipients. The status can be: 
+    - `owner` for the member that has created the sharing
+    - `mail-not-sent` for a member that has been added, but its invitation has not yet been sent (often, this status is used only for a few seconds)
+    - `pending` for a member with an invitation sent, but who has not clicked on the link
+    - `seen` for a member that has clicked on the invitation link, but has not setup the Cozy to Cozy replication for the sharing
+    - `ready` for a member where the Cozy to Cozy replication has been set up
+    - `revoked` for a member who is on longer in the sharing
 - A `description` (one sentence that will help people understand what is shared
   and why)
 - a flag `active` that says if the sharing is currently active for at least
