@@ -56,6 +56,8 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
       - `_type`: {string} doctype "io.cozy.contacts.accounts"
 - `trashed?`: {boolean} is `true` if the contact is marked for removal and will be deleted soon (e.g. after remote deletion is confirmed)
 - `me`: {boolean} whether the contact matches the cozy owner (defaults to `false`)
+- `nationalities?`: {array} 2-letter iso3166 country codes (can be set in io.cozy.identities for legal reasons in Banks)
+- `birthcity?`: {string} City of birth of a contact (can be set in io.cozy.identities for legal reasons in Banks)
 - `metadata`: {object} previous metadata information.
   - `cozy`: {boolean} whether the contact has been created by cozy
   - `google`: {object} Google metadata
