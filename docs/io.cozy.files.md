@@ -284,3 +284,9 @@ fields), and a relationship to the versioned file.
   }
 }
 ```
+
+## `io.cozy.files.settings`
+
+This doctype is used to store settings for files. It is currenly only used for the qualification migration service.
+
+- lastProcessedFileDate: {string} the date of the last processed file. It is used to know from where the query should be starting on an index sorted by date.

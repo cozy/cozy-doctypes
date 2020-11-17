@@ -29,6 +29,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.contacts.accounts](io.cozy.contacts.md#iocozycontactsaccounts): Vendors account
 - [io.cozy.files](io.cozy.files.md): Files
   - [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
+  - [io.cozy.files.settings](io.cozy.files.md#iocozyfilessettings): Files settings
 - [io.cozy.konnectors](io.cozy.konnectors.md): Connectors installed in the cozy
 - [io.cozy.identities](io.cozy.identities.md): Instance owner identities
 - [io.cozy.notes](io.cozy.notes.md): Notes with collaborative edition
