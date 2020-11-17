@@ -36,6 +36,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.notifications](io.cozy.notifications.md): Notifications made by the apps (Email or Push notifications)
 - [io.cozy.permissions](io.cozy.permissions.md): Permissions of the instance
 - [io.cozy.photos](io.cozy.photos.md): Photos
+  - [io.cozy.photos.settings](io.cozy.photos.md#iocozyphotossettings): Photos settings
 - [io.cozy.procedures](io.cozy.procedures.md): Administrative procedures
 - [io.cozy.docrules](io.cozy.docrules.md): Rules to retrieve documents
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
