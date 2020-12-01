@@ -50,10 +50,16 @@ The attributes of a file are:
     - `x`: {float}: x coordinate in the photo where the person is
     - `y`: {float}: y coordinate in the photo where the person is
   - `icon`: {string} : A small SVG file to use as icon for this file (optional)
+  - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
+  - `electronicSafe`: {boolean} : if the document is secured in a secure storage
+
+⚠ `carbonCopy` and `electronicSafe` both
+[need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
+to be added to a document.
 
 It also has a relationship with its `parent` in the JSON-API representation.
 
-For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`. 
+For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`.
 These thumbnail links are valid for 10 minutes. After that, links will return a 400 Bad Request response code.
 
 ### References

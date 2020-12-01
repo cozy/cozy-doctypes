@@ -61,8 +61,7 @@ Here is a qualification example:
     "purpose": "attestation",
     "sourceCategory": "gov",
     "sourceSubCategory": "transport",
-    "subjects": ["permit", "driving"]
-  }
+    "subjects": ["permit", "driving"] }
 }
 ```
 
@@ -109,7 +108,7 @@ Most of these attributes heavily depends on the document context and are not
 expected in every cases.
 
 - `contentAuthor` : {string} the author of the document, e.g. `impots.gouv`,
-  `amazon.com`, etc. 
+  `amazon.com`, etc.
 - `datetime` : {date} Equals to the date attribute specified by `datetimeLabel`.
 - `datetimeLabel` : {string} specify which attribute is used as `datetime`, e.g.
   `issueDate` or `startDate`.
@@ -126,6 +125,12 @@ expected in every cases.
 - `country` : {string} country name.
 - `accountNumber` : {string} number of the related account.
 - `bankName` : {string} name of the related bank.
+- `carbonCopy`: {boolean} : if the document is the original document imported by the connector
+- `electronicSafe`: {boolean} : if the document is secured in a secure storage
+
+⚠ `carbonCopy` and `electronicSafe` both
+[need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
+to be added to a document.
 
 ### Examples
 
