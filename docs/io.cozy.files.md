@@ -35,23 +35,23 @@ The attributes of a file are:
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
 - `mime`: {string} the full mime-type
 - `metadata`: {map} an optional map of metadata ([Full metadata description](io.cozy.files_metadata.md)), with for example:
-  - `width`: {number}
-  - `height`: {number}
-  - `datetime`: {date} : date in original image file metadata
-  - `gps`: {map} : localization metadata with the following attributes
-    - `lat`: {float}: latitude
-    - `long`: {float}: longitude
-    - `city`: {string}: nearest city (optional)
-    - `zip`: {string}: postal code of the nearest city (optional)
-    - `country`: {string}: name of the associated country if any (optional)
-  - `persons`: {array}: the maps can have the following attributes (optional)
-    - `name`: {string}: then name of the tagged person on the photo
-    - `created_at`: {date}: date of creation of the tag
-    - `x`: {float}: x coordinate in the photo where the person is
-    - `y`: {float}: y coordinate in the photo where the person is
-  - `icon`: {string} : A small SVG file to use as icon for this file (optional)
-  - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
-  - `electronicSafe`: {boolean} : if the document is secured in a secure storage
+    - `width`: {number}
+    - `height`: {number}
+    - `datetime`: {date} : date in original image file metadata
+    - `gps`: {map} : localization metadata with the following attributes
+        - `lat`: {float}: latitude
+        - `long`: {float}: longitude
+        - `city`: {string}: nearest city (optional)
+        - `zip`: {string}: postal code of the nearest city (optional)
+        - `country`: {string}: name of the associated country if any (optional)
+    - `persons`: {array}: the maps can have the following attributes (optional)
+        - `name`: {string}: then name of the tagged person on the photo
+        - `created_at`: {date}: date of creation of the tag
+        - `x`: {float}: x coordinate in the photo where the person is
+        - `y`: {float}: y coordinate in the photo where the person is
+    - `icon`: {string} : A small SVG file to use as icon for this file (optional)
+    - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
+    - `electronicSafe`: {boolean} : if the document is secured in a secure storage
 
 ⚠ `carbonCopy` and `electronicSafe` both
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
@@ -76,9 +76,9 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
 - `uploadedAt`: {date} the server date/time of the last upload (when the content was changed)
 - `uploadedOn`: {string} the instance URL on which the file content was changed the last time
 - `uploadedBy`: {map} information on which app has made the last upload
-  - `slug`: {string} the slug of the application that has made the upload
-  - `version`: {string} the version number of this application
-  - `oauthClient`: {map} if the upload was made by an OAuth Client, information about it (`id`, `name`, and `kind`)
+    - `slug`: {string} the slug of the application that has made the upload
+    - `version`: {string} the version number of this application
+    - `oauthClient`: {map} if the upload was made by an OAuth Client, information about it (`id`, `name`, and `kind`)
 
 ### Example (JSON-API format)
 
