@@ -22,7 +22,7 @@ This doctype is used to store settings for photos, useful for the clustering.
 
 ### Clustering settings
 
-- `lastDate`: {date} the date of the last clustered photo (based on `cozyMetadata.createdAt`).
+- `lastDate`: {date} the date of the last clustered photo. It is the value of the `cozyMetadata.createdAt` saved in the `io.cozy.files` of the photo.
 - `jobStatus`: {string} the execution status, can be `running` if the service is running, `postponed` if an execution is planned later, or empty.
 - `evaluationCount`: {number} indicates the number of photos clustered since the last parameters evaluation. If this number is greater than a threshold, it triggers a new parameter evaluation and reset this number to 0.
 - `runs`: {number} number of all clustering runs, it is incremented at each new successful execution.
