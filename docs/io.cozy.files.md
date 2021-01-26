@@ -196,6 +196,7 @@ They can have `metadata`:
 - `target.mime` is the mime-type of the destination of the link (when it is a
   file)
 - `target.app` is the slug of the destination app (internal links only).
+- `icon` {string?} contains the svg icon.   
 
 #### Example (JSON format)
 
