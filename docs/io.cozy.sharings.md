@@ -21,6 +21,9 @@ documents and files from her cozy instance to other people.
     - `false` if only the owner can add a new recipient
 - Some technical data (`created_at`, `updated_at`, `app_slug`, `preview_path`,
   `triggers`, `credentials`)
+- A flag `initial_sync` present only when the initial replication is still running
+- A number of files to synchronize for the initial sync, `initial_number_of_files_to_sync` (if there is no file to sync or the initial replication has finished, the field won't be here)
+- A `shortcut_id` with the identifier of the shortcut file (when the recipient doesn't want to synchronize the documents on their Cozy instance)
 - A list of sharing `rules`, each rule being composed of:
     - a `title`, that will be displayed to the recipients before they accept the
     sharing
