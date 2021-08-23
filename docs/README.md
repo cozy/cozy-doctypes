@@ -23,6 +23,8 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.bank.operations](io.cozy.bank.md#iocozybankoperations): Bank transaction
   - [io.cozy.bank.balancehistories](io.cozy.bank.md#iocozybankbalancehistories): Daily balances
   - [io.cozy.bank.recurrence](io.cozy.bank.md#iocozybankrecurrence): Recurrence group information
+  - [io.cozy.bank.groups](io.cozy.bank.md#iocozybankgroups): Group of bank accounts
+  - [io.cozy.bank.recipients](io.cozy.bank.md#iocozybankrecipients): Recipients for transfert
 - [io.cozy.bills](io.cozy.bills.md): Bills
 - [io.cozy.contacts](io.cozy.contacts.md): Contacts
   - [io.cozy.contacts.groups](io.cozy.contacts.md#iocozycontactsgroups): Contacts groups

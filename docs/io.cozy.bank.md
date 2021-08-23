@@ -233,3 +233,48 @@ a HasOne relationship to a `io.cozy.bank.recurrence` object.
 - `stats.deltas.median` : Median time distance in days between operations. For example, for a monthly recurrence, this should be 30.
 - `latestDate`:  {String} Date of the last transaction that is part of the recurrence. This is used to compute the next occurence of the recurrence
 - `accounts`: {Array<string>} Ids of the bank accounts that have participated to the recurrence. This is used to compute planned transactions.
+
+## io.cozy.bank.groups 
+
+Groups banks accounts together.
+
+- `label`: {string} - Name of the group 
+- `accounts`: {Array} - Ids of io.cozy.bank.accounts
+
+### Exemple
+  
+```json
+ {
+  "_id": "2a432e54822e7caeed02367a6e1f5739",
+  "accounts": [
+    "cla4",
+    "gen3"
+  ],
+  "id": "2a432e54822e7caeed02367a6e1f5739",
+  "label": "My Group"
+}
+```
+
+  
+## io.cozy.bank.recipients
+
+Used to make a transfert 
+
+- `vendorAccountId` : io.cozy.bank.accounts.vendorId 
+
+### Exemple 
+
+```json
+{
+  "_id": "recipient_internal_1",
+  "category": "internal",
+  "bankName": "Caisse d'Épargne",
+  "bic": "CEPAFRPP627",
+  "label": "Isabelle checkings",
+  "currency": "EUR",
+  "iban": "FR3330002005500000157841Z27",
+  "vendorLastUpdate": "2020-02-12 16:12:58",
+  "vendorAccountId": 1,
+  "deleted": null
+}
+```
