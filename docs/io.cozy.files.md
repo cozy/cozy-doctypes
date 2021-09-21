@@ -297,3 +297,12 @@ fields), and a relationship to the versioned file.
 This doctype is used to store settings for files. It is currenly only used for the qualification migration service.
 
 - lastProcessedFileDate: {string} the `cozyMetadata.updatedAt` date of the last processed file. It is used to know from where the query should be starting on an index sorted by date.
+
+## `io.cozy.files.encryption`
+
+This doctype is used to store encryption keys for directories.
+The encryption keys are stored encrypted in the same way than bitwarden's [ciphers](https://docs.cozy.io/cozy-doctypes/com.bitwarden.ciphers.html), and are used to encrypt/decrypt files' binary inside the directory.
+
+
+- `_id`: {string} refers to its directory id: `io.cozy.files/<dirID>`
+- `key`: {string} the encrypted key, used to encrypt/decrypt files inside the directory.
