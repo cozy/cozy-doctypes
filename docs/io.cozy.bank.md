@@ -128,6 +128,7 @@ This doctype stors informations about a bank transaction:
 - `label`: {string} - The label describing the transaction
 - `type`: {string} - A type in the list : `['none', 'credit card', 'cash', 'check', 'transfer', 'internal transfer', 'debit card', 'deposit', 'financial fee', 'direct debit']`
 - `date`: {date} - The date the transaction is emitted
+- `applicationDate`: {string} - The date the transaction is affected to, after a manual modification
 - `dateOperation`: {date} - The date the transaction is registered in the account
 - `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
 - `amount`: {number} - The amount of the transaction

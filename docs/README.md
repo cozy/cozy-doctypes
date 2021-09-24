@@ -30,6 +30,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.files](io.cozy.files.md): Files
   - [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
   - [io.cozy.files.settings](io.cozy.files.md#iocozyfilessettings): Files settings
+  - [io.cozy.files.encryption](io.cozy.files.md#iocozyfilesencryption): Files encryption
 - [io.cozy.konnectors](io.cozy.konnectors.md): Connectors installed in the cozy
 - [io.cozy.identities](io.cozy.identities.md): Instance owner identities
 - [io.cozy.notes](io.cozy.notes.md): Notes with collaborative edition
@@ -113,7 +114,8 @@ At the moment the only available external relationship is `bitwarden` with the f
 }
 ```
 
-\#### Relationships with metadata
+#### Relationships with metadata
+
 
 A relationship can store additional information, in the `metadata` attribute. For instance, see the [contracts](https://docs.cozy.io/en/cozy-doctypes/docs/io.cozy.accounts/#contracts-contracts) relationship for the accounts.
 
