@@ -127,7 +127,8 @@ This doctype stors informations about a bank transaction:
 
 - `label`: {string} - The label describing the transaction
 - `type`: {string} - A type in the list : `['none', 'credit card', 'cash', 'check', 'transfer', 'internal transfer', 'debit card', 'deposit', 'financial fee', 'direct debit']`
-- `date`: {date} - The date the transaction is emitted
+- `date`: {date} - The debit/credit date of the transaction on which the account is debited/credited. Is different from the `realizationDate` with deferred debit cards
+- `realisationDate`: {date} - The realization date of the transaction on which the operation really occured
 - `applicationDate`: {string} - The date the transaction is affected to, after a manual modification
 - `dateOperation`: {date} - The date the transaction is registered in the account
 - `dateImport`: {date} - The date the transaction is imported (can differ of the date of creation of the document as the import can be done by an external service)
@@ -234,15 +235,15 @@ a HasOne relationship to a `io.cozy.bank.recurrence` object.
 - `latestDate`:  {String} Date of the last transaction that is part of the recurrence. This is used to compute the next occurence of the recurrence
 - `accounts`: {Array<string>} Ids of the bank accounts that have participated to the recurrence. This is used to compute planned transactions.
 
-## io.cozy.bank.groups 
+## io.cozy.bank.groups
 
 Groups banks accounts together.
 
-- `label`: {string} - Name of the group 
+- `label`: {string} - Name of the group
 - `accounts`: {Array} - Ids of io.cozy.bank.accounts
 
 ### Exemple
-  
+
 ```json
  {
   "_id": "2a432e54822e7caeed02367a6e1f5739",
@@ -255,14 +256,14 @@ Groups banks accounts together.
 }
 ```
 
-  
+
 ## io.cozy.bank.recipients
 
-Used to make a transfert 
+Used to make a transfert
 
-- `vendorAccountId` : io.cozy.bank.accounts.vendorId 
+- `vendorAccountId` : io.cozy.bank.accounts.vendorId
 
-### Exemple 
+### Exemple
 
 ```json
 {
