@@ -233,6 +233,7 @@ a HasOne relationship to a `io.cozy.bank.recurrence` object.
 - `stats`: {Object} - Statistics used during matching
 - `stats.deltas.median` : Median time distance in days between operations. For example, for a monthly recurrence, this should be 30.
 - `latestDate`:  {String} Date of the last transaction that is part of the recurrence. This is used to compute the next occurence of the recurrence
+- `latestAmount`:  {number} Amount of the last transaction that is part of the recurrence.
 - `accounts`: {Array<string>} Ids of the bank accounts that have participated to the recurrence. This is used to compute planned transactions.
 
 ## io.cozy.bank.groups
