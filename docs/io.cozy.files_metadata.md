@@ -1,5 +1,9 @@
 # Metadata on `io.cozy.files` documents
 
+## Generic metadata
+
+For generic metadata like `createdAt` or `updatedAt`, please follow the [cozy-doctypes doc](./#generic-model) about generic model
+
 ## Image files
 
 For pictures files, like `jpg`, `png`, `gif`...
@@ -112,7 +116,7 @@ expected in every cases.
 - `datetime` : {date} Equals to the date attribute specified by `datetimeLabel`.
 - `datetimeLabel` : {string} specify which attribute is used as `datetime`, e.g.
   `issueDate` or `startDate`.
-- `issueDate` : {date} issue date of the document.
+- `issueDate` : {date} issue date of the document emitted by the vendor.
 - `startDate` : {date} first day of a period, e.g. for a contract.
 - `endDate` : {date} last day of a period, e.g. for a contract.
 - `expirationDate` : {date} last day of validity, e.g. for an identity document.
