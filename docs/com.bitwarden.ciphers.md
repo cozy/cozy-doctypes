@@ -21,6 +21,8 @@ The `com.bitwarden.ciphers` doctype is used to store secret things for the
 - `login`: {object} - an object only used when type is 1 (see below)
 - `data`: {object} - a map of encrypted properties on the cipher
 - `fields`: {array} - a list of objects, with `type`, `name`, and `value` (encrypted)
+- `organization_id`: {uuid} - the identifier of a [bitwarden organization](./com.bitwarden.organizations.md)
+- `collection_id`: {uuid} - the identifier of the collection (see [bitwarden organization](./com.bitwarden.organizations.md))
 - `cozyMetadata`: {object} - the [cozyMetadata](README.md#document-metadata)
 - `deletedDate`: {string} - the [soft deletion date](https://docs.cozy.io/en/cozy-stack/bitwarden/#put-bitwardenapiciphersiddelete) of the cipher. It is used to trash ciphers.
 
@@ -53,6 +55,8 @@ When the cipher has type 1 (login), the `login` is an object with these fields:
     "password": "2.L+41A7ch4GypwrIFXG5vkA==|S3eFnoNtk1IpsT4gcfcNrw==|lqdBTpSHKqTJtgBBXBXqm2K249AF1gZMec4cFf5gqR0="
   },
   "fields": null,
+  "organization_id": "8869e3ee461551cc2bc4d5d9a107dbf9",
+  "collection_id": "8869e3ee461551cc2bc4d5d9a107d0c1",
   "cozyMetadata": {
     "doctypeVersion": "1",
     "metadataVersion": 1,
