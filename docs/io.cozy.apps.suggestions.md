@@ -4,7 +4,7 @@
 
 The `io.cozy.apps.suggestions` doctype is used to store apps that are not yet installed, but might be useful for the user.
 
-`io.cozy.apps.suggestions` are used by [Cozy-Banks](http://github.com/cozy/cozy-banks/) to extract which connectors can be suggested to the user based on his / her banking operations.
+`io.cozy.apps.suggestions` are used by [Cozy-Banks](http://github.com/cozy/cozy-banks/) to extract which connectors can be suggested to the user based on his / her banking operations and used by Cozy-Pass to extract which connectors can be suggested to the user based on his / her ciphers. 
 
 ## Attributes
 
