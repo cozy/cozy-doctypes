@@ -36,6 +36,9 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.konnectors](io.cozy.konnectors.md): Connectors installed in the cozy
 - [io.cozy.identities](io.cozy.identities.md): Instance owner identities
 - [io.cozy.notes](io.cozy.notes.md): Notes with collaborative edition
+  - [io.cozy.notes.steps](io.cozy.notes.md#iocozynotessteps)
+  - [io.cozy.notes.events](io.cozy.notes.md#iocozynotesevents)
+  - [io.cozy.notes.images](io.cozy.notes.md#iocozynotesimages)
 - [io.cozy.notifications](io.cozy.notifications.md): Notifications made by the apps (Email or Push notifications)
 - [io.cozy.permissions](io.cozy.permissions.md): Permissions of the instance
 - [io.cozy.photos](io.cozy.photos.md): Photos
