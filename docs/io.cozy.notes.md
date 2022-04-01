@@ -164,3 +164,27 @@ server > {"event": "UPDATED",
                       "type": "io.cozy.notes.events",
                       "doc": {"doctype": "io.cozy.notes.telepointers", "sessionID": "543781490137", "anchor": 7, "head": 12, "type": "textSelection"}}}
 ```
+
+## `io.cozy.notes.images`
+
+This doctype is used to keep track of images added to a note. Its attributes are:
+
+- `name`: {string} The image name
+- `mime`: {string} The image mime-type
+- `width`: {number} The image width
+- `height`: {number} The image height
+- `willBeResized`: {boolean} Set by the stack to determine if the image is too large to be contained in the note and a thumbnail needs to be computed.
+- `willBeRemoved`: {boolean} Set by the stack to indicate the image needs to be later removed. This is used to give some time to the user to cancel the deletion of an image. 
+
+
+### Example (JSON in CouchDB)
+
+```json
+{
+  "_id": "7690fa7c64f9fa512531319e3df9f472/dd1776a3-6abe-47dc-b0d9-6c0e345b2679",
+  "name": "clisk.png",
+  "mime": "image/svg+xml",
+  "width": 341,
+  "height": 512
+}
+```
