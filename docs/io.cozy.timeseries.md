@@ -16,7 +16,7 @@ Any type of time series must follow the same common structure:
 
 ## `io.cozy.timeseries.geojson`
 
-These time series follow the [GeoJSON](https://geojson.org/) format. 
+These time series follow the [GeoJSON](https://geojson.org/) format. See [here](https://github.com/cozy/coachCO2#timeseries-models-and-nomenclature) for a complete example of this doctype.
 
 ###  Example
 
