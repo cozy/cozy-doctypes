@@ -10,7 +10,7 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
 
 - `account_type`: {string} Slug of the konnector the account is related to. Note this could be a [relationship](https://github.com/cozy/cozy-doctypes/#relationships) to the konnector manifest, but we keep this field for historical reasons.
 - `auth`: {object} Contains authentification data, typically a couple with `login`/`password`. It could also contain an attribute `token` for OAuth konnectors.
-- `data`: {object} Additional custom data.
+- `data`: {object} Additional custom data. This is useful to store arbitrary data related to the account. For instance, this can be used to store an account status, the date of the last retrieved document, etc.
 - `label`: {string} Label given by user.
 - `state`: {string} The account state is used to communicate between the konnector and [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) to ask for a needed 2FA Code or to tell to reset the konnector session for example. Here are the used values for now:
   - `TWOFA_NEEDED`: The service is asking for a Two Factor connexion and the related code (sent by the service) must be provided by the user. This status can be further precised with its type. This allows the UI presented to the user to have custom messages, depending on the type of two factor authentication required by the vendor.
