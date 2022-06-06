@@ -1,4 +1,4 @@
-POST https://dacc.mycozy.eu/measure
+POST https://dacc.mycozy.eu/{{path}}
 Authorization: Bearer {{secret_token}}
 Content-Type: application/json
 
