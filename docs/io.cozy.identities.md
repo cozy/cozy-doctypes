@@ -20,19 +20,24 @@ There are three sources of identity, considering the source of the data:
 
 ℹ️ Whatever the source of the data, all identities must follow the same format, described below.
 
-#### Account
+#### Relation between Identities and Accounts
 
-There is one identity per couple `identifier` (unique identifier of the user account)  and `slug` (brand), as well as one associated `io.cozy.accounts`.
+There is one identity per `identifier/slug` couple:
+
+- `identifier` is the unique identifier of the user account, often an email.
+- `slug` is the brand
+
+An identity is associated to a unique `io.cozy.accounts`.
+
+ℹ️ Multiple connectors may create an identity for a given identifier. That is why an identity will be unique by identifier **and** slug.
+
+ℹ️ When an account is disconnected in a connector, then the associated CouchDB document is deleted, but not its corresponding identity. If the same “user account” is connected again, then a new account is created but the corresponding identity is reused.
 
 The id of the corresponding account and the identifier of the account are in the .cozyMetadata:
 
 - `sourceAccount`: id of the `io.cozy.accounts` document
 - `sourceAccountIdentifier`: identifier of this account, for instance “jo32@gmail.com”
   - ℹ️ The identifier is also stored in the `identifier` attribute (data is duplicated)
-
-ℹ️ When an account is disconnected in a connector, then the associated CouchDB document is deleted, but not its corresponding identity. If the same “user account” is connected again, then a new account is created but the corresponding identity is reused.
-
-ℹ️ Multiple connectors may create an identity for a given identifier. That is why an identity will be unique by identifier **and** slug.
 
 
 #### Manual identity
