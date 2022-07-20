@@ -48,6 +48,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [io.cozy.settings](io.cozy.settings.md): Instance settings
 - [io.cozy.sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
+- [io.cozy.tags](io.cozy.tags.md): Tags
 - [io.cozy.timeseries](io.cozy.timeseries.md): Time Series
   - [io.cozy.timeseries.geojson](io.cozy.timeseries.md#iocozytimeseriesgeojson): GeoJSON time series
 - [io.cozy.todos](io.cozy.todos.md): Todos
