@@ -2,11 +2,11 @@
 
 # Cozy Bank doctypes
 
-Cozy can stores and manipulate bank related datas, distributed across several doctypes.
+Cozy can store and manipulate bank related datas, distributed across several doctypes.
 
 ## `io.cozy.bank.settings`
 
-This doctype store informations about Bank application settings. There is only one document, by default:
+This doctype store information about Bank application settings. There is only one document, by default:
 
 ```
 {
@@ -21,7 +21,7 @@ This doctype store informations about Bank application settings. There is only o
 
 ## `io.cozy.bank.accounts`
 
-This doctypes stores informations about a Bank account:
+This doctype stores information about a Bank account:
 
 - `label`: {string} - The bank account label (e.g. _John Doe Bank Account_)
 - `institutionLabel`: {string} - The financial institution name the bank account belongs to
@@ -29,7 +29,7 @@ This doctypes stores informations about a Bank account:
 - `type`: {string} - The account type in the list `['none', 'bank', 'cash', 'asset', 'credit card', 'liability']`
 - `number`: {string} - The bank account number in its institution
 - `iban`: {string} - The bank account international identifier
-- `serviceID`: {number} - In case of external service used to import transactions, this key can stores the service's account ID; can be `undefined` is the account isn't managed by any external service
+- `serviceID`: {number} - In case of external service used to import transactions, this key can store the service's account ID; can be `undefined` is the account isn't managed by any external service
 - `vendorId`: {string} - Id of the bank account on the vendor side
 - `loan`: {Object} - Specific properties for loan accounts. Will be undefined for all other account types
   - `contactName`: {string} - The name of the contact in the credit institution
@@ -155,7 +155,7 @@ the time zones.
 
 ### Categories
 
-There are up to four categories that can be assigned to a `io.cozy.bank.operations` document. But there is only one that a connector have to set when retrieving the transactions from a bank: `automaticCategoryId`. This property have to be one of the categories ID listed [here](https://github.com/cozy/cozy-banks/blob/master/src/ducks/categories/tree.json). If you want to see more human labels, you can check the translations of each label in [english](https://github.com/cozy/cozy-banks/blob/master/src/locales/en.json) or [french](https://github.com/cozy/cozy-banks/blob/master/src/locales/fr.json).
+There are up to four categories that can be assigned to a `io.cozy.bank.operations` document. But there is only one that a connector has to set when retrieving the transactions from a bank: `automaticCategoryId`. This property has to be one of the categories ID listed [here](https://github.com/cozy/cozy-banks/blob/master/src/ducks/categories/tree.json). If you want to see more human labels, you can check the translations of each label in [english](https://github.com/cozy/cozy-banks/blob/master/src/locales/en.json) or [french](https://github.com/cozy/cozy-banks/blob/master/src/locales/fr.json).
 
 Other category properties are to be set by other sources: the user or Cozy Banks services.
 
