@@ -23,6 +23,16 @@ For pictures files, like `jpg`, `png`, `gif`...
   - `x`: {float}: x coordinate in the photo where the person is
   - `y`: {float}: y coordinate in the photo where the person is
 
+
+## Cozy Note files 
+
+For a Cozy Note, here is the list: 
+
+- `content`: {object} - The Note's content. See https://prosemirror.net/docs/ref/#model for more informations
+- `schema`: {object} - The Note's schema. See https://prosemirror.net/docs/guide/#schema for more informations
+- `title`: {string} - The Note's title
+- `version`: {int} - The Note's version 
+
 ## Document qualification
 
 It is possible to add semantics to documents in order to qualify them.
@@ -136,7 +146,7 @@ expected in every cases.
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
 to be added to a document.
 
-### Examples
+### Examples
 
 #### Invoices and documents related to payments
 
