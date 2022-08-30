@@ -169,27 +169,22 @@ What we aim for:
 }
 ```
 
-### Caisse d'Épargne (Linxo connector)
+### Caisse d'Épargne (Budget Insights connector)
 
-The connectors based on Linxo API are storing specific informations into `data` attribute.
+The connectors based on Budget Insight API are storing specific informations into `data` attribute.
 
 ```json
 {
-  "account_type": "linxo",
+  "account_type": "caissedepargne1",
   "auth": {
-    "folderPath": null,
-    "frequency": "week",
-    "identifier": "0000000000",
-    "secret": "*********"
+    "bankIds": ["1"]
   },
   "data": {
     "auth": {
-      "login": "00000.00000000@cozyclaudy.red.cloud",
-      "password": "********************************"
-    },
-    "status": "connected",
-    "token": "f415e",
-    "uuid": "deadbeef-912e-4ba8-9378-067c5c3e4f54"
+      "bi": {
+        "connId": 1556
+      }
+    }
   }
 }
 ```
