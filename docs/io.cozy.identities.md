@@ -69,6 +69,7 @@ A service (WIP) is in charge of updating this factorized identity each time a mo
 Depending on the data retrieved by the source, the identity might include those attibutes:
 
 - `contact`: {object} - identity data following the [io.cozy.contacts](./io.cozy.contacts.md) format
+  - Some specific data related to brands might be added by konnectors. See [maif-data-collect](https://github.com/konnectors/maif-data-collect) for example.
 - `tax_information`: {array} - there is one element per year
     - `year`: {number} year of the last tax_information
     - `rfr`: {number} “revenu fiscal de référence”, scrapped from “Avis d’imposition” file
