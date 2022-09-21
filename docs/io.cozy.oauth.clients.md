@@ -34,8 +34,12 @@ the OAuth2 flow.
   Optional, declared by the client
 - `notifications_device_token`: {string}: Token for the notifications. Optional,
   declared by the client.
-- `synchronized_at`: {string}: Date of the last synchronization. Used by
+- `client_os`: {string}: The Operating System of the client, inferred from the
+  user-agent.
+- `synchronized_at`: {date}: Date of the last synchronization. Used by
   settings.
+- `last_refreshed_at`: {date}: Date of the last time an access_token has been
+  given for this client (from an authorization_code or a refresh_token).
 - `onboarding_*` {string}: `onboarding_secret`, `onboarding_app`, `onboarding_permissions` & `onboarding_state` are used for an onboarding straight on the mobile.
 
 The [official documentation](https://docs.cozy.io/en/cozy-stack/auth/#what-about-oauth2) give a more in-depth overview of the OAuth client authorization workflow.
