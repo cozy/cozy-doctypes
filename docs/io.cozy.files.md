@@ -13,6 +13,7 @@ For a folder, its attributes are:
 - `type`: {string} always `directory`
 - `name`: {string} the directory name
 - `path`: {string} the path to this directory, which is the path of its parent, then `/`, then its name
+- `restore_path`: {string} the restore path of the directory, if is in the trash
 - `created_at`: {timestamp} the date of the creation of this directory given by the client
 - `updated_at`: {timestamp} the date of the last update of this directory given by the client
 - `tags`: {array of strings} a list of tags
@@ -26,6 +27,7 @@ The attributes of a file are:
 - `type`: {string} always `file`
 - `name`: {string} the file name
 - `trashed`: {bool} true if the file is in the trash
+- `restore_path`: {string} the restore path of the file, if is in the trash
 - `md5sum`: {string} the checksum of its content, computed with the MD5 algorithm
 - `created_at`: {date} the date of the creation of this file given by the client
 - `updated_at`: {date} the date of the last update of this file given by the client
