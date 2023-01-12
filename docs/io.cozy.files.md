@@ -64,6 +64,21 @@ It also has a relationship with its `parent` in the JSON-API representation.
 For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`.
 These thumbnail links are valid for 10 minutes. After that, links will return a 400 Bad Request response code.
 
+### Trash
+
+When a file or a directory is put in the trash bin, some attributes are updated:
+- `trashed` is set to true, but only for files: directories never have this attribute.
+- The `restore_path` is set, for both files and directories.
+  - ⚠️ The `restore_path` is not set on children. For instance, if a directory `foo` is trashed, it will have a `restore_path` but not the children. 
+- The `path` is updated only for directories, starting with `.cozy_trash`
+
+Here is how one could query files and directories **not** in the trash, through a mango query:
+```
+_id: { $ne: 'io.cozy.files.trash-dir' },
+path: { $or: [{ $exists: false }, { $regex: '^(?!/.cozy_trash)' }] },
+trashed: { $or: [{ $exists: false }, { $eq: false }] }
+```
+
 ### References
 
 It's possible to link a file or a folder to another document.
