@@ -31,7 +31,7 @@ The attributes of a file are:
 - `md5sum`: {string} the checksum of its content, computed with the MD5 algorithm
 - `created_at`: {date} the date of the creation of this file given by the client
 - `updated_at`: {date} the date of the last update of this file given by the client
-- `tags`: {array of strings} a list of tags
+- `tags`: {array of strings} a list of tags. It is currently used to know if a file was uploaded through the mobile photo sync, with the value `library`. 
 - `size`: {number} the size of its content, in bytes
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary', 'pdf', 'files', 'code', 'slide', 'spreadsheet', 'text', 'zip', 'shortcut']`
