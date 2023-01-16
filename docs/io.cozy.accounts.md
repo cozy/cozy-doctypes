@@ -37,7 +37,7 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
 - `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
 - `mutedErrors`: {array} (Optional) A list of errors that have been discarded by the user and will no longer be shown in the UI. See below for more information.
 - `token`: {string} (Optional) User token for banking aggregator used only in `bi-aggregator` and `bi-aggregator-user` accounts
-- `user_id`: {string} (Optional) User id for banking aggregator used only in `bi-aggregator` and `bi-aggregator-user` accounts
+- `userId`: {string} (Optional) User id for banking aggregator used only in `bi-aggregator` and `bi-aggregator-user` accounts
 
 
 ## About the name of the account
