@@ -36,6 +36,8 @@ Accounts can be managed in [Cozy-Home](http://github.com/cozy/cozy-home/) (via [
   - `RESET_SESSION`: By finding this state, the konnector should reset the login session if there is one stored and reset the state.
 - `twoFACode`: When a 2FA code is asked by the service, [Harvest](https://github.com/cozy/cozy-libs/tree/master/packages/cozy-harvest-lib) will ask the user for it from and send it to the konnector via this attribute.
 - `mutedErrors`: {array} (Optional) A list of errors that have been discarded by the user and will no longer be shown in the UI. See below for more information.
+- `token`: {string} (Optional) User token for banking aggregator used only in `bi-aggregator` account
+- `userId`: {string} (Optional) User id for banking aggregator used only in `bi-aggregator-user` account
 
 
 ## About the name of the account
