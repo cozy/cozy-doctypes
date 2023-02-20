@@ -24,15 +24,23 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `label?`: {string} A user-provided localized type of email (example: `"Work"`)
   - `primary?`: {boolean} Indicates a preferred-use address
 - `address?`: {array} An array of postal addresses objects with the following attributes:
-  - `street?`: {string}
-  - `pobox?`: {string}
-  - `city?`: {string}
-  - `region?`: {string}
-  - `postcode?`: {string}
-  - `country?`: {string}
+  - `street?`: {string} Street name
+  - `pobox?`: {string} P.O Box number
+  - `city?`: {string} City name
+  - `region?`: {string} Region name
+  - `number?`: {string} Lane number
+  - `code?`: {string} Postal code
+  - `country?`: {string} Country name
   - `type?`: {string} Programmatic type of address (`"work"`, `"home"`, `"other"`)
   - `primary?`: {boolean} Indicates a preferred-use address
   - `label?`: {string}
+  - `extendedAddress?`: {object}
+    - `locality?`: {string} Locality name
+    - `building?`: {string} Building number
+    - `stairs?`: {string} Stairs number
+    - `floor?`: {string} Apartment floor
+    - `apartment?`: {string} Apartment number
+    - `entrycode?`: {string} Entry code
   - `formattedAddress?`: {string} Unstructured version of the address
 - `phone?`: {array} An array of phone number objects with the following attributes:
   - `number`: {string}
