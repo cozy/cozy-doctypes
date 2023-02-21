@@ -20,24 +20,29 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 - `note?`: {string}
 - `email?`: {array} An array of email addresses objects with the following attributes:
   - `address`: {string} Email address
-  - `type?`: {string} Programmatic type of email (`"work"`, `"home"`, `"other"`)
-  - `label?`: {string} A user-provided localized type of email (example: `"Work"`)
+  - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
   - `primary?`: {boolean} Indicates a preferred-use address
 - `address?`: {array} An array of postal addresses objects with the following attributes:
-  - `street?`: {string}
-  - `pobox?`: {string}
-  - `city?`: {string}
-  - `region?`: {string}
-  - `postcode?`: {string}
-  - `country?`: {string}
-  - `type?`: {string} Programmatic type of address (`"work"`, `"home"`, `"other"`)
+  - `street?`: {string} Street name
+  - `pobox?`: {string} P.O Box number
+  - `city?`: {string} City name
+  - `region?`: {string} Region name
+  - `number?`: {string} Lane number
+  - `code?`: {string} Postal code
+  - `country?`: {string} Country name
+  - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
   - `primary?`: {boolean} Indicates a preferred-use address
-  - `label?`: {string}
+  - `extendedAddress?`: {object}
+    - `locality?`: {string} Locality name
+    - `building?`: {string} Building number
+    - `stairs?`: {string} Stairs number
+    - `floor?`: {string} Apartment floor
+    - `apartment?`: {string} Apartment number
+    - `entrycode?`: {string} Entry code
   - `formattedAddress?`: {string} Unstructured version of the address
 - `phone?`: {array} An array of phone number objects with the following attributes:
   - `number`: {string}
-  - `type?`: {string} Programmatic type of phone number (`"work"`, `"home"`, `"mobile"`, `"fax"`, `"other"`)
-  - `label?`: {string} A user-provided localized type of phone number (example: `"Work"`)
+  - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
   - `primary?`: {boolean} Indicates a preferred-use number
 - `cozy?`: {array} An array of cozy instances with the following attributes:
   - `url`: {string}
