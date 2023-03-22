@@ -12,6 +12,7 @@ is the stack instance-related settings.
 - `tz`: {string} Timezone of the instance (ex: `Europe/Paris`)
 - `email`: {string} Email of the instance
 - `public_name`: {string} Public displayed name of the instance
+- `default_redirection`: {string} Redirect to an app after login (ex: `drive/#/folder`)
 
 There is also a document with the stuff related to authentication and Bitwarden:
 
