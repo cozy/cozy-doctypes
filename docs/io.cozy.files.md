@@ -213,7 +213,8 @@ They can have `metadata`:
 - `target.mime` is the mime-type of the destination of the link (when it is a
   file)
 - `target.app` is the slug of the destination app (internal links only).
-- `icon` {string?} contains the svg icon.   
+- `icon` {string?} contains the base64 encoded image or svg binary if mimetype is not present.
+- `iconMimeType` {string?} contains the mime-type of the icon.
 
 #### Example (JSON format)
 
@@ -239,7 +240,9 @@ They can have `metadata`:
       },
       "_type": "io.cozy.files",
       "mime": "image/jpg"
-    }
+    },
+    "icon": "[encoded base64 string of the content of the icon or svg binary]",
+    "iconMimeType":"image/svg+xml"
   },
   "size": 62,
   "executable": false,
