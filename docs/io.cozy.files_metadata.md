@@ -24,14 +24,14 @@ For pictures files, like `jpg`, `png`, `gif`...
   - `y`: {float}: y coordinate in the photo where the person is
 
 
-## Cozy Note files 
+## Cozy Note files
 
-For a Cozy Note, here is the list: 
+For a Cozy Note, here is the list:
 
 - `content`: {object} - The Note's content. See https://prosemirror.net/docs/ref/#model for more informations
 - `schema`: {object} - The Note's schema. See https://prosemirror.net/docs/guide/#schema for more informations
 - `title`: {string} - The Note's title
-- `version`: {int} - The Note's version 
+- `version`: {int} - The Note's version
 
 ## Document qualification
 
@@ -130,6 +130,10 @@ expected in every cases.
 - `startDate` : {date} first day of a period, e.g. for a contract.
 - `endDate` : {date} last day of a period, e.g. for a contract.
 - `expirationDate` : {date} last day of validity, e.g. for an identity document.
+- `[A|B|C|D]ObtentionDate` : {date} date of obtaining the driving license [A|B|C|D].
+- `noticePeriod` : {string} number of days before expiration alert.
+- `contractType` : {string} type of employment contract.
+- `refTaxIncome` : {string} reference tax income.
 - `invoiceNumber` : {string} invoice number.
 - `contractReference` : {string} reference of the related contract.
 - `isSubscription` : {bool} true if the invoice is related to a subscription
@@ -173,6 +177,7 @@ to be added to a document.
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string}
 - `issueDate` : {date} Issue date of the document
+- `refTaxIncom` : {string} reference tax income.
 
 #### Tax Returns
 
@@ -188,6 +193,7 @@ to be added to a document.
  - `datetimeLabel` : {string} `'startDate'`
  - `contentAuthor` : {string}
  - `contractReference` : {string} Reference of the contract
+ - `contractType` : {string} type of employment contract.
  - `issueDate` : {date} Issue date of the document
  - `startDate` : {date} First day of the validity period
  - `endDate` : {date} Last day of the validity period
@@ -201,7 +207,7 @@ to be added to a document.
 - `startDate` : {date} First day of the validity period
 - `endDate` : {date} Last day of the validity period
 
-#### Diplomas and Driving licenses
+#### Diplomas
 
 - `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
@@ -210,6 +216,13 @@ to be added to a document.
 - `label` : {string} Short description of the diploma
 - `school` : {string} School name
 - `country` : {string} Country name
+
+#### Driving licenses
+- `datetime` : {date} Equals to `startDate`
+- `datetimeLabel` : {string} `'startDate'`
+- `number` : {string} Document number
+- `country` : {string} Country name
+- `[A|B|C|D]ObtentionDate` : {date} date of obtaining the driving license [A|B|C|D].
 
 #### Identity documents
 
@@ -221,6 +234,7 @@ to be added to a document.
 - `number` : {string} Document number
 - `school` : {string} School name
 - `country` : {string} Country name
+- `noticePeriod` : {string} number of days before expiration alert.
 
 #### Bank Statements
 
