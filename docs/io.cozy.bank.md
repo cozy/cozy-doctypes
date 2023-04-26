@@ -19,6 +19,11 @@ This doctype store information about Bank application settings. There is only on
 }
 ```
 
+The doctype also stores the following data:
+- `lastImportSuccess`: {Object} - Information on the last successful import
+  - `savedTransactionsCount`: {number} - Number of successfully imported operations
+
+
 ## `io.cozy.bank.accounts`
 
 This doctype stores information about a Bank account:
