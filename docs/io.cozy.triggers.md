@@ -4,7 +4,7 @@
 
 `io.cozy.triggers` documents are used by the stack to configure [how and when a job should be runned](https://docs.cozy.io/en/cozy-stack/jobs/).
 
-This is a special doctype which can only be created from an app. We are using it in [Cozy-Collect](http://github.com/cozy/cozy-collect/) to manage konnectors scheduling.
+This is a special doctype which can only be created from an app. We are using it in [Cozy-Home](http://github.com/cozy/cozy-home/) to manage konnectors scheduling.
 
 ## Attributes
 
