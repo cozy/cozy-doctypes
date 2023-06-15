@@ -114,7 +114,6 @@ If you need to add new values, please consider opening an
 request](https://github.com/cozy/cozy-client/pulls) to the cozy-client
 repository.
 
-
 ## Additional metadata attributes
 
 Additional metadata attributes might be set to further describe the document.
@@ -145,7 +144,8 @@ expected in every cases.
 - `bankName` : {string} name of the related bank.
 - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
 - `electronicSafe`: {boolean} : if the document is secured in a secure storage
-
+- `backupDeviceIds`: {string[]} : id of the devices owning the backup. Only for backup directories.
+ 
 ⚠ `carbonCopy` and `electronicSafe` both
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
 to be added to a document.
