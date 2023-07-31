@@ -12,6 +12,7 @@ is the stack instance-related settings.
 - `tz`: {string} Timezone of the instance (ex: `Europe/Paris`)
 - `email`: {string} Email of the instance
 - `public_name`: {string} Public displayed name of the instance
+- `default_redirection`: {string} Redirect to an app after login (ex: `drive/#/folder`)
 
 There is also a document with the stuff related to authentication and Bitwarden:
 
@@ -28,3 +29,8 @@ There is also a document with the stuff related to authentication and Bitwarden:
 - `collection_id`: {string} the identifier of the collection for the Cozy organization
 - `equivalent_domains`: {array} an array with lists of equivalent domains
 - `global_equivalent_domains`: {array} an array of integers used by bitwarden clients
+
+- `_id`: `io.cozy.settings.display`
+- `pushBanners`: {object} Relative attributes to push banners
+  - `hideFlagshipApp`: {bool} Hide the push banner for Flagship App
+  - `hidePassMobile`: {bool} Hide the push banner for Pass Mobile App

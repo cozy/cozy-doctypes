@@ -8,7 +8,7 @@ The `io.cozy.konnectors` doctype is used to store installed konnectors.
 
 When installing a konnector, the Cozy stack creates a new `io.cozy.konnector` document from the fields in the `manifest.konnector`.
 
-`io.cozy.konnectors` are used by [Cozy-Store](http://github.com/cozy/cozy-store/) to install and uninstall konnectors, and by [Cozy-Collect](http://github.com/cozy/cozy-collect/) to manage [accounts](io.cozy.accounts.md) for konnectors
+`io.cozy.konnectors` are used by [Cozy-Store](http://github.com/cozy/cozy-store/) to install and uninstall konnectors, and by [Cozy-Home](http://github.com/cozy/cozy-home/) to manage [accounts](io.cozy.accounts.md) for konnectors
 
 ## Attributes
 
@@ -20,6 +20,7 @@ Field              | Description
 -------------------|---------------------------------------------------------------------------------------------------
 `aggregator`       | Object containing aggregator data. Typically `{ accountId: 'aggregator-service' }`.
 `categories`       | array of categories for your apps (see authorized categories), it will be `['others']` by default if empty
+`clientSide`       | Boolean to specify if the konnector should be run on the client or not
 `data_types`       | _(konnector specific)_ Array of the data type the konnector will manage
 `developer`        | `name` and `url` for the developer
 `editor`           | the editor's name to display on the cozy-bar (__REQUIRED__)
@@ -55,6 +56,46 @@ Field              | Description
 `version`          | the current version number (__REQUIRED__)
 `vendor_link`      | _(konnector specific)_ URL to editor or service website
 
+#### Translated manifest fields
+
+Here are the properties that you can override using `locales` (we recommand to automatically build these properties according to your locales files if you're using a translating tool like `transifex`):
+
+- `name`, the app's name
+- `short_description`, short description of what the app do
+- `long_description`, longer and more complete description of the app behaviour
+- `changes`, description of your new version of the konnector or all changes since the last version
+- `fields`, An object containing translations for fields.
+- `screenshots`
+- `folders`
+
+
+```json
+{
+  "fields": {
+    "email": {
+      "type": "email"
+    }
+  },
+  "locales": {
+    "en": {
+      "short_description": "Collect your Orange's bills",
+      "fields": {
+        "email": {
+          "label": "Identifier (your email)"
+        }
+      }
+    },
+    "fr": {
+      "short_description": "Récupère vos factures Orange",
+      "fields": {
+        "email": {
+          "label": "Identifiant (votre adresse mail)"
+        }
+      }
+    }
+  }
+}
+```
 
 #### Available manifest’s features list :
 
@@ -104,7 +145,7 @@ Field              | Description
 
  - **LOGIN_OK**
 
-    The konnector deactivate the auto-notification 
+    The konnector deactivate the auto-notification
 
  - **METADATA_DEDUP**
 

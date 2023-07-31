@@ -13,6 +13,7 @@ For a folder, its attributes are:
 - `type`: {string} always `directory`
 - `name`: {string} the directory name
 - `path`: {string} the path to this directory, which is the path of its parent, then `/`, then its name
+- `restore_path`: {string} the restore path of the directory, if is in the trash
 - `created_at`: {timestamp} the date of the creation of this directory given by the client
 - `updated_at`: {timestamp} the date of the last update of this directory given by the client
 - `tags`: {array of strings} a list of tags
@@ -26,13 +27,14 @@ The attributes of a file are:
 - `type`: {string} always `file`
 - `name`: {string} the file name
 - `trashed`: {bool} true if the file is in the trash
+- `restore_path`: {string} the restore path of the file, if is in the trash
 - `md5sum`: {string} the checksum of its content, computed with the MD5 algorithm
 - `created_at`: {date} the date of the creation of this file given by the client
 - `updated_at`: {date} the date of the last update of this file given by the client
-- `tags`: {array of strings} a list of tags
+- `tags`: {array of strings} a list of tags. It is currently used to know if a file was uploaded through the mobile photo sync, with the value `library`. 
 - `size`: {number} the size of its content, in bytes
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
-- `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary']`
+- `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary', 'pdf', 'files', 'code', 'slide', 'spreadsheet', 'text', 'zip', 'shortcut']`
 - `mime`: {string} the full mime-type
 - `metadata`: {map} an optional map of metadata ([Full metadata description](io.cozy.files_metadata.md)), with for example:
     - `width`: {number}
@@ -61,6 +63,21 @@ It also has a relationship with its `parent` in the JSON-API representation.
 
 For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`.
 These thumbnail links are valid for 10 minutes. After that, links will return a 400 Bad Request response code.
+
+### Trash
+
+When a file or a directory is put in the trash bin, some attributes are updated:
+- `trashed` is set to true, but only for files: directories never have this attribute.
+- The `restore_path` is set, for both files and directories.
+  - ⚠️ The `restore_path` is not set on children. For instance, if a directory `foo` is trashed, it will have a `restore_path` but not the children. 
+- The `path` is updated only for directories, starting with `.cozy_trash`
+
+Here is how one could query files and directories **not** in the trash, through a mango query:
+```
+_id: { $ne: 'io.cozy.files.trash-dir' },
+path: { $or: [{ $exists: false }, { $regex: '^(?!/.cozy_trash)' }] },
+trashed: { $or: [{ $exists: false }, { $eq: false }] }
+```
 
 ### References
 
@@ -196,7 +213,8 @@ They can have `metadata`:
 - `target.mime` is the mime-type of the destination of the link (when it is a
   file)
 - `target.app` is the slug of the destination app (internal links only).
-- `icon` {string?} contains the svg icon.   
+- `icon` {string?} contains the base64 encoded image or svg binary if mimetype is not present.
+- `iconMimeType` {string?} contains the mime-type of the icon.
 
 #### Example (JSON format)
 
@@ -222,7 +240,9 @@ They can have `metadata`:
       },
       "_type": "io.cozy.files",
       "mime": "image/jpg"
-    }
+    },
+    "icon": "[encoded base64 string of the content of the icon or svg binary]",
+    "iconMimeType":"image/svg+xml"
   },
   "size": 62,
   "executable": false,

@@ -12,7 +12,7 @@ This doctype is used both for manual albums and for clusters.
   - `start`: {date} the date of the oldest photo.
   - `end`: {date} the date of the newest photo.
 
-The photos in an album are files (with the class `image`) that are [referenced](https://cozy.github.io/cozy-stack/references-docs-in-vfs.html) by the album document.
+The photos in an album are files (with the class `image`) that are [referenced](https://docs.cozy.io/en/cozy-stack/references-docs-in-vfs/) by the album document.
 
 ## `io.cozy.photos.settings`
 
