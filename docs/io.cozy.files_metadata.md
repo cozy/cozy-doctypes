@@ -129,14 +129,17 @@ expected in every cases.
 - `startDate` : {date} first day of a period, e.g. for a contract.
 - `endDate` : {date} last day of a period, e.g. for a contract.
 - `expirationDate` : {date} last day of validity, e.g. for an identity document.
+- `referencedDate` : {date} reference date, e.g. for a sports club card.
 - `[A|B|C|D]ObtentionDate` : {date} date of obtaining the driving license [A|B|C|D].
 - `noticePeriod` : {string} number of days before expiration alert.
 - `contractType` : {string} type of employment contract.
 - `refTaxIncome` : {string} reference tax income.
 - `invoiceNumber` : {string} invoice number.
+- `number` : {string} Relative number e.g. iban number for an iban document.
 - `contractReference` : {string} reference of the related contract.
 - `isSubscription` : {bool} true if the invoice is related to a subscription
   plan.
+- `labelGivenByUser` : {string} custom document name.
 - `formReference` : {string} reference of the form (ex: '2042RICI').
 - `school` : {string} school name.
 - `country` : {string} country name.
@@ -145,7 +148,7 @@ expected in every cases.
 - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
 - `electronicSafe`: {boolean} : if the document is secured in a secure storage
 - `backupDeviceIds`: {string[]} : id of the devices owning the backup. Only for backup directories.
- 
+
 ⚠ `carbonCopy` and `electronicSafe` both
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
 to be added to a document.
