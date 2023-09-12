@@ -144,6 +144,7 @@ expected in every cases.
 - `school` : {string} school name.
 - `country` : {string} country name.
 - `accountNumber` : {string} number of the related account.
+- `bicNumber`: {string} Number of the related bank.
 - `bankName` : {string} name of the related bank.
 - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
 - `electronicSafe`: {boolean} : if the document is secured in a secure storage
@@ -256,6 +257,7 @@ to be added to a document.
 - `contentAuthor` : {string}
 - `issueDate` : {date} Issue date of the document
 - `accountNumber` : {string} Number of the related account
+- `bicNumber`: {string} Number of the related bank
 - `bankName` : {string} Name of the related bank
 
 #### Mail
