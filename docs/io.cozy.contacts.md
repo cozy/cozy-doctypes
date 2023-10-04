@@ -23,6 +23,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
   - `primary?`: {boolean} Indicates a preferred-use address
 - `address?`: {array} An array of postal addresses objects with the following attributes:
+  - `id?`: {string} id of the address
   - `street?`: {string} Street name
   - `pobox?`: {string} P.O Box number
   - `city?`: {string} City name
@@ -40,6 +41,9 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
     - `apartment?`: {string} Apartment number
     - `entrycode?`: {string} Entry code
   - `formattedAddress?`: {string} Unstructured version of the address
+  - `geo?`: {object}
+    - `geo?`: {array} Coordinates of the address, must be `[long, lat]`
+    - `cozyCategory?`: {"home|work"} The category of the address type
 - `phone?`: {array} An array of phone number objects with the following attributes:
   - `number`: {string}
   - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
