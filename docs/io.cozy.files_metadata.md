@@ -123,6 +123,7 @@ expected in every cases.
 - `contentAuthor` : {string} the author of the document, e.g. `impots.gouv`,
   `amazon.com`, etc.
 - `datetime` : {date} Equals to the date attribute specified by `datetimeLabel`.
+- `fileIdAttributes` : {string} Used to deduplicate files imported by a konnector. This is a concatenation of a set of attributes, separated by `####`. For example: `mycontractid####myfile.pdf####/mypath/`.
 - `datetimeLabel` : {string} specify which attribute is used as `datetime`, e.g.
   `issueDate` or `startDate`.
 - `issueDate` : {date} issue date of the document emitted by the vendor.
