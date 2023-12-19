@@ -10,6 +10,7 @@ Any type of time series must follow the same common structure:
 
 - `startDate`: {date} the starting date of the time series.
 - `endDate`: {date} the ending date of the time series.
+- `title`: {string} the title of the time serie.
 - `source`: {string} the data source, e.g. "strava.com".
 - `theme`: {string} a theme is used to group several types of time series into a common theme, e.g. "activity".
 - `series`: {Array} the actual time series. The array contains objects and the format of each object depends on the data type of the time series.
