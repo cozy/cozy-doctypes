@@ -31,7 +31,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `number?`: {string} Lane number
   - `code?`: {string} Postal code
   - `country?`: {string} Country name
-  - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
+  - `type?`: {string} A user-provided localized type of address (example: `"Work"`, `"Home"`, `"Other"`)
   - `primary?`: {boolean} Indicates a preferred-use address
   - `extendedAddress?`: {object}
     - `locality?`: {string} Locality name
