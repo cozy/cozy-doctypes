@@ -20,7 +20,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 - `note?`: {string}
 - `email?`: {array} An array of email addresses objects with the following attributes:
   - `address`: {string} Email address
-  - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
+  - `type?`: {string} A user-provided localized type of email address (example: `"Work"`, `"Home"`, `"Other"`)
   - `primary?`: {boolean} Indicates a preferred-use address
 - `address?`: {array} An array of postal addresses objects with the following attributes:
   - `id?`: {string} id of the address
