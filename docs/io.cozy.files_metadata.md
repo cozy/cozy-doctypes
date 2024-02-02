@@ -488,14 +488,6 @@ to be added to a document.
   "expirationDate": "2029-05-10",
   "number": "ABC123456",
   "country": "france",
-  "relationships": {
-    "contacts": {
-      "data": {
-        "_id": "ce61088e116994e265d7f0e6091d0755",
-        "_type": "io.cozy.contacts"
-      }
-    }
-  },
 }
 "cozyMetadata": {
   ...
