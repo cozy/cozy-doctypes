@@ -135,6 +135,7 @@ expected in every cases.
 - `noticePeriod` : {string} number of days before expiration alert.
 - `contractType` : {string} type of employment contract.
 - `refTaxIncome` : {string} reference tax income.
+- `taxNumber` : {string} fiscal reference number.
 - `invoiceNumber` : {string} invoice number.
 - `number` : {string} Relative number e.g. iban number for an iban document.
 - `contractReference` : {string} reference of the related contract.
@@ -182,7 +183,8 @@ to be added to a document.
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string}
 - `issueDate` : {date} Issue date of the document
-- `refTaxIncom` : {string} reference tax income.
+- `refTaxIncome` : {string} reference tax income.
+- `taxNumber` : {string} fiscal reference number.
 
 #### Tax Returns
 
@@ -351,7 +353,9 @@ to be added to a document.
   "datetime": "2019-05-10",
   "datetimeLabel": "issueDate",
   "contentAuthor": "impots.gouv",
-  "issueDate": "2019-05-10"
+  "issueDate": "2019-05-10",
+  "taxNumber": "1234567891011",
+  "refTaxIncome" : "12345"
 },
 "cozyMetadata": {
   ...
