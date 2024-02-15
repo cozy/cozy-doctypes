@@ -1,8 +1,11 @@
 # Cozy CoachCO2 settings doctype
 
+### Description
+
 This doctype stores information about CoachCO2 application settings. There is only one document.
 
-The doctype stores the following data:
+### Attributes:
+
 - `account`: {Object} - Current account displayed, copy of the associated `io.cozy.account` document
 - `bikeGoal`: {Object} - Informations about the bike goal feature
   - `showAlert`: {boolean} - Whether an alert is displayed requesting activation of the bike goal feature
@@ -17,3 +20,5 @@ The doctype stores the following data:
 - `CO2Emission`: {Object} - Informations about the CO2 Emission feature
   - `showAlert`: {boolean} - Whether an alert is displayed requesting activation of the DACC
   - `sendToDACC`: {boolean} - Whether the user has agreed to share their data with the DACC
+- `hidePoiModal`: {boolean} - Whether to display the POI modal when changing the purpose (except for the "Going to or from work" choice)
+- `isAllAccountsSelected`: {boolean} - If the "all sources" option is selected, in this case `account` is `null`
