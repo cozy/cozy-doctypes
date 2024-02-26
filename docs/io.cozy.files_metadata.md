@@ -135,6 +135,7 @@ expected in every cases.
 - `noticePeriod` : {string} number of days before expiration alert.
 - `contractType` : {string} type of employment contract.
 - `refTaxIncome` : {string} reference tax income.
+- `netSocialAmount` : {number} net social amount.
 - `taxNumber` : {string} fiscal reference number.
 - `invoiceNumber` : {string} invoice number.
 - `number` : {string} Relative number e.g. iban number for an iban document.
