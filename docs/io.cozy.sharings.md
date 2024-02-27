@@ -13,6 +13,12 @@ documents and files from her cozy instance to other people.
     - `seen` for a member that has clicked on the invitation link, but has not setup the Cozy to Cozy replication for the sharing
     - `ready` for a member where the Cozy to Cozy replication has been set up
     - `revoked` for a member who is on longer in the sharing
+- A list of `groups`, with for each one:
+    - `id`, the identifier of the io.cozy.contacts.groups
+    - `name`, the name of the group
+    - `addedBy`, the index of the member that has added the group
+    - `read_only`, a flag to tell if the group is restricted to read-only mode
+    - `revoked`, a flag set to true when the group is revoked from the sharing
 - A `description` (one sentence that will help people understand what is shared and why)
 - a flag `active` that says if the sharing is currently active for at least one member
 - a flag `owner`, true for the document on the cozy of the sharer, and absent on the other cozy instance
