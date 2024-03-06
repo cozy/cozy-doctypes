@@ -120,7 +120,7 @@ Additional metadata attributes might be set to further describe the document.
 Most of these attributes heavily depends on the document context and are not
 expected in every cases.
 
-- `contentAuthor` : {string} the author of the document, e.g. `impots.gouv`, `amazon.com`, etc.
+- `contentAuthor` : {string} the author of the document, e.g. `impots.gouv`, `amazon.com`, etc. It is currently used as a source meaning.
 - `datetime` : {date} Equals to the date attribute specified by `datetimeLabel`.
 - `fileIdAttributes` : {string} Used to deduplicate files imported by a konnector. This is a concatenation of a set of attributes, separated by `####`. For example: `mycontractid####myfile.pdf####/mypath/`.
 - `datetimeLabel` : {string} specify which attribute is used as `datetime`, e.g.
