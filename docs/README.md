@@ -26,6 +26,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.bank.groups](io.cozy.bank.md#iocozybankgroups): Group of bank accounts
   - [io.cozy.bank.recipients](io.cozy.bank.md#iocozybankrecipients): Recipients for transfert
 - [io.cozy.bills](io.cozy.bills.md): Bills
+- [io.cozy.coachco2.settings](io.cozy.coachco2.md): CoachCO2 application settings
 - [io.cozy.contacts](io.cozy.contacts.md): Contacts
   - [io.cozy.contacts.groups](io.cozy.contacts.md#iocozycontactsgroups): Contacts groups
   - [io.cozy.contacts.accounts](io.cozy.contacts.md#iocozycontactsaccounts): Vendors account
@@ -33,6 +34,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [Files_metadatas](io.cozy.files_metadata.md): Metadatas about files
   - [io.cozy.files.settings](io.cozy.files.md#iocozyfilessettings): Files settings
   - [io.cozy.files.encryption](io.cozy.files.md#iocozyfilesencryption): Files encryption
+- [io.cozy.home.settings](io.cozy.home.settings.md): Home settings
 - [io.cozy.konnectors](io.cozy.konnectors.md): Connectors installed in the cozy
 - [io.cozy.identities](io.cozy.identities.md): Instance owner identities
 - [io.cozy.notes](io.cozy.notes.md): Notes with collaborative edition
@@ -48,6 +50,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [io.cozy.settings](io.cozy.settings.md): Instance settings
 - [io.cozy.sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
+- [io.cozy.tags](io.cozy.tags.md): Tags
 - [io.cozy.timeseries](io.cozy.timeseries.md): Time Series
   - [io.cozy.timeseries.geojson](io.cozy.timeseries.md#iocozytimeseriesgeojson): GeoJSON time series
 - [io.cozy.todos](io.cozy.todos.md): Todos

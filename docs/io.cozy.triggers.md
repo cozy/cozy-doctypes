@@ -4,14 +4,14 @@
 
 `io.cozy.triggers` documents are used by the stack to configure [how and when a job should be runned](https://docs.cozy.io/en/cozy-stack/jobs/).
 
-This is a special doctype which can only be created from an app. We are using it in [Cozy-Collect](http://github.com/cozy/cozy-collect/) to manage konnectors scheduling.
+This is a special doctype which can only be created from an app. We are using it in [Cozy-Home](http://github.com/cozy/cozy-home/) to manage konnectors scheduling.
 
 ## Attributes
 
 | Attribute   | Role                                                                                                                                                                  |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `arguments` | Arguments related to the `type` attribute. For example it's a cron configuration when the `type` is set to `@cron`.                                                   |
-| `debounce`  | Amount of time until the job cannot be run again. This attribute is used to limite the amount of jobs in a burst.                                                     |
+| `debounce`  | The debounce parameter can be used to limit the number of jobs created in a burst. It delays the creation of the job on the first input by the given time argument, and if the trigger has its condition matched again during this period, it won’t create another job. Its syntax is the one understood by go’s [time.ParseDuration](https://golang.org/pkg/time/#ParseDuration)                                                |
 | `message`   | Parameters to pass to the the worker. For example, when the `worker` is set to `konnector`, `message` contains the related konnector and the related account.         |
 | `options`   | Parameters related to the job.                                                                                                                                        |
 | `type`      | Type of trigger. Can be `@at`, `@cron`, `@event`, `@every`, `@in` and `@webhook`. See the [stack documentation](https://docs.cozy.io/en/cozy-stack/jobs/) for more informations. |

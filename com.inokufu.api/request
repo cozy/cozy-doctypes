@@ -1,0 +1,3 @@
+GET https://api.inokufu.com/learningobject/v2/search-provider?lang={{lang}}&model={{model}}&sort={{sort}}&max={{max}}&match={{match}}&page={{page}}&provider={{provider}}&keywords={{keywords}}&publisher={{publisher}}
+x-api-key: {{secret_token}}
+Content-Type: application/json

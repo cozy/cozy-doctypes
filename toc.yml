@@ -5,10 +5,12 @@
 - Banking doctypes: ./docs/io.cozy.bank.md
 - Bills: ./docs/io.cozy.bills.md
 - Connectors: ./docs/io.cozy.konnectors.md
+- CoachCO2: ./docs/io.cozy.coachco2.md
 - Contacts: ./docs/io.cozy.contacts.md
 - DocRules: ./docs/io.cozy.docrules.md
 - Files: ./docs/io.cozy.files.md
 - Files metadata: ./docs/io.cozy.files_metadata.md
+- Home settings: ./docs/io.cozy.home.settings.md
 - Identities: ./docs/io.cozy.identities.md
 - Notes: ./docs/io.cozy.notes.md
 - Notifications: ./docs/io.cozy.notifications.md
@@ -18,6 +20,7 @@
 - Sessions Logins: ./docs/io.cozy.sessions.logins.md
 - Settings: ./docs/io.cozy.settings.md
 - Sharings: ./docs/io.cozy.sharings.md
+- Tags: ./docs/io.cozy.tags.md
 - Time series: ./docs/io.cozy.timeseries.md
 - Todos: ./docs/io.cozy.todos.md
 - Accounts Types: ./docs/io.cozy.account_types.md
@@ -34,4 +37,6 @@
 - Terms: ./docs/io.cozy.terms.md
 - Bitwarden ciphers: ./docs/com.bitwarden.ciphers.md
 - Bitwarden folders: ./docs/com.bitwarden.folders.md
+- Bitwarden organizations: ./docs/com.bitwarden.organizations.md
+- Bitwarden contacts: ./docs/com.bitwarden.contacts.md
 - Bets Unibet: ./docs/com.unibet.bets.md

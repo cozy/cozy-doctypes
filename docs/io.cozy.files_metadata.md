@@ -23,6 +23,16 @@ For pictures files, like `jpg`, `png`, `gif`...
   - `x`: {float}: x coordinate in the photo where the person is
   - `y`: {float}: y coordinate in the photo where the person is
 
+
+## Cozy Note files
+
+For a Cozy Note, here is the list:
+
+- `content`: {object} - The Note's content. See https://prosemirror.net/docs/ref/#model for more informations
+- `schema`: {object} - The Note's schema. See https://prosemirror.net/docs/guide/#schema for more informations
+- `title`: {string} - The Note's title
+- `version`: {int} - The Note's version
+
 ## Document qualification
 
 It is possible to add semantics to documents in order to qualify them.
@@ -104,39 +114,50 @@ If you need to add new values, please consider opening an
 request](https://github.com/cozy/cozy-client/pulls) to the cozy-client
 repository.
 
-
 ## Additional metadata attributes
 
 Additional metadata attributes might be set to further describe the document.
 Most of these attributes heavily depends on the document context and are not
 expected in every cases.
 
-- `contentAuthor` : {string} the author of the document, e.g. `impots.gouv`,
-  `amazon.com`, etc.
+- `contentAuthor` : {string} the author of the document, e.g. `impots.gouv`, `amazon.com`, etc. It is currently used as a source meaning.
 - `datetime` : {date} Equals to the date attribute specified by `datetimeLabel`.
+- `fileIdAttributes` : {string} Used to deduplicate files imported by a konnector. This is a concatenation of a set of attributes, separated by `####`. For example: `mycontractid####myfile.pdf####/mypath/`.
 - `datetimeLabel` : {string} specify which attribute is used as `datetime`, e.g.
   `issueDate` or `startDate`.
 - `issueDate` : {date} issue date of the document emitted by the vendor.
 - `startDate` : {date} first day of a period, e.g. for a contract.
 - `endDate` : {date} last day of a period, e.g. for a contract.
 - `expirationDate` : {date} last day of validity, e.g. for an identity document.
+- `referencedDate` : {date} reference date, e.g. for a sports club card.
+- `[A|B|C|D]ObtentionDate` : {date} date of obtaining the driving license [A|B|C|D].
+- `noticePeriod` : {string} number of days before expiration alert.
+- `contractType` : {string} type of employment contract.
+- `refTaxIncome` : {string} reference tax income.
+- `netSocialAmount` : {string} net social amount.
+- `employerName` : {string} name of the employer.
+- `taxNumber` : {string} fiscal reference number.
 - `invoiceNumber` : {string} invoice number.
+- `number` : {string} Relative number e.g. iban number for an iban document.
 - `contractReference` : {string} reference of the related contract.
 - `isSubscription` : {bool} true if the invoice is related to a subscription
   plan.
+- `labelGivenByUser` : {string} custom document name.
 - `formReference` : {string} reference of the form (ex: '2042RICI').
 - `school` : {string} school name.
 - `country` : {string} country name.
 - `accountNumber` : {string} number of the related account.
+- `bicNumber`: {string} Number of the related bank.
 - `bankName` : {string} name of the related bank.
 - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
 - `electronicSafe`: {boolean} : if the document is secured in a secure storage
+- `backupDeviceIds`: {string[]} : id of the devices owning the backup. Only for backup directories.
 
 ⚠ `carbonCopy` and `electronicSafe` both
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
 to be added to a document.
 
-### Examples
+### Examples
 
 #### Invoices and documents related to payments
 
@@ -152,7 +173,8 @@ to be added to a document.
 
 - `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
-- `contentAuthor` : {string} Employer on the payslip
+- `contentAuthor` : {string} Source of the payslip, e.g. `payfit.fr`
+- `employerName` : {string} Name of the employer on the payslip
 - `startDate` : {date} First day of the worked period
 - `endDate` : {date} Last day of the worked period
 - `issueDate` : {date} Issue date of the document
@@ -163,6 +185,8 @@ to be added to a document.
 - `datetimeLabel` : {string} `'issueDate'`
 - `contentAuthor` : {string}
 - `issueDate` : {date} Issue date of the document
+- `refTaxIncome` : {string} reference tax income.
+- `taxNumber` : {string} fiscal reference number.
 
 #### Tax Returns
 
@@ -178,6 +202,7 @@ to be added to a document.
  - `datetimeLabel` : {string} `'startDate'`
  - `contentAuthor` : {string}
  - `contractReference` : {string} Reference of the contract
+ - `contractType` : {string} type of employment contract.
  - `issueDate` : {date} Issue date of the document
  - `startDate` : {date} First day of the validity period
  - `endDate` : {date} Last day of the validity period
@@ -191,7 +216,7 @@ to be added to a document.
 - `startDate` : {date} First day of the validity period
 - `endDate` : {date} Last day of the validity period
 
-#### Diplomas and Driving licenses
+#### Diplomas
 
 - `datetime` : {date} Equals to `startDate`
 - `datetimeLabel` : {string} `'startDate'`
@@ -200,6 +225,13 @@ to be added to a document.
 - `label` : {string} Short description of the diploma
 - `school` : {string} School name
 - `country` : {string} Country name
+
+#### Driving licenses
+- `datetime` : {date} Equals to `startDate`
+- `datetimeLabel` : {string} `'startDate'`
+- `number` : {string} Document number
+- `country` : {string} Country name
+- `[A|B|C|D]ObtentionDate` : {date} date of obtaining the driving license [A|B|C|D].
 
 #### Identity documents
 
@@ -211,6 +243,7 @@ to be added to a document.
 - `number` : {string} Document number
 - `school` : {string} School name
 - `country` : {string} Country name
+- `noticePeriod` : {string} number of days before expiration alert.
 
 #### Bank Statements
 
@@ -229,6 +262,7 @@ to be added to a document.
 - `contentAuthor` : {string}
 - `issueDate` : {date} Issue date of the document
 - `accountNumber` : {string} Number of the related account
+- `bicNumber`: {string} Number of the related bank
 - `bankName` : {string} Name of the related bank
 
 #### Mail
@@ -321,7 +355,9 @@ to be added to a document.
   "datetime": "2019-05-10",
   "datetimeLabel": "issueDate",
   "contentAuthor": "impots.gouv",
-  "issueDate": "2019-05-10"
+  "issueDate": "2019-05-10",
+  "taxNumber": "1234567891011",
+  "refTaxIncome" : "12345"
 },
 "cozyMetadata": {
   ...
@@ -362,7 +398,8 @@ to be added to a document.
   },
   "datetime": "2019-05-01",
   "datetimeLabel": "startDate",
-  "contentAuthor": "cozycloud",
+  "contentAuthor": "payfit.fr",
+  "employerName": "cozycloud",
   "startDate": "2019-05-01",
   "endDate": "2019-05-31"
 },
@@ -458,14 +495,6 @@ to be added to a document.
   "expirationDate": "2029-05-10",
   "number": "ABC123456",
   "country": "france",
-  "relationships": {
-    "contacts": {
-      "data": {
-        "_id": "ce61088e116994e265d7f0e6091d0755",
-        "_type": "io.cozy.contacts"
-      }
-    }
-  },
 }
 "cozyMetadata": {
   ...
