@@ -149,11 +149,15 @@ A relationship can store additional information, in the `metadata` attribute. Fo
 
 ### Document metadata
 
-We distinguish three levels : the data (a list of songs from a playlist), the metadata about the data (the creation date of the playlist itself), the metadata of the cozy document (the creation date of the cozy document describing the playlist).
+We distinguish three levels of attributes:
 
-The third level (metadata of the wrapping document) is described by an object named `cozyMetadata` at the root of the document.
+1. The data (e.g. a list of songs from a playlist)
+2. The metadata about the data (e.g. the creation date of the playlist itself)
+3. The metadata of the cozy document (e.g. the creation date of the cozy document describing the playlist).
 
-The following keys are reserved and have special meanings:
+The third level is described by an object named `cozyMetadata` at the root of the document.
+
+The expected `cozyMetadata` attributes are the following:
 
 - `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in its version 2")
 - `metadataVersion`: Version of the `cozyMetadata`
@@ -165,7 +169,9 @@ The following keys are reserved and have special meanings:
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
 - `sourceAccountIdentifier`: When the document was imported from a connector, identifier of the account on targeted web service (the email address most of the time)
 
-Note: All these attributes are optional and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
+ℹ️ All these attributes are optional and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
+
+ℹ️ For doctypes protected by the stack such as `io.cozy.files`, any non-expected attribute in `cozyMetadata` will be refused by the stack. 
 
 ```json
 {
