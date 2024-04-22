@@ -20,7 +20,8 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 - `note?`: {string}
 - `email?`: {array} An array of email addresses objects with the following attributes:
   - `address`: {string} Email address
-  - `type?`: {string} A user-provided localized type of email address (example: `"Work"`, `"Home"`, `"Other"`)
+  - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`)
+  - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use address
 - `address?`: {array} An array of postal addresses objects with the following attributes:
   - `id?`: {string} id of the address
@@ -31,7 +32,8 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `number?`: {string} Lane number
   - `code?`: {string} Postal code
   - `country?`: {string} Country name
-  - `type?`: {string} A user-provided localized type of address (example: `"Work"`, `"Home"`, `"Other"`)
+  - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`)
+  - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use address
   - `extendedAddress?`: {object}
     - `locality?`: {string} Locality name
@@ -46,11 +48,13 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
     - `cozyCategory?`: {"home|work"} The category of the address type
 - `phone?`: {array} An array of phone number objects with the following attributes:
   - `number`: {string}
-  - `type?`: {string} A user-provided localized type of phone number (example: `"Work"`, `"Home"`, `"Other"`)
+  - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`), could be provided by Contacts app too as `voice|fax|cell`
+  - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use number
 - `cozy?`: {array} An array of cozy instances with the following attributes:
   - `url`: {string}
-  - `label?`: {string} A user-provided localized type of instance
+  - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`)
+  - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use instance
 - `company`: {string} Company
 - `jobTitle`: {string} Job title
