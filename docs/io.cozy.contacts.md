@@ -17,6 +17,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `namePrefix?`: {string} (example: `"Dr."`)
   - `nameSuffix?`: {string} (example: `"III"`)
 - `birthday?`: {date} (example: `"1959-05-15"`)
+- `gender?`: {string} `male|female`
 - `note?`: {string}
 - `email?`: {array} An array of email addresses objects with the following attributes:
   - `address`: {string} Email address
@@ -56,6 +57,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`)
   - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use instance
+- `url?`: {string} Deprecated. Cozy instance url. Use `cozy?` array of cozy instances instead.
 - `company`: {string} Company
 - `jobTitle`: {string} Job title
 - `relationships`: {object} links between documents
