@@ -56,6 +56,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`)
   - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use instance
+- `url?`: {string} Deprecated. Cozy instance url. Use `cozy?` array of cozy instances instead.
 - `company`: {string} Company
 - `jobTitle`: {string} Job title
 - `relationships`: {object} links between documents
