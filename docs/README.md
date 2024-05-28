@@ -47,6 +47,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.photos.settings](io.cozy.photos.md#iocozyphotossettings): Photos settings
 - [io.cozy.procedures](io.cozy.procedures.md): Administrative procedures
 - [io.cozy.docrules](io.cozy.docrules.md): Rules to retrieve documents
+- [io.cozy.remote.nextcloud.files](io.cozy.remote.nextcloud.files.md): Files on a remote NextCloud (via WebDAV)
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [io.cozy.settings](io.cozy.settings.md): Instance settings
 - [io.cozy.sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
