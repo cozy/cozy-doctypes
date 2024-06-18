@@ -15,6 +15,7 @@ is the stack instance-related settings.
 - `email`: {string} Email of the instance
 - `public_name`: {string} Public displayed name of the instance
 - `default_redirection`: {string} Redirect to an app after login (ex: `drive/#/folder`)
+- `colorScheme`: {'light'|'dark'|'auto} Used to manage the appearance of an app
 
 ### Bitwarden settings document
 
@@ -35,6 +36,8 @@ There is also a document with the stuff related to authentication and Bitwarden:
 - `global_equivalent_domains`: {array} an array of integers used by bitwarden clients
 
 ### Display settings document
+
+:warning: Deprecated because there is no direct stack route to use it.
 
 - `_id`: `io.cozy.settings.display`
 - `pushBanners`: {object} Relative attributes to push banners
