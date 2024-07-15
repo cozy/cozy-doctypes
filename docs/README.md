@@ -156,7 +156,7 @@ We distinguish three levels of attributes:
 2. The metadata about the data (e.g. the creation date of the playlist itself)
 3. The metadata of the cozy document (e.g. the creation date of the cozy document describing the playlist).
 
-The third level is described by an object named `cozyMetadata` at the root of the document.
+The third level is described by an object named `cozyMetadata` at the root of the document. This object structure is common to all Cozy doctypes. 
 
 The expected `cozyMetadata` attributes are the following:
 
@@ -169,6 +169,7 @@ The expected `cozyMetadata` attributes are the following:
 - `updatedByApps`: List of objects representing the applications (slugs and versions) which modified the cozy document in its life and the last update date for each of those apps (one entry per slug, apps should just update the value)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
 - `sourceAccountIdentifier`: When the document was imported from a connector, identifier of the account on targeted web service (the email address most of the time)
+- `favorite`: {boolean} whether or not the document is a favorite.
 
 ℹ️ All these attributes are optional and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
 
