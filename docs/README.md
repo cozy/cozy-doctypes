@@ -26,6 +26,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.bank.groups](io.cozy.bank.md#iocozybankgroups): Group of bank accounts
   - [io.cozy.bank.recipients](io.cozy.bank.md#iocozybankrecipients): Recipients for transfert
 - [io.cozy.bills](io.cozy.bills.md): Bills
+- [io.cozy.calendar](io.cozy.calendar.md): Calendar
 - [io.cozy.coachco2.settings](io.cozy.coachco2.md): CoachCO2 application settings
 - [io.cozy.contacts](io.cozy.contacts.md): Contacts
   - [io.cozy.contacts.groups](io.cozy.contacts.md#iocozycontactsgroups): Contacts groups
@@ -54,6 +55,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.tags](io.cozy.tags.md): Tags
 - [io.cozy.timeseries](io.cozy.timeseries.md): Time Series
   - [io.cozy.timeseries.geojson](io.cozy.timeseries.md#iocozytimeseriesgeojson): GeoJSON time series
+  - [io.cozy.timeseries.grades](io.cozy.timeseries.md#iocozytimeseriesgrades): Grades time series
 - [io.cozy.todos](io.cozy.todos.md): Todos
   - [io.cozy.todos.list](io.cozy.todos.md#iocozytodoslist): Todos list
   - [io.cozy.todos.item](io.cozy.todos.md#iocozytodositem): Todos item
