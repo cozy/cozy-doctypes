@@ -76,7 +76,8 @@ It uses additional attributes :
   "_id": "62e5d66d6e11d19992b7efce794263f0",
   "subject": "hisgeo",
   "title": "Semestre 2",
-  "startDate": "2017-04-22T01:00:00-05:00",  "endDate": "2017-07-01T01:00:00-05:00",
+  "startDate": "2017-04-22T01:00:00-05:00",
+  "endDate": "2017-07-01T01:00:00-05:00",
   "aggregation": {
     "avgGrades": ...,
     "avgClass": ...,
