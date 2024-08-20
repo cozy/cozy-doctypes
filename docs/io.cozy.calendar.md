@@ -11,7 +11,7 @@ The `io.cozy.calendar` doctype is loosely based on the [iCalendar RFC](https://d
 - `label?` : {string}
 - `description?` : {string}
 - `location?` : {string}
-- `organiser?` : {string}
+- `organizer?` : {string}
 - `status?` : {string} `CONFIRMED|CANCELLED`
 - `attendee?` : {array} Array of string with event attendees
 
