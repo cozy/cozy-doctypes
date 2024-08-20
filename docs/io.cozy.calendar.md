@@ -30,7 +30,7 @@ The `io.cozy.calendar` doctype is loosely based on the [iCalendar RFC](https://d
 }
 ```
 
-## `io.cozy.calendar.event`
+## `io.cozy.calendar.events`
 Used to save calendar event data, to be shown in a timetable or to save past time related activities.
 
 - `start` : {date} (example: `"1959-05-15"`)
