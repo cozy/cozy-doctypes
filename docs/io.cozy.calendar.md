@@ -9,8 +9,9 @@ The `io.cozy.calendar` doctype is loosely based on the [iCalendar RFC](https://d
 - `start?` : {date} [Start of event](https://icalendar.org/iCalendar-RFC-5545/3-8-2-4-date-time-start.html)
 - `end?` : {date} [End of event](https://icalendar.org/iCalendar-RFC-5545/3-8-2-2-date-time-end.html)
 - `timezone?` : {sting} [TZID identifier](https://icalendar.org/iCalendar-RFC-5545/3-2-19-time-zone-identifier.html) for a specific time zone
-- `frequency?` : {number} [Frequency of recurrence](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)
-- `until?` : {date} Date of [end of reccurence](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html) specified with frequency
+- `rrule` : {dict} [Recurrency rule](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)
+    - `frequency?` : {number} [Frequency of recurrence](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)
+    - `until?` : {date} Date of [end of reccurence](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html) specified with frequency
 - `label?` : {string} [Event description](https://icalendar.org/iCalendar-RFC-5545/3-8-1-5-description.html)
 - `description?` : {string} [Event comment](https://icalendar.org/iCalendar-RFC-5545/3-8-1-4-comment.html)
 - `location?` : {string} [Event location](https://icalendar.org/iCalendar-RFC-5545/3-8-1-7-location.html)
@@ -25,8 +26,10 @@ The `io.cozy.calendar` doctype is loosely based on the [iCalendar RFC](https://d
   "start": "2018-01-02T20:38:04Z",
   "end": "2018-01-02T20:38:04Z",
   "timezone": "Europe/Paris",
-  "frequency": "weekly",
-  "until": "2018-01-02T20:38:04Z",
+  "rrule": {
+    "frequency": "weekly",
+    "until": "2018-01-02T20:38:04Z",
+  }
   "label": "history-geography"
   "location": "B209 BIS",
   "organizer": "Mme. Dubois",
