@@ -66,6 +66,7 @@ for another doctype, feel free to open a PR with the description and role of you
   ](io.cozy.account_types.md): OAuth informations and secrets
     for apps & konnectors
 - [cc.cozycloud.autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
+- [cc.cozycloud.announcements](cc.cozycloud.announcements.md): Announcements remote doctype
 - [io.cozy.exports](io.cozy.exports.md): Instances exports
 - [io.cozy.jobs](io.cozy.jobs.md): Instance jobs
 - [io.cozy.oauth.clients](io.cozy.oauth.clients.md): OAuth clients informations of the stack
