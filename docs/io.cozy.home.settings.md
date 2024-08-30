@@ -9,9 +9,8 @@ The `io.cozy.home.settings` doctype contains one document that manages settings 
 ### Fields:
 
 - **`default_redirection_snackbar_disabled`**: {boolean} If the default redirection snackbar (a notification suggesting redirection to another app) has been disabled.
-  
-- **`default_redirection_view_count`**: {number} The view count of the home app if the default redirection app is different from the home app. This tracks how often the user returns to the home app.
 
+- **`default_redirection_view_count`**: {number} The view count of the home app if the default redirection app is different from the home app. This tracks how often the user returns to the home app.
 - **`shortcutsLayout`**: {array of objects} Defines the layout and grouping of shortcuts for both desktop and mobile views in the Cozy Home app.
   - **`createdByApp`**: {string} Identifier of the app that created the shortcut.
   - **`desktop`**: {object} Layout configuration for desktop view.
@@ -23,13 +22,14 @@ The `io.cozy.home.settings` doctype contains one document that manages settings 
     - **`grouped`**: {boolean} If `true`, shortcuts are grouped together on the mobile view.
   - **`order`**: {number} If provided, the order in which the shortcut should appear.
   - **`originalName`**: {string} Original name of the shortcut.
+- **`announcements`**: {object} Data related to the lifecycle of announcement inside Cozy
+- **`announcements.dismissedAt`**: {date} The last time, the user dismiss the announcements dialog
+- **`announcements.seen`**: {string[]} The viewed announcements. The array size is limited to same as the number of announcement return by the API (currently: 5)
 
 ### Metadata:
 
 - **`_id`**: {string} Unique identifier for the settings document.
-  
 - **`_rev`**: {string} Revision identifier for the settings document, tracking changes over time.
-
 - **`cozyMetadata`**: {object} Metadata related to the document's lifecycle in Cozy.
   - **`createdAt`**: {string} Timestamp when the document was created.
   - **`metadataVersion`**: {number} Version number of the metadata format.
