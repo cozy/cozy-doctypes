@@ -23,6 +23,7 @@ The `io.cozy.home.settings` doctype contains one document that manages settings 
   - **`order`**: {number} If provided, the order in which the shortcut should appear.
   - **`originalName`**: {string} Original name of the shortcut.
 - **`announcements`**: {object} Data related to the lifecycle of announcement inside Cozy
+- **`announcements.firstActivatedAt`**: {date} The first time, the user has announcements feature activated. Allow delayed display of the dialog for first time users.
 - **`announcements.dismissedAt`**: {date} The last time, the user dismiss the announcements dialog
 - **`announcements.seen`**: {string[]} The viewed announcements. The array size is limited to same as the number of announcement return by the API (currently: 5)
 
