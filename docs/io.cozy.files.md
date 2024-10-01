@@ -209,6 +209,7 @@ They can have `metadata`:
 
 - `icon` {string?} contains the base64 encoded image or svg binary if mimetype is not present.
 - `iconMimeType` {string?} contains the mime-type of the icon.
+- `description`: {string} the description of the shortcut (optional)
 
 An object `target`
 - `target.cozyMetadata.instance` is set to the cozy instance when relevant
@@ -219,7 +220,6 @@ An object `target`
   file)
 - `target.app` is the slug of the destination app (internal links only).
 - `target.title`: {string} the title of the application where the shortcut redirects (optional)
-- `target.description`: {string} the description of the application where the shortcut redirects (optional)
 - `target.category`: {string} the category of the application where the shortcut redirects (optional)
 
 #### Example (JSON format)
