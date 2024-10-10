@@ -14,6 +14,7 @@ for another doctype, feel free to open a PR with the description and role of you
 ## Cozy doctypes
 
 - [io.cozy.accounts](io.cozy.accounts.md): Konnector accounts
+- [io.cozy.ai.chat.conversations](io.cozy.ai.chat.conversations.md): Chat conversations with an assistant (AI)
 - [io.cozy.apps](io.cozy.apps.md): Apps installed in the Cozy
   - [io.cozy.apps.suggestions](io.cozy.apps.suggestions.md): Suggestions for apps that the user might find useful
 - [io.cozy.bank](io.cozy.bank.md): Banking related data
