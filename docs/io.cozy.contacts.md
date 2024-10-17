@@ -16,6 +16,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `additionalName?`: {string} (example: `"J."`)
   - `namePrefix?`: {string} (example: `"Dr."`)
   - `nameSuffix?`: {string} (example: `"III"`)
+  - `surname?`: {string} (example: `"Anderson"`)
 - `birthday?`: {date} (example: `"1959-05-15"`)
 - `gender?`: {string} `male|female`
 - `note?`: {string}
@@ -69,6 +70,12 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
     - `data`: {array} list of accounts
       - `_id`: {string} id of the io.cozy.contacts.accounts document
       - `_type`: {string} doctype "io.cozy.contacts.accounts"
+  - `related`: {object}
+    - `data`: {array} list of related contacts
+      - `_id`: {string} id of the related io.cozy.contacts document
+      - `_type`: {string} doctype "io.cozy.contacts"
+      - `metadata`: {object}
+        - `relationTypes`: {array} list of relationship types with target contacts (see [related-type-value](https://datatracker.ietf.org/doc/html/rfc6350#section-6.6.6))
 - `trashed?`: {boolean} is `true` if the contact is marked for removal and will be deleted soon (e.g. after remote deletion is confirmed)
 - `me`: {boolean} whether the contact matches the cozy owner (defaults to `false`)
 - `nationalities?`: {array} 2-letter iso3166 country codes (can be set in io.cozy.identities for legal reasons in Banks)

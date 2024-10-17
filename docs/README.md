@@ -14,6 +14,7 @@ for another doctype, feel free to open a PR with the description and role of you
 ## Cozy doctypes
 
 - [io.cozy.accounts](io.cozy.accounts.md): Konnector accounts
+- [io.cozy.ai.chat.conversations](io.cozy.ai.chat.conversations.md): Chat conversations with an assistant (AI)
 - [io.cozy.apps](io.cozy.apps.md): Apps installed in the Cozy
   - [io.cozy.apps.suggestions](io.cozy.apps.suggestions.md): Suggestions for apps that the user might find useful
 - [io.cozy.bank](io.cozy.bank.md): Banking related data
@@ -26,6 +27,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.bank.groups](io.cozy.bank.md#iocozybankgroups): Group of bank accounts
   - [io.cozy.bank.recipients](io.cozy.bank.md#iocozybankrecipients): Recipients for transfert
 - [io.cozy.bills](io.cozy.bills.md): Bills
+- [io.cozy.calendar](io.cozy.calendar.md): Calendar
 - [io.cozy.coachco2.settings](io.cozy.coachco2.md): CoachCO2 application settings
 - [io.cozy.contacts](io.cozy.contacts.md): Contacts
   - [io.cozy.contacts.groups](io.cozy.contacts.md#iocozycontactsgroups): Contacts groups
@@ -47,12 +49,14 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.photos.settings](io.cozy.photos.md#iocozyphotossettings): Photos settings
 - [io.cozy.procedures](io.cozy.procedures.md): Administrative procedures
 - [io.cozy.docrules](io.cozy.docrules.md): Rules to retrieve documents
+- [io.cozy.remote.nextcloud.files](io.cozy.remote.nextcloud.files.md): Files on a remote NextCloud (via WebDAV)
 - [io.cozy.sessions.logins](io.cozy.sessions.logins.md): Sessions logins entry
 - [io.cozy.settings](io.cozy.settings.md): Instance settings
 - [io.cozy.sharings](io.cozy.sharings.md): Documents used for Cozy to Cozy sharings
 - [io.cozy.tags](io.cozy.tags.md): Tags
 - [io.cozy.timeseries](io.cozy.timeseries.md): Time Series
   - [io.cozy.timeseries.geojson](io.cozy.timeseries.md#iocozytimeseriesgeojson): GeoJSON time series
+  - [io.cozy.timeseries.grades](io.cozy.timeseries.md#iocozytimeseriesgrades): Grades time series
 - [io.cozy.todos](io.cozy.todos.md): Todos
   - [io.cozy.todos.list](io.cozy.todos.md#iocozytodoslist): Todos list
   - [io.cozy.todos.item](io.cozy.todos.md#iocozytodositem): Todos item
@@ -63,6 +67,7 @@ for another doctype, feel free to open a PR with the description and role of you
   ](io.cozy.account_types.md): OAuth informations and secrets
     for apps & konnectors
 - [cc.cozycloud.autocategorization](cc.cozycloud.autocategorization.md): Auto categorization remote doctype
+- [cc.cozycloud.announcements](cc.cozycloud.announcements.md): Announcements remote doctype
 - [io.cozy.exports](io.cozy.exports.md): Instances exports
 - [io.cozy.jobs](io.cozy.jobs.md): Instance jobs
 - [io.cozy.oauth.clients](io.cozy.oauth.clients.md): OAuth clients informations of the stack
@@ -149,11 +154,15 @@ A relationship can store additional information, in the `metadata` attribute. Fo
 
 ### Document metadata
 
-We distinguish three levels : the data (a list of songs from a playlist), the metadata about the data (the creation date of the playlist itself), the metadata of the cozy document (the creation date of the cozy document describing the playlist).
+We distinguish three levels of attributes:
 
-The third level (metadata of the wrapping document) is described by an object named `cozyMetadata` at the root of the document.
+1. The data (e.g. a list of songs from a playlist)
+2. The metadata about the data (e.g. the creation date of the playlist itself)
+3. The metadata of the cozy document (e.g. the creation date of the cozy document describing the playlist).
 
-The following keys are reserved and have special meanings:
+The third level is described by an object named `cozyMetadata` at the root of the document. This object structure is common to all Cozy doctypes. 
+
+The expected `cozyMetadata` attributes are the following:
 
 - `doctypeVersion`: Name or identifier for the version of the schema used by this document (ie: `doctypeVersion: 2` for "This document conforms to io.cozy.contacts in its version 2")
 - `metadataVersion`: Version of the `cozyMetadata`
@@ -164,8 +173,11 @@ The following keys are reserved and have special meanings:
 - `updatedByApps`: List of objects representing the applications (slugs and versions) which modified the cozy document in its life and the last update date for each of those apps (one entry per slug, apps should just update the value)
 - `sourceAccount`: When the document was imported from a connector, identifier of the account in io.cozy.accounts
 - `sourceAccountIdentifier`: When the document was imported from a connector, identifier of the account on targeted web service (the email address most of the time)
+- `favorite`: {boolean} whether or not the document is a favorite.
 
-Note: All these attributes are optional and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
+ℹ️ All these attributes are optional and taken care by the apps modifying the document. Unless specified otherwise in the documentation of the doctype, all these attributes may not be present or may have a `null` value.
+
+ℹ️ For doctypes protected by the stack such as `io.cozy.files`, any non-expected attribute in `cozyMetadata` will be refused by the stack. 
 
 ```json
 {

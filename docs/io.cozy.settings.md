@@ -8,11 +8,16 @@
 The `io.cozy.settings` doctype contains some documents. The most important one
 is the stack instance-related settings.
 
+### Instance settings document
+
 - `_id`: `io.cozy.settings.instance`
 - `tz`: {string} Timezone of the instance (ex: `Europe/Paris`)
 - `email`: {string} Email of the instance
 - `public_name`: {string} Public displayed name of the instance
 - `default_redirection`: {string} Redirect to an app after login (ex: `drive/#/folder`)
+- `colorScheme`: {'light'|'dark'|'auto} Used to manage the appearance of an app
+
+### Bitwarden settings document
 
 There is also a document with the stuff related to authentication and Bitwarden:
 
@@ -29,6 +34,10 @@ There is also a document with the stuff related to authentication and Bitwarden:
 - `collection_id`: {string} the identifier of the collection for the Cozy organization
 - `equivalent_domains`: {array} an array with lists of equivalent domains
 - `global_equivalent_domains`: {array} an array of integers used by bitwarden clients
+
+### Display settings document
+
+:warning: Deprecated because there is no direct stack route to use it.
 
 - `_id`: `io.cozy.settings.display`
 - `pushBanners`: {object} Relative attributes to push banners

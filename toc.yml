@@ -1,9 +1,11 @@
 - README: ./docs/README.md
 - Accounts: ./docs/io.cozy.accounts.md
+- AI: ./docs/io.cozy.ai.chat.conversations.md
 - Apps: ./docs/io.cozy.apps.md
 - App suggestions: ./docs/io.cozy.apps.suggestions.md
 - Banking doctypes: ./docs/io.cozy.bank.md
 - Bills: ./docs/io.cozy.bills.md
+- Calendar: ./docs/io.cozy.calendar.md
 - Connectors: ./docs/io.cozy.konnectors.md
 - CoachCO2: ./docs/io.cozy.coachco2.md
 - Contacts: ./docs/io.cozy.contacts.md
@@ -31,6 +33,7 @@
 - OAuth Access Codes: ./docs/io.cozy.oauth.access_codes.md
 - Triggers: ./docs/io.cozy.triggers.md
 - Triggers state: ./docs/io.cozy.triggers.state.md
+- Remote NextCloud files: ./docs/io.cozy.remote.nextcloud.files.md
 - Remote requests: ./docs/io.cozy.remote.requests.md
 - Sessions: ./docs/io.cozy.sessions.md
 - Shared: ./docs/io.cozy.shared.md
@@ -40,3 +43,4 @@
 - Bitwarden organizations: ./docs/com.bitwarden.organizations.md
 - Bitwarden contacts: ./docs/com.bitwarden.contacts.md
 - Bets Unibet: ./docs/com.unibet.bets.md
+- Announcements: ./docs/cc.cozycloud.announcements.md

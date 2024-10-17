@@ -152,6 +152,8 @@ expected in every cases.
 - `carbonCopy`: {boolean} : if the document is the original document imported by the connector
 - `electronicSafe`: {boolean} : if the document is secured in a secure storage
 - `backupDeviceIds`: {string[]} : id of the devices owning the backup. Only for backup directories.
+- `paperProps`: {object} : Metadata relative to a paper. A "paper" is an administrative file whose nature is defined in the `metadata.qualification` set of attributes.
+  - `isBlank`: {boolean} : if the document is created without a visual (image or pdf) added by the user
 
 ⚠ `carbonCopy` and `electronicSafe` both
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)

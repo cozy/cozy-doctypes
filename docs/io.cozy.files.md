@@ -206,6 +206,12 @@ They can have `metadata`:
 - `sharing.status` will be set if the link can be used to open a sharing. 2
   values are possible: `new` and `seen`, depending on whether the link
   has been opened.
+
+- `icon` {string?} contains the base64 encoded image or svg binary if mimetype is not present.
+- `iconMimeType` {string?} contains the mime-type of the icon.
+- `description`: {string} the description of the shortcut (optional)
+
+An object `target`
 - `target.cozyMetadata.instance` is set to the cozy instance when relevant
   (mostly sharing and internal links)
 - `target._type` is the doctype of the destination of the link (when the link
@@ -213,8 +219,8 @@ They can have `metadata`:
 - `target.mime` is the mime-type of the destination of the link (when it is a
   file)
 - `target.app` is the slug of the destination app (internal links only).
-- `icon` {string?} contains the base64 encoded image or svg binary if mimetype is not present.
-- `iconMimeType` {string?} contains the mime-type of the icon.
+- `target.title`: {string} the title of the application where the shortcut redirects (optional)
+- `target.category`: {string} the category of the application where the shortcut redirects (optional)
 
 #### Example (JSON format)
 
@@ -255,6 +261,81 @@ They can have `metadata`:
     "createdOn": "https://bob.cozy.example/",
     "updatedAt": "2020-02-10T20:38:04Z",
     "uploadedAt": "2020-02-10T20:38:04Z",
+    "uploadedOn": "https://bob.cozy.example/"
+  }
+}
+```
+
+### Toutatice shortcuts
+
+The [Toutatice konnector](https://github.com/konnectors/toutatice) creates specific shortcuts for applications on the Toutatice store. This metadata is used to organize the display in the Home and Store applications.
+
+Generic data is stored in the `target` object with the following attributes:
+- `title`: {string} The title of the application to which the shortcut redirects
+- `description`: {string} A brief description of the application
+- `category`: {string} The category of the application (e.g., lien, info, triskell, perso). Each category corresponds to a sub-folder in the Home settings folder where the associated shortcuts are located.
+
+Additional information is stored in the `externalDataSource` object to maintain the link with the Toutatice object:
+- `source`: {string} The space to which the application belongs
+- `networkAccess`: {string} The access rights granted to the application
+- `hubMetadata`: {object} Contains various metadata fields:
+  - `derniereSynchronisation`: {string} Date of the last synchronization
+  - `etat`: {string} Current status of the application
+  - `favori`: {boolean} Indicates if the application is marked as a favorite
+  - `idInterne`: {string} Internal ID of the application
+  - `premiereSynchronisation`: {string} Date of the first synchronization
+
+#### Example (JSON format)
+
+```json
+{
+  "_id": "629fb233be550a21174ac8e19f0043af",
+  "_rev": "1-61c7804bdb4f9f8dae5a363cb9a30dd8",
+  "type": "file",
+  "name": "École Directe.url",
+  "dir_id": "90c6120de7cf25f9f87424e09fea4e13",
+  "created_at": "2024-08-16T00:09:13.655513926Z",
+  "updated_at": "2024-08-16T00:09:13.655513926Z",
+  "md5sum": "BZcKfVhs0FWFJ9r7vxhJRg==",
+  "mime": "application/internet-shortcut",
+  "class": "shortcut",
+  "trashed": false,
+  "metadata": {
+    "target": {
+      "title": "École Directe",
+      "description": "Application de vie scolaire",
+      "category": "lien"
+    },
+    "externalDataSource": {
+      "networkAccess": "ALL",
+      "source": "Arena",
+      "hubMetadata": {
+        "derniereSynchronisation": "2022-10-21T14:27:37.794654Z",
+        "etat": "AFFECTEE",
+        "favori": false,
+        "idInterne": "4ebec71e-814e-4638-8b7e-7c5117599851",
+        "premiereSynchronisation": "2022-10-21T07:27:21.375402Z"
+      },
+    }
+  },
+  "cozyMetadata": {
+    "doctypeVersion": 1,
+    "metadataVersion": 1,
+    "createdAt": "2020-02-10T20:38:04Z",
+    "createdByApp": "toutatice",
+    "createdOn": "https://bob.cozy.example/",
+    "updatedAt": "2020-02-10T20:38:04Z",
+    "updatedByApps": [
+      {
+        "slug": "toutatice",
+        "date": "2020-02-10T20:38:04Z",
+        "instance": "https://bob.cozy.example/"
+      }
+    ],
+    "uploadedAt": "2020-02-10T20:38:04Z",
+    "uploadedBy": {
+      "slug": "toutatice"
+    },
     "uploadedOn": "https://bob.cozy.example/"
   }
 }
