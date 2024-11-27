@@ -31,7 +31,7 @@ The attributes of a file are:
 - `md5sum`: {string} the checksum of its content, computed with the MD5 algorithm
 - `created_at`: {date} the date of the creation of this file given by the client
 - `updated_at`: {date} the date of the last update of this file given by the client
-- `tags`: {array of strings} a list of tags. It is currently used to know if a file was uploaded through the mobile photo sync, with the value `library`. 
+- `tags`: {array of strings} a list of tags. It is currently used to know if a file was uploaded through the mobile photo sync, with the value `library`.
 - `size`: {number} the size of its content, in bytes
 - `executable`: {bool} true is the file has the executable bit on UNIX (`chmod +x`)
 - `class`: {string} a class in the list: `['image', 'document', 'audio', 'video', 'text', 'binary', 'pdf', 'files', 'code', 'slide', 'spreadsheet', 'text', 'zip', 'shortcut']`
@@ -39,6 +39,7 @@ The attributes of a file are:
 - `metadata`: {map} an optional map of metadata ([Full metadata description](io.cozy.files_metadata.md)), with for example:
     - `width`: {number}
     - `height`: {number}
+    - `description`: {string}
     - `datetime`: {date} : date in original image file metadata
     - `gps`: {map} : localization metadata with the following attributes
         - `lat`: {float}: latitude
@@ -69,7 +70,7 @@ These thumbnail links are valid for 10 minutes. After that, links will return a 
 When a file or a directory is put in the trash bin, some attributes are updated:
 - `trashed` is set to true, but only for files: directories never have this attribute.
 - The `restore_path` is set, for both files and directories.
-  - ⚠️ The `restore_path` is not set on children. For instance, if a directory `foo` is trashed, it will have a `restore_path` but not the children. 
+  - ⚠️ The `restore_path` is not set on children. For instance, if a directory `foo` is trashed, it will have a `restore_path` but not the children.
 - The `path` is updated only for directories, starting with `.cozy_trash`
 
 Here is how one could query files and directories **not** in the trash, through a mango query:
