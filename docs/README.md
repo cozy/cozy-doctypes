@@ -39,6 +39,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.home.settings](io.cozy.home.settings.md): Home settings
 - [io.cozy.konnectors](io.cozy.konnectors.md): Connectors installed in the cozy
 - [io.cozy.identities](io.cozy.identities.md): Instance owner identities
+- [io.cozy.learningrecords](io.cozy.learningrecords.md): Tracked learning experience
 - [io.cozy.notes](io.cozy.notes.md): Notes with collaborative edition
   - [io.cozy.notes.steps](io.cozy.notes.md#iocozynotessteps)
   - [io.cozy.notes.events](io.cozy.notes.md#iocozynotesevents)
