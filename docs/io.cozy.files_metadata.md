@@ -124,6 +124,7 @@ expected in every cases.
 - `datetime` : {date} Equals to the date attribute specified by `datetimeLabel`.
 - `description`: {string} A file summary
 - `fileIdAttributes` : {string} Used to deduplicate files imported by a konnector. This is a concatenation of a set of attributes, separated by `####`. For example: `mycontractid####myfile.pdf####/mypath/`.
+- `externalId` : {string} Used to identify the file in an external application.
 - `datetimeLabel` : {string} specify which attribute is used as `datetime`, e.g.
   `issueDate` or `startDate`.
 - `issueDate` : {date} issue date of the document emitted by the vendor.
