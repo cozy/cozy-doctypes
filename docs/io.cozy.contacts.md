@@ -25,6 +25,11 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
   - `type?`: {string} A user-provided localized type (example: `"Personnal"`, `"Profressional"`, `"Other"`)
   - `label?`: {string} A keyword to identify the type, must be `work|home`
   - `primary?`: {boolean} Indicates a preferred-use address
+- `impp?`: {array} An array of impp URI and relative informations
+  - `uri`: {string} Indicates the address of a IMPP service
+  - `protocol?`: {string} Protocol used by the IMPP service
+  - `label?`: {string} A keyword to identify the type, must be `work|home`
+  - `primary?`: {boolean} Indicates a preferred-use number
 - `address?`: {array} An array of postal addresses objects with the following attributes:
   - `id?`: {string} id of the address
   - `street?`: {string} Street name
