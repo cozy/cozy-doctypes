@@ -14,7 +14,7 @@ is the stack instance-related settings.
 - `tz`: {string} Timezone of the instance (ex: `Europe/Paris`)
 - `email`: {string} Email of the instance
 - `public_name`: {string} Public displayed name of the instance
-- `phone_number`: {string} Phone number of the instance
+- `phone`: {string} Phone number of the instance
 - `default_redirection`: {string} Redirect to an app after login (ex: `drive/#/folder`)
 - `colorScheme`: {'light'|'dark'|'auto} Used to manage the appearance of an app
 
