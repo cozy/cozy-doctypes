@@ -60,6 +60,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.todos](io.cozy.todos.md): Todos
   - [io.cozy.todos.list](io.cozy.todos.md#iocozytodoslist): Todos list
   - [io.cozy.todos.item](io.cozy.todos.md#iocozytodositem): Todos item
+- [io.cozy.drive.settings](io.cozy.drive.settings.md): Drives Settings
 
 ## Technical doctypes
 
