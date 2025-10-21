@@ -17,6 +17,11 @@ For a folder, its attributes are:
 - `created_at`: {timestamp} the date of the creation of this directory given by the client
 - `updated_at`: {timestamp} the date of the last update of this directory given by the client
 - `tags`: {array of strings} a list of tags
+- `metadata`: {object} an optional map of metadata ([Full metadata description](io.cozy.files_metadata.md)), with for example:
+    - `decorations`: {object} information on folder presentation
+        - `color`: {string} hexadecimal color code
+        - `icon`: {string} name of the icon in the list of cozy-ui icons
+        - `emoji`: {string} unicode character of the emoji
 
 It also has a relationship with its `parent` in the JSON-API representation, and another called `data` with the files and directory inside it.
 
