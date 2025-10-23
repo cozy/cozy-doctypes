@@ -33,6 +33,13 @@ For a Cozy Note, here is the list:
 - `title`: {string} - The Note's title
 - `version`: {int} - The Note's version
 
+## Folders
+
+- `decorations`: {object} information on folder presentation
+    - `color`: {string} hexadecimal color code
+    - `icon`: {string} name of the icon in the list of cozy-ui icons
+    - `emoji`: {string} unicode character of the emoji
+
 ## Document qualification
 
 It is possible to add semantics to documents in order to qualify them.
