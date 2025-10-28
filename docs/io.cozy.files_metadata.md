@@ -38,6 +38,7 @@ For a Cozy Note, here is the list:
 - `decorations`: {object} information on folder presentation
     - `color`: {string} hexadecimal color code
     - `icon`: {string} name of the icon in the list of cozy-ui icons
+    - `icon_color`: {string} hexadecimal color code for the icon
     - `emoji`: {string} unicode character of the emoji
 
 ## Document qualification
