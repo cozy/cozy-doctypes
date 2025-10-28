@@ -21,6 +21,7 @@ For a folder, its attributes are:
     - `decorations`: {object} information on folder presentation
         - `color`: {string} hexadecimal color code
         - `icon`: {string} name of the icon in the list of cozy-ui icons
+        - `icon_color`: {string} hexadecimal color code for icon
         - `emoji`: {string} unicode character of the emoji
 
 It also has a relationship with its `parent` in the JSON-API representation, and another called `data` with the files and directory inside it.
