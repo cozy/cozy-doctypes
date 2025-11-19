@@ -86,6 +86,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 - `nationalities?`: {array} 2-letter iso3166 country codes (can be set in io.cozy.identities for legal reasons in Banks)
 - `birthcity?`: {string} City of birth of a contact (can be set in io.cozy.identities for legal reasons in Banks)
 - `birthcountry?`: {string} Country of birth of a contact (can be set in io.cozy.identities for legal reasons in Banks)
+- `birthplace?`: {string} Place of birth of a contact
 - `metadata`: {object} previous metadata information.
   - `cozy`: {boolean} whether the contact has been created by cozy
   - `google`: {object} Google metadata
