@@ -66,6 +66,12 @@ The attributes of a file are:
 [need specific permission](https://docs.cozy.io/en/cozy-stack/files/#post-filesuploadmetadata)
 to be added to a document.
 
+- `antivirus_scan`: {object} antivirus scan information (optional, only present when antivirus scanning is enabled)
+    - `status`: {string} the scan status, one of: `pending`, `clean`, `infected`, `error`, `skipped`
+    - `scanned_at`: {date} when the scan was performed (optional, not present for `pending` status)
+    - `virus_name`: {string} name of detected virus (optional, only present when `status` is `infected`)
+    - `error`: {string} error message (optional, only present when `status` is `error`)
+
 It also has a relationship with its `parent` in the JSON-API representation.
 
 For an `image`, there are 3 links to thumbnails: `small`, `medium`, and `large`.
@@ -167,6 +173,10 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
         },
         "sourceAccount": "07b49550-8b60-11e9-bb7e-87717e829039",
         "sourceAccountIdentifier": "157ae784"
+      },
+      "antivirus_scan": {
+        "status": "clean",
+        "scanned_at": "2019-06-12T12:40:10Z"
       }
     },
     "relationships": {
