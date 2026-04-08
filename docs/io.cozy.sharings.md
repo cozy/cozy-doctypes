@@ -25,6 +25,7 @@ documents and files from her cozy instance to other people.
 - a flag `open_sharing`:
     - `true` if any member of the sharing can add a new recipient
     - `false` if only the owner can add a new recipient
+- a flag `org_drive`: present and `true` when the shared drive was created from an organization instance (i.e. the instance's canonical slug matches its `OrgID`)
 - Some technical data (`created_at`, `updated_at`, `app_slug`, `preview_path`,
   `triggers`, `credentials`)
 - A flag `initial_sync` present only when the initial replication is still running
