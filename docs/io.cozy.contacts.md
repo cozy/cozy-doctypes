@@ -106,6 +106,7 @@ The `io.cozy.contacts` doctype is loosely based on the [vCard RFC](https://tools
 Used to group contacts together. A group can obviously have multiple contacts, but contacts can also be part of multiple groups.
 
 - `name`: {string} is the group's public name
+- `color?`: {string} hexadecimal color code
 - `trashed?`: {boolean} is `true` if the group is marked for removal and will be deleted soon
 - `metadata`: {object}
 - `version`: {integer} Used for migrations. Current version is **1**
