@@ -16,6 +16,7 @@ documents and files from her cozy instance to other people.
 - A list of `groups`, with for each one:
     - `id`, the identifier of the io.cozy.contacts.groups
     - `name`, the name of the group
+    - `color`, the color of the group
     - `addedBy`, the index of the member that has added the group
     - `read_only`, a flag to tell if the group is restricted to read-only mode
     - `revoked`, a flag set to true when the group is revoked from the sharing
