@@ -109,6 +109,11 @@ The `io.cozy.files` doctype has [the standard `cozyMetadata`](https://docs.cozy.
     - `slug`: {string} the slug of the application that has made the upload
     - `version`: {string} the version number of this application
     - `oauthClient`: {object} if the upload was made by an OAuth Client, information about it (`id`, `name`, and `kind`)
+- `trashedAt`: {date} the server date/time when the file or folder was moved to the trash
+- `trashedBy`: {object} information on who trashed the file or folder (only present when the file is in the trash)
+    - `kind`: {string} either `member` (a sharing member) or `anonymous-share`
+    - `displayName`: {string} the display name of the member who trashed the file (only when `kind` is `member`)
+    - `domain`: {string} the domain of the member's Cozy instance (only when `kind` is `member`)
 
 ### Example (JSON-API format)
 
