@@ -26,6 +26,7 @@ for another doctype, feel free to open a PR with the description and role of you
   - [io.cozy.bank.recurrence](io.cozy.bank.md#iocozybankrecurrence): Recurrence group information
   - [io.cozy.bank.groups](io.cozy.bank.md#iocozybankgroups): Group of bank accounts
   - [io.cozy.bank.recipients](io.cozy.bank.md#iocozybankrecipients): Recipients for transfert
+- [io.cozy.banners](io.cozy.banners.md): Platform banners displayed to the user
 - [io.cozy.bills](io.cozy.bills.md): Bills
 - [io.cozy.calendar](io.cozy.calendar.md): Calendar
 - [io.cozy.coachco2.settings](io.cozy.coachco2.md): CoachCO2 application settings
