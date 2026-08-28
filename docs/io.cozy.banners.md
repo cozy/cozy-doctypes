@@ -20,8 +20,11 @@ A banner describes the instance owner's own state, so clients do not read or ren
 - **`surface`**: {string} Where the banner is meant to be displayed: `banner` for a full-width message at the top of the application, `modal` for a blocking dialog. Set by the stack. A client that does not know a surface, or that has no host for it, renders the banner as `banner` rather than dropping it. Adding a surface keeps the version, so a value is only introduced once a client renders it.
 - **`title`**: {string} Optional heading, `null` or absent when there is none. Set by the stack. Meaningful on the `modal` surface, where a message needs a heading above its body; a plain banner carries none. Plain text, localized as `text` is.
 - **`text`**: {string} The message, in the language given by `lang`. Set by the stack. It is plain text: clients escape it and never interpret markup in it.
-- **`lang`**: {string} BCP 47 tag of the language `text` and `cta.label` are written in, the instance language at materialization time. Set by the stack, which re-materializes the live banners of an instance when that language changes.
+- **`lang`**: {string} BCP 47 tag of the language `text`, `cta.label` and `secondaryCta.label` are written in, the instance language at materialization time. Set by the stack, which re-materializes the live banners of an instance when that language changes.
 - **`cta`**: {object} Optional call to action, `null` or absent when there is none. Set by the stack.
+  - **`label`**: {string} The label, plain text, localized as `text` is.
+  - **`url`**: {string} Absolute `https://` URL the label points to. The stack restricts the hosts it writes here.
+- **`secondaryCta`**: {object} Optional second call to action, of the same shape as `cta`, `null` or absent when there is none. Set by the stack. It is the lesser action, so a client renders it less prominently than `cta` and never on its own: a document carrying a `secondaryCta` and no `cta` is malformed, and a client ignores the secondary one rather than promoting it.
   - **`label`**: {string} The label, plain text, localized as `text` is.
   - **`url`**: {string} Absolute `https://` URL the label points to. The stack restricts the hosts it writes here.
 - **`dismissible`**: {boolean} Whether the client offers a control to dismiss the banner. It is a rendering instruction, not an access control: anything that must actually block the user is enforced elsewhere. A non dismissible banner on the `modal` surface carries a `cta`, so the user is never left without a way out. When a document carries `dismissible: false` and a `dismissedAt` recorded while it was still dismissible, the dismissal wins and the banner stays hidden.
@@ -33,7 +36,7 @@ A banner describes the instance owner's own state, so clients do not read or ren
   - **`trigger`**: {string} The input that caused the last materialization.
   - **`at`**: {date} When it was materialized.
 
-`title`, `cta`, `dismissedAt` and `endsAt` are the only fields that may be missing, and for them a `null` value and an absent key mean the same thing. A client checks for both, including before reading `cta.label` or `cta.url`. Every other field is always present.
+`title`, `cta`, `secondaryCta`, `dismissedAt` and `endsAt` are the only fields that may be missing, and for them a `null` value and an absent key mean the same thing. A client checks for both, including before reading `cta.label` or `cta.url`. Every other field is always present.
 
 ### Dates
 
@@ -57,7 +60,7 @@ Adding a field, a category, a severity or a surface keeps the version: a client 
 
 ### Contract vectors
 
-[`fixtures/io.cozy.banners.json`](../fixtures/io.cozy.banners.json) holds the cases every client is expected to reproduce: ordering and its tie-break, the validity window bounds, dismissal, the fallbacks for an unknown severity or surface, the call to action scheme check, and the version filter. Each case gives `input` documents and the `expected` list a client displays, so two implementations can be checked against the same data rather than against each other.
+[`fixtures/io.cozy.banners.json`](../fixtures/io.cozy.banners.json) holds the cases every client is expected to reproduce: ordering and its tie-break, the validity window bounds, dismissal, the fallbacks for an unknown severity or surface, the call to action scheme check, a secondary call to action, and the version filter. Each case gives `input` documents and the `expected` list a client displays, so two implementations can be checked against the same data rather than against each other.
 
 ### Example
 
