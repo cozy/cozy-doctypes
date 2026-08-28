@@ -10,8 +10,6 @@ Documents are written by the stack when the state that drives them changes, so t
 
 The only field a client writes is `dismissedAt`. Because the documents live in the user's own database, a banner dismissed in one application is dismissed in all of them.
 
-Permissions scope by doctype and verb, never by field, so an application allowed to record a dismissal is also able to rewrite `text`, `cta` and `priority` on the same document. Every other field is set by the stack and the platform cannot enforce that, so a client treats a document whose `cozyMetadata.createdByApp` is not the stack as untrusted.
-
 A banner describes the instance owner's own state, so clients do not read or render one in a context where the reader is not the owner, such as a share by link or a preview.
 
 ### Fields
@@ -20,11 +18,12 @@ A banner describes the instance owner's own state, so clients do not read or ren
 - **`category`**: {string} What the banner is about: `quota`, `billing`, `trial`, `account` or `system`. Set by the stack. A client that does not know a category ignores the category and still renders the banner.
 - **`severity`**: {string} `info`, `warning` or `error`. Set by the stack. Clients map it to their own alert styles, and treat a severity they do not know as `warning`.
 - **`surface`**: {string} Where the banner is meant to be displayed: `banner` for a full-width message at the top of the application, `modal` for a blocking dialog. Set by the stack. A client that does not know a surface, or that has no host for it, renders the banner as `banner` rather than dropping it. Adding a surface keeps the version, so a value is only introduced once a client renders it.
+- **`title`**: {string} Optional heading, `null` or absent when there is none. Set by the stack. Meaningful on the `modal` surface, where a message needs a heading above its body; a plain banner carries none. Plain text, localized as `text` is.
 - **`text`**: {string} The message, in the language given by `lang`. Set by the stack. It is plain text: clients escape it and never interpret markup in it.
 - **`lang`**: {string} BCP 47 tag of the language `text` and `cta.label` are written in, the instance language at materialization time. Set by the stack, which re-materializes the live banners of an instance when that language changes.
 - **`cta`**: {object} Optional call to action, `null` or absent when there is none. Set by the stack.
   - **`label`**: {string} The label, plain text, localized as `text` is.
-  - **`url`**: {string} Absolute `https://` URL the label points to. The stack restricts the hosts it writes here. A client that reads any other scheme drops the call to action and renders the rest of the banner.
+  - **`url`**: {string} Absolute `https://` URL the label points to. The stack restricts the hosts it writes here.
 - **`dismissible`**: {boolean} Whether the client offers a control to dismiss the banner. It is a rendering instruction, not an access control: anything that must actually block the user is enforced elsewhere. A non dismissible banner on the `modal` surface carries a `cta`, so the user is never left without a way out. When a document carries `dismissible: false` and a `dismissedAt` recorded while it was still dismissible, the dismissal wins and the banner stays hidden.
 - **`dismissedAt`**: {date} When the user dismissed this banner, `null` while it is active. The only field written by a client. The stack preserves it when it re-materializes the same `bannerId`; only a new `bannerId` clears it.
 - **`priority`**: {number} Sort order, highest first, when several banners apply at once. An integer. Equal priorities break on `bannerId` ascending, compared code unit by code unit rather than with a locale aware collation, so every client orders identically whatever its runtime locale.
@@ -34,7 +33,7 @@ A banner describes the instance owner's own state, so clients do not read or ren
   - **`trigger`**: {string} The input that caused the last materialization.
   - **`at`**: {date} When it was materialized.
 
-`cta`, `dismissedAt` and `endsAt` are the only fields that may be missing, and for them a `null` value and an absent key mean the same thing. A client checks for both, including before reading `cta.label` or `cta.url`. Every other field is always present.
+`title`, `cta`, `dismissedAt` and `endsAt` are the only fields that may be missing, and for them a `null` value and an absent key mean the same thing. A client checks for both, including before reading `cta.label` or `cta.url`. Every other field is always present.
 
 ### Dates
 
@@ -52,9 +51,9 @@ A client null checks a date before building one from it, because `new Date(null)
 
 ### Versioning
 
-The shape of the document is versioned with `cozyMetadata.doctypeVersion`, like every other doctype in the [generic model](README.md#document-metadata). It is a string, as it is for every doctype the stack writes, so a client parses it before comparing rather than relying on its language's coercion rules. Adding a field or a category keeps the version, and clients ignore what they do not understand. Renaming or removing one bumps it, and both versions are then materialized under the same `bannerId` until the oldest deployed clients are gone.
+The shape of the document is versioned with `cozyMetadata.doctypeVersion`, like every other doctype in the [generic model](README.md#document-metadata). It is a string, as it is for every doctype the stack writes.
 
-So a client reads `doctypeVersion`, skips a document whose version is higher than the version it was written against, and keeps only the highest version it does support for a given `bannerId`. Two documents can still tie: the most recently updated one wins on `cozyMetadata.updatedAt`, and if that ties too, the lowest `_id` wins. The rule is spelled out so that every client resolves a tie the same way rather than taking whichever the database returned first. Without that filter the migration renders every banner twice. A dismissal is written to every version of a `bannerId`, so dismissing in one client is not undone by another still reading the older version. Reading one is the exception to the skip rule: a client collects `dismissedAt` from every document sharing a `bannerId`, including versions it is too old to render, so a banner the user closed stays closed even if the write reached only the newer document.
+Adding a field, a category, a severity or a surface keeps the version: a client renders a value it does not know rather than dropping the banner, so a new one needs no client release. Renaming or removing a field bumps it.
 
 ### Contract vectors
 
@@ -74,6 +73,7 @@ So a client reads `doctypeVersion`, skips a document whose version is higher tha
     "updatedAt": "2026-07-22T09:14:02Z"
   },
   "bannerId": "quota.exceeded:2026-07-22T09:14:02Z",
+  "title": null,
   "category": "quota",
   "severity": "error",
   "surface": "banner",
@@ -103,7 +103,7 @@ See the [`cozyMetadata` documentation](README.md#document-metadata) for the attr
 - **`_rev`**: {string} Revision identifier of the document.
 - **`cozyMetadata`**: {object} Metadata related to the document's lifecycle in Cozy.
   - **`createdAt`**: {date} When the document was created.
-  - **`createdByApp`**: {string} What wrote the document. Anything other than the stack is not to be trusted.
+  - **`createdByApp`**: {string} What wrote the document, always the stack.
   - **`doctypeVersion`**: {string} Version of the document shape, see [Versioning](#versioning).
   - **`metadataVersion`**: {number} Version number of the metadata format.
   - **`updatedAt`**: {date} When the document was last updated, by the stack or by a client recording a dismissal.
