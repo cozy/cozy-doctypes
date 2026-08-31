@@ -229,3 +229,53 @@ would silently widen a folder-scoped conversation to the whole instance.
   }
 }
 ```
+
+## `io.cozy.ai.chat.rag`
+
+The `io.cozy.ai.chat.rag` doctype is used to keep the RAG indexation status of
+a document. Its identifier is the identifier of the document it describes. Only
+files are indexed for now, and the relationship always points to an
+`io.cozy.files` document.
+
+- `indexed`: {boolean} Whether a version of the document has been indexed. A
+  failed indexation does not reset it to `false`, so `indexed` can be `true`
+  while `status` is `error`: a previous version is still indexed
+- `status`: {string} Can be `success`, `error` or `notsupported`. The
+  `notsupported` status is not reported by the indexer, it is the stack that
+  decides a document will not be indexed
+- `docRev`: {string} The revision of the document this status describes.
+  Compare it to the current revision of the document to know whether it is the
+  current content that is indexed.
+- `lastSuccessDate?`: {date} When the document was last indexed successfully.
+  Absent as long as no indexation has succeeded
+- `lastErrorDate?`: {date} When the last indexation of the document failed.
+  Absent as long as no indexation has failed
+- `relationships`: {object}
+  - `doc`: {object} The document this status describes
+
+A status is only replaced by one about a revision that is not older than the
+recorded `docRev`, so a callback that comes in late cannot bring an outdated
+status back. The status document is deleted along with the document it
+describes.
+
+### Example
+
+
+```json
+{
+  "_id": "e21dce8058b9013d800a18c04daba326",
+  "_rev": "1-23456",
+  "indexed": true,
+  "status": "success",
+  "docRev": "3-6a1b0b8a51a4e0e0a3b7f0f1d2c3b4a5",
+  "lastSuccessDate": "2026-08-28T13:24:07.576Z",
+  "relationships": {
+    "doc": {
+      "data": {
+        "_id": "e21dce8058b9013d800a18c04daba326",
+        "_type": "io.cozy.files"
+      }
+    }
+  }
+}
+```

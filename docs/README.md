@@ -17,6 +17,7 @@ for another doctype, feel free to open a PR with the description and role of you
 - [io.cozy.ai.chat](io.cozy.ai.chat.md): Chat with an AI
   - [io.cozy.ai.chat.conversations](io.cozy.ai.chat.md#iocozyaichatconversations): Chat conversations with an assistant (AI)
   - [io.cozy.ai.chat.assistants](io.cozy.ai.chat.md#iocozyaichatassistants): AI assistants for chat
+  - [io.cozy.ai.chat.rag](io.cozy.ai.chat.md#iocozyaichatrag): RAG indexation status of a document
 - [io.cozy.apps](io.cozy.apps.md): Apps installed in the Cozy
   - [io.cozy.apps.suggestions](io.cozy.apps.suggestions.md): Suggestions for apps that the user might find useful
 - [io.cozy.bank](io.cozy.bank.md): Banking related data
